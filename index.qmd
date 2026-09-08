@@ -12,3 +12,7 @@ A concise, self-contained textbook of definitions, examples, results, and
 computational methods used in the course.
 
 [Start reading](lectures/01-strategic-games.qmd)
+
+::: {.content-visible when-format="html"}
+[Download textbook (PDF)](downloads/computational-game-theory.pdf)
+:::

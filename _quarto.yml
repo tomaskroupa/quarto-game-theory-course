@@ -12,6 +12,11 @@ book:
   output-file: "computational-game-theory"
   search: true
   page-navigation: true
+  sidebar:
+    tools:
+      - icon: file-earmark-pdf
+        text: "Download textbook (PDF)"
+        href: downloads/computational-game-theory.pdf
 
   chapters:
     - index.qmd
