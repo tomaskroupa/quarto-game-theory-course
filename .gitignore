@@ -8,6 +8,8 @@
 /index.print.typ
 /lectures/*.html
 /lectures/*_files/
+/course-info/*.html
+/course-info/*_files/
 __pycache__/
 *.py[cod]
 .DS_Store
