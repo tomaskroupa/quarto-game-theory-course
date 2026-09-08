@@ -1,0 +1,146 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Semestral project {.unnumbered}
+
+The project contributes **30 points**. Choose a topic from the [Semestral project catalogue](semestral-projects.qmd) or come up with your own theme. The project assesses three aspects equally: your ability to design a rigorous study, interpret the results, and clearly explain the submitted implementation. *The students must work in teams of two or three students.*
+
+The project consists of a **project proposal (10 points)**, a **final report (10 points)**, and a **live code defense (10 points)**. The proposal and report marks are shared by all the students in team, while all 10 defense points are awarded individually.
+
+
+## Timeline {#sec-semestral-project-timeline}
+
+| Stage | Timing | Required outcome |
+|---|---|:---|
+| Topic and team selection | Before preparing the proposal | Select a topic, agree on the team, and identify the intended problem and experiments. *Consult the topic with the teachers to obtain the approval.* |
+| Proposal preparation | After topic approval | Submit the project proposal by **6 Dec 2026**. |
+| Proposal approval | By **15 Dec 2026** | Obtain explicit approval of the submitted proposal. A requested revision must also be approved by the deadline. |
+| Implementation and experiments | After proposal approval | Implement the  required methods, verify the environment and algorithms, run the planned experiments, and record any justified departure from the proposal. |
+| Final submission | At the announced deadline | Submit the final report PDF and the frozen code ZIP. |
+| Live code defense | At the assigned consultation | Each team runs and defends the exact frozen version of the code on their own computer. |
+
+: Project timeline {#tbl-semestral-project-timeline}
+
+
+## Module 1: project proposal {#sec-semestral-project-proposal}
+
+You are not restricted to the games studied directly in the course. You are
+encouraged to be ambitious and explore a stochastic game or a partially
+observable stochastic game, including one of the templates in the [Semestral
+project catalogue](semestral-projects.qmd). Such a project requires some
+independent study, but it builds on familiar objects: at each state, the
+one-stage interaction is a normal-form game, while histories and partial
+observations extend ideas from extensive-form games. In this sense, the games
+studied in the course become the basic building blocks of a richer model.
+
+Submit `proposal.pdf` with the following two parts.
+
+### A. Formulation
+
+Define, if applicable:
+
+- the players, actions, payoffs, transitions, observations, information assumptions etc.;
+- the precise mathematical or computational problem and the target solution   or learning concept;
+- the algorithms and the update equations;
+- the quantities that the implementation will compute;
+- the mathematical criteria that will be used to decide whether the results  are correct.
+
+### B. Implementation and validation plan
+
+Specify:
+
+- the intended functions, modules, or other code structure;
+- the inputs, outputs, configurations, and random seeds;
+- basic hand-checkable tests and an independent benchmark or correctness  certificate;
+- the principal experiment and the game-theoretic evaluation metric;
+- the anticipated limitations, risks, and fallback scope.
+
+
+::: {.callout-important title=""}
+Approval and grading have different purposes. *Approval* confirms that the scope is feasible and that the project may proceed. The *mark* evaluates the quality of the approved proposal. Approval does not automatically award full points.
+:::
+
+
+## Module 2: final report {#sec-semestral-project-report}
+
+### A. Results
+
+Submit `report.pdf`. It should focus on what was implemented and learned rather than repeat the proposal. It must contain:
+
+- a concise description of the implemented methods and experimental setup;
+- the prescribed and student-designed tests;
+- figures or tables reporting the main experiment;
+- numerical evidence supporting correctness;
+- game-theoretic interpretation of the results;
+- limitations, negative results, and deviations from the approved proposal;
+- citations for sources, external code, libraries, data, and figures; 
+- division of work among students in the team;
+- an AI-use statement according to [AI policy](#sec-semestral-project-ai-policy).
+
+::: {.callout-important title=""}
+A negative result of the experiments can receive full credit when the implementation and validation are correct and the failure is convincingly diagnosed.
+:::
+
+### B. Implementation
+Submit one ZIP archive containing the complete source code, a README with the exact commands needed for the prepared run, dependency versions,    configurations and seeds, tests, and every non-private input needed for the demonstration.
+
+::: {.callout-important title=""}
+The ZIP archive fixes the version being assessed. At the live defense, retrieve the originally submitted archive and run that exact version on your own computer rather than a later local copy. Make the archive self-contained and test it before submission. Files changed after the deadline are not part of the assessed version.
+:::
+
+## Module 3: live code defense {#sec-semestral-project-defense}
+
+During the defense, the students in the team operate the computer throughout. The instructor does not install or run the submission. A possible structure of the live code defense:
+
+1. Run a prepared representative example that reproduces a principal result from the report using the frozen submission. It need not repeat every seed of a long experiment.
+2. Receive a small new instance or a mathematically predictable transformation, predict the effect, and run it. 
+3. Display and explain the relevant certificate, such as exploitability, value bounds, constraint violations, comparison with an exact solution.
+4. Locate one central mathematical update in the implementation and explain the objects represented by the main variables. 
+5. Modify a parameter, payoff, test, or stopping condition, or diagnose a small problem and explain the expected consequence.
+
+
+
+::: {.callout-important title=""}
+Questions may also cover individual contributions, limitations, validation, and declared AI use. Generative-AI tools and external communication are not permitted during the defense. The last stage of defense may be used to clarify selected solutions from the exam test with each student. 
+:::
+
+## Detailed evaluation {#sec-semestral-project-evaluation}
+
+| Module | Criterion | Points | Full-credit evidence |
+|---|---|:---:|:---|
+| Proposal | Mathematical formulation | 5 | Complete and  consistent model, precise target problem, correct algorithmic equations, defined outputs, and suitable correctness criteria. |
+| Proposal | Implementation and validation plan | 5 | Concrete code design, inputs and outputs, tests,  benchmarks or certificates, experiment, risks, and division of work. |
+| Final report | Results and documented experiments | 3 | The implemented methods and setup are clear; prescribed and additional tests are reported; figures and tables answer the research question. |
+| Final report | Correctness tests and validation evidence | 3 | Appropriate invariants, benchmarks, uncertainty, and game-theoretic metrics provide credible evidence that the implementation and results are valid. |
+| Final report | Interpretation, limitations, and deviations | 3 | Results, including negative results, are interpreted through the model; limitations and changes from the proposal are explained honestly. |
+| Final report | Clarity, citations, and AI-use declaration | 1 | The PDF is focused and readable; sources and external artifacts are attributed; contributions and AI use are declared. |
+| Live defense | Connection between model and code | 5 | The student correctly relates the algorithm, data structures, and numerical outputs. |
+| Live defense | Prediction and modification | 3 | The student predicts the effect of a change (new case, modified input, unseen test) and performs or precisely explains the required modification or diagnosis. |
+| Live defense | Individual contribution, limitations, and AI use | 2 | The student explains their contribution, understands the complete core solution, identifies limitations, and accounts for any AI assistance. |
+| **Total** |  | **30** | |
+
+: Semestral project evaluation {#tbl-semestral-project-evaluation}
+
+## AI policy {#sec-semestral-project-ai-policy}
+
+### Intellectual Ownership and Accountability
+The project assesses whether each student has intellectual ownership of the submitted work. Students must be able to formulate the method, translate it into code, validate the implementation, interpret its results, identify problems and limitations, and make justified modifications. In short, each student should be capable of turning a mathematical algorithm into a trustworthy computational experiment and defending the evidence it produces. Declared AI assistance is permitted; unaccountable work is not. The team is responsible for all content it submits or incorporates, and each student must be able to explain, test, debug, and modify the complete core solution without AI assistance during the defense.
+
+
+### Required declaration
+
+ Every team submits information about generative-AI use that affected the project as a separate section included in the file `report.pdf`. Ordinary spelling and grammar checking need not be declared. Use the following fields for each tool. 
+
+| Field | Required information |
+|:---|:---|
+| Tool | Model and version |
+| Purpose | What assistance was requested |
+| Location | Affected files, functions, figures, or report sections |
+| Incorporation | What generated output entered the submission |
+| Verification | Tests, corrections and modifications |
+
+: Required AI-use declaration {#tbl-semestral-project-ai-declaration}
+
+
+

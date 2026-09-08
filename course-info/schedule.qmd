@@ -1,0 +1,62 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Lecture and tutorial schedule {.unnumbered}
+
+## Academic calendar
+
+- **Teaching period:** 21 September 2026 – 10 January 2027
+- **Winter holiday:** 21 December 2026 – 3 January 2027
+- **Examination period:** 11 January – 12 February 2027
+
+
+## Lectures
+
+
+| Week | Date | Topic | Instructor |
+|---:|---|:---|:---:|
+| 1 | 22 Sep | [Normal-form games](topics.qmd#sec-topic-normal-form-games) | TK |
+| 2 | 29 Sep | [Nash equilibrium](topics.qmd#sec-topic-nash-equilibrium) | TK |
+| 3 | 6 Oct | [Computing Nash equilibrium](topics.qmd#sec-topic-computing-nash-equilibrium) | TK |
+| 4 | 13 Oct | [Two-player zero-sum games](topics.qmd#sec-topic-zero-sum-games) | TK |
+| 5 | 20 Oct | [Alternatives to Nash equilibrium](topics.qmd#sec-topic-alternatives) | TK |
+| 6 | 27 Oct | [Learning in games](topics.qmd#sec-topic-learning) | TK |
+| 7 | 3 Nov | [Extensive-form games](topics.qmd#sec-topic-extensive-form-games) | TK |
+| 8 | 10 Nov | [Solving extensive-form games](topics.qmd#sec-topic-solving-extensive-form-games) |  TK |
+| 9 | 17 Nov | *No class — public holiday* | - |
+| 10 | 24 Nov | [Auctions 1](topics.qmd#sec-topic-auctions-1) |  TK |
+| 11 | 1 Dec | [Auctions 2](topics.qmd#sec-topic-auctions-2) | TK |
+| 12 | 8 Dec | [Mechanism design](topics.qmd#sec-topic-mechanism-design) | TK |
+| 13 | 15 Dec | [Coalitional games](topics.qmd#sec-topic-coalitional-games) |  TK |
+| — |  22, 29 Dec| *No class — winter holiday* | - |
+| 14 | 5 Jan | [Shapley value](topics.qmd#sec-topic-shapley-value) | TK |
+
+: Lecture schedule for winter semester 2026/2027 {#tbl-lecture-schedule}
+
+## Tutorials
+
+| Week | Date | Topic | Instructor |
+|---:|---|---|:---:|
+| 1 |  22 Sep  |  | DR |
+| 2 |  29 Sep  | | DR |
+| 3 |  6 Oct  | | DR |
+| 4 |  13 Oct  | | DR |
+| 5 |  20 Oct  |  | DR |
+| 6 |  27 Oct  |  | DR |
+| 7 |  3 Nov  | **Midterm test**  | - |
+| 8 |  10 Nov  |  | DR |
+| 9 |  17 Nov  | *No class — public holiday* | - |
+| 10 |  24 Nov  |  | DR |
+| 11 |  1 Dec  |  | DR |
+| 12 |  8 Dec  |  | DR |
+| 13 |  15 Dec  |  | DR |
+| — |  22, 29 Dec  | *No class — winter holiday* | - |
+| 14 |  5 Jan | | DR |
+
+: Tutorial schedule for winter semester 2026/2027 {#tbl-tutorial-schedule}
+
+## Instructor abbreviations
+
+- **TK:** Tomáš Kroupa
+- **DR:** David Ryzák

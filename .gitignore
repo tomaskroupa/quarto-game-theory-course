@@ -1,0 +1,18 @@
+/.quarto/
+/_drafts/
+/_site/
+/.venv/
+/site_libs/
+/index.html
+/index.typ
+/lectures/*.html
+/lectures/*_files/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Do not ignore _freeze/ if executable lecture material is added.
+
+**/*.quarto_ipynb
+AGENTS.md
+/project-context/

@@ -1,0 +1,106 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Topic guide {.unnumbered}
+
+This guide summarizes the planned scope of each topic in the [weekly schedule](schedule.qmd). It is intended as a compact orientation for
+students.
+
+## Normal-form games {#sec-topic-normal-form-games}
+
+The normal (strategic) form represents a simultaneous interaction by its players, their available actions (strategies), and their payoff functions. The topic introduces the language used throughout the non-cooperative part of the course and the first methods for identifying rational choices.
+
+**Key concepts:** forms of games; players, actions and action profiles; payoff functions;
+ strict and weak dominance; iterated elimination of dominated actions; pure-strategy Nash equilibrium; best responses; Pareto optimality.
+
+## Nash equilibrium {#sec-topic-nash-equilibrium}
+
+Nash equilibrium formalizes mutual strategic stability: each player's strategy must be a best response to the strategies of the other players. Mixed strategies extend the model by allowing randomization and guarantee equilibrium existence in finite games.
+
+**Key concepts:** mixed strategies; expected utility; mixed-strategy Nash equilibrium; best-response conditions; Nash's existence theorem; indifference conditions; supports of equilibrium strategies.
+
+## Computing Nash equilibrium {#sec-topic-computing-nash-equilibrium}
+
+This topic turns the equilibrium conditions into concrete computational procedures for finite general-sum games. Candidate supports determine which actions may receive positive probability, while the remaining equilibrium conditions test whether the candidate is valid.
+
+**Key concepts:** $\epsilon$-Nash equilibrium; support enumeration method; optimization formulation of Nash equilibrium; best response dynamics; potential games.
+
+## Two-player zero-sum games {#sec-topic-zero-sum-games}
+
+In a two-player zero-sum game, one player's gain is the other player's loss. This special structure connects equilibrium computation with maximin and minimax optimization and makes linear programming available as a solution method.
+
+**Key concepts:** payoff matrices; pure saddle points; maximin and minimax values; the minimax theorem; primal and dual linear programs; equilibrium strategies and the value of a game; the double-oracle method.
+
+## Alternatives to Nash equilibrium {#sec-topic-alternatives}
+
+The course next studies solution concepts that allow correlation or an explicit leader-follower structure. Correlated equilibrium permits recommendations from a mediator, while Stackelberg equilibrium models commitment by a leader before followers respond.
+
+**Key concepts:** correlated equilibrium; linear-programming computation of correlated equilibrium; Stackelberg games; leader commitment; follower best responses; weak and strong Stackelberg equilibria.
+
+## Learning in games {#sec-topic-learning}
+
+Learning models describe how play evolves when agents adapt from repeated interaction instead of solving an equilibrium in advance. The central question is when simple update rules converge to equilibrium behavior or guarantee low regret.
+
+**Key concepts:** fictitious play; empirical distributions of play; convergence of fictitious play; regret minimization; regret matching.
+
+## Extensive-form games {#sec-topic-extensive-form-games}
+
+The extensive form makes the timing of moves and the information available to each player explicit. Strategies are complete contingent plans: they prescribe an action at every decision point at which a player may be called upon to move.
+
+**Key concepts:** game trees, histories and terminal nodes; chance moves; induced normal form; backward induction; subgame-perfect equilibrium; information sets; imperfect information; pure and behavioral strategies; perfect recall. 
+
+## Solving extensive-form games {#sec-topic-solving-extensive-form-games}
+
+Imperfect information prevents independent backward induction at individual information sets, so algorithms must account for the game as a whole. Compact sequence-form representations support exact linear-programming methods, while regret-based methods provide an iterative alternative.
+
+**Key concepts:** sequences and realization plans; sequence-form linear programming for two-player zero-sum games; counterfactual regret minimization.
+
+## Auctions 1 {#sec-topic-auctions-1}
+
+The first auction topic introduces common auction formats. Interim analysis
+expresses a bidder's expected payoff as a function of the bid, the probability
+of winning, and the payment rule.
+
+**Key concepts:** English, Dutch, first-price and second-price auctions;
+independent private values; types and bidding strategies; symmetric auctions;
+order statistics; probability of winning; interim expected utility.
+
+## Auctions 2 {#sec-topic-auctions-2}
+
+The second auction topic analyzes strategic bidding and the seller's expected
+revenue. Equilibrium bidding differs between first-price and second-price
+auctions, but under the stated assumptions their expected payments can be
+compared through revenue equivalence.
+
+**Key concepts:** equilibrium bidding in first-price
+auctions; truthful bidding in second-price auctions; expected payment;
+seller revenue; revenue equivalence.
+
+## Mechanism design {#sec-topic-mechanism-design}
+
+Mechanism design reverses the usual direction of game theory: instead of taking
+the rules as given, the designer chooses allocation and payment rules to
+produce desired incentives and outcomes. The topic begins with
+single-parameter environments and then moves to multi-parameter allocation.
+
+**Key concepts:** types and reports; allocation and payment rules; dominant
+strategy incentive compatibility; individual rationality; monotone allocation
+rules and their associated payment rules; virtual valuations and revenue
+optimization; the Vickrey-Clarke-Groves mechanism.
+
+## Coalitional games {#sec-topic-coalitional-games}
+
+Coalitional game theory studies what groups of players can achieve by cooperating and how the resulting worth or cost can be allocated. Stability is captured by asking whether any coalition would prefer to leave the proposed allocation.
+
+**Key concepts:** transferable-utility games; coalitions and the grand coalition; allocations; the core; core emptiness and non-emptiness; marginal contributions; supermodular games.
+
+## Shapley value {#sec-topic-shapley-value}
+
+The Shapley value assigns a unique payoff allocation by averaging each player's marginal contribution over all possible orders in which the grand coalition can form. Its axiomatic characterization expresses basic principles of fair allocation.
+
+**Key concepts:** marginal contributions; efficiency; symmetry; the null-player
+property; additivity; the Shapley formula; interpretation as an expected
+marginal contribution.
+
+

@@ -1,0 +1,14 @@
+# Home {.unnumbered}
+
+## Course Information
+
+Information about the course organization, schedule, topics, tutorials, assessment, and exams.
+
+[Course information](course-info/index.qmd)
+
+## Textbook
+
+A concise, self-contained textbook of definitions, examples, results, and
+computational methods used in the course.
+
+[Start reading](lectures/01-strategic-games.qmd)

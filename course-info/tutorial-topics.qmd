@@ -1,0 +1,130 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Tutorial topic guide {.unnumbered}
+
+This guide describes the focus of each tutorial in the [weekly schedule](schedule.qmd). It complements the [lecture topic guide](topics.qmd) by emphasizing the concepts and methods that students will practise.
+
+<!--
+
+## Normal-form games {#sec-tutorial-normal-form-games}
+
+The tutorial introduces the practical representation and analysis of finite
+strategic games.
+
+**Tutorial focus:** constructing and reading payoff matrices; identifying action
+profiles and best responses; testing strict and weak dominance; iterated
+elimination of dominated actions; finding pure-strategy Nash equilibria;
+comparing equilibrium outcomes with Pareto-optimal outcomes.
+
+## Nash equilibrium {#sec-tutorial-nash-equilibrium}
+
+The tutorial develops the calculations needed to work with mixed strategies and
+equilibrium conditions.
+
+**Tutorial focus:** computing expected payoffs; deriving best-response and
+indifference conditions; solving small games in mixed strategies; determining
+supports; verifying whether a proposed strategy profile is a Nash equilibrium.
+
+## Two-player zero-sum games {#sec-tutorial-zero-sum-games}
+
+The tutorial uses the zero-sum structure to connect equilibrium analysis with
+optimization.
+
+**Tutorial focus:** locating pure saddle points; computing maximin and minimax
+values; formulating the players' linear programs; interpreting primal and dual
+solutions as equilibrium strategies; applying best-response and double-oracle
+reasoning.
+
+## Computing Nash equilibrium {#sec-tutorial-computing-nash-equilibrium}
+
+The tutorial applies systematic methods for finding equilibria in finite
+general-sum games.
+
+**Tutorial focus:** selecting candidate supports; setting up indifference
+equations; checking actions outside the proposed supports; support enumeration;
+testing candidate equilibria through pure deviations and feasibility
+conditions.
+
+## Alternatives to Nash equilibrium {#sec-tutorial-alternatives}
+
+The tutorial works with equilibrium concepts that incorporate correlation or
+commitment.
+
+**Tutorial focus:** writing correlated-equilibrium incentive constraints;
+checking a proposed correlated distribution; formulating correlated-equilibrium
+computation as a linear program; finding follower best responses; distinguishing
+weak and strong Stackelberg equilibria under different tie-breaking rules.
+
+## Selected exercises {#sec-tutorial-selected-exercises}
+
+This tutorial consolidates the strategic-form material from the preceding
+weeks. The teaching assistant will announce the exact selection and emphasis.
+
+## Midterm test {#sec-tutorial-midterm-test}
+
+The tutorial time is reserved for the midterm test. Its point value, structure,
+and requirements are described in the
+[assessment and grading information](assessment.qmd#midterm-test).
+
+## Extensive-form games {#sec-tutorial-extensive-form-games}
+
+The tutorial practises representing sequential interaction and reasoning at
+every decision point in a game tree.
+
+**Tutorial focus:** identifying histories, terminal nodes, player and chance
+moves, and information sets; specifying complete contingent strategies;
+constructing the induced normal form; applying backward induction; checking
+subgame-perfect equilibrium and credible behavior.
+
+## Solving extensive-form games {#sec-tutorial-solving-extensive-form-games}
+
+The tutorial develops computational representations for games with imperfect
+information.
+
+**Tutorial focus:** listing sequences; constructing realization plans and their
+flow constraints; setting up sequence-form linear programs for two-player
+zero-sum games; interpreting best responses; understanding incremental strategy
+generation and counterfactual-regret methods.
+
+## Auctions {#sec-tutorial-auctions}
+
+The tutorial applies Bayesian-game analysis to standard auction formats.
+
+**Tutorial focus:** modelling types, valuations, bids, allocation, and payments;
+computing winning probabilities and interim expected utility; deriving or
+checking symmetric Bayes-Nash equilibrium bidding strategies; comparing
+first-price and second-price auctions; using revenue equivalence under its
+stated assumptions.
+
+## Mechanism design {#sec-tutorial-mechanism-design}
+
+The tutorial analyses allocation and payment rules through their incentive
+properties.
+
+**Tutorial focus:** distinguishing types from reports; checking dominant-strategy
+incentive compatibility and individual rationality; working with monotone
+allocation rules and their payment rules; applying virtual valuations;
+computing outcomes and payments under the Vickrey-Clarke-Groves mechanism.
+
+## Coalitional games {#sec-tutorial-coalitional-games}
+
+The tutorial practises evaluating cooperation and the stability of proposed
+allocations.
+
+**Tutorial focus:** specifying a transferable-utility characteristic function;
+computing coalition values and marginal contributions; writing efficiency and
+coalitional-rationality constraints; checking whether an allocation belongs to
+the core; analysing core emptiness in small games.
+
+## Shapley value {#sec-tutorial-shapley-value}
+
+The tutorial computes fair allocations from marginal contributions.
+
+**Tutorial focus:** calculating marginal contributions for different player
+orders; evaluating the Shapley formula in small games; checking efficiency,
+symmetry, the null-player property, and additivity; interpreting the result as
+an expected marginal contribution.
+
+-->

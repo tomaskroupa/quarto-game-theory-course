@@ -1,0 +1,34 @@
+# Normal-form game catalogue {.unnumbered}
+
+All reusable normal-form games are stored together in `_variables.yml`. A
+lecture inserts a selected matrix with a Quarto variable shortcode, for example
+`games.prisoners_dilemma.matrix`. The catalogue below renders those same
+definitions.
+
+## Prisoner's dilemma
+
+{{< var games.prisoners_dilemma.matrix >}}
+
+## Matching pennies
+
+{{< var games.matching_pennies.matrix >}}
+
+## Sharing household chores
+
+{{< var games.household_chores.matrix >}}
+
+## Bach or Stravinski
+
+{{< var games.bach_or_stravinski.matrix >}}
+
+## Coordination game
+
+{{< var games.coordination.matrix >}}
+
+## Iterated-dominance example
+
+{{< var games.dominance_elimination.matrix >}}
+
+## Strategic form of the dynamic game
+
+{{< var games.contingent_plans.matrix >}}

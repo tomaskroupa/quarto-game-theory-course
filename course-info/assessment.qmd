@@ -1,0 +1,50 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Assessment and grading {.unnumbered}
+
+## Point distribution
+
+
+| Component | Maximum points |
+|---|:---:|
+| Semestral project | 30 |
+| Midterm test | 30 |
+| Exam | 40 |
+| **Total** | **100** |
+
+
+## Semestral project {#sec-assessment-semestral-project}
+
+The semestral project contributes **30 points**. See
+the [Semestral Project instructions](semestral-project.qmd) for the timeline, submission requirements, detailed evaluation, and AI policy, and choose a topic
+from the [Semestral Project Catalogue](semestral-projects.qmd).
+
+## Midterm test
+
+The examination consists of a 90-minute written test. In selected cases, a brief oral examination may follow to clarify or further discuss the submitted answers.
+
+## Course assessment
+
+To obtain the course assessment (*zápočet*), you must earn at least **20 points** out of the combined **40 points** available from the midterm test (**30 pts**) and the [approved project proposal](semestral-project.qmd#sec-semestral-project-proposal) (**10 pts**).
+
+## Exam
+
+At least **20 points** must be earned from the exam (two-hour written test). A brief oral examination may follow in selected cases to clarify answers. *Course assessment must normally be completed before taking the exam.* The first exam session may be treated as an exception.
+
+
+
+## Final grade
+
+
+Both the course assessment (*zápočet*) and the exam are required to complete the course. The final grade is determined by the sum of points earned from the project, midterm test, and exam, subject to the separate minimum requirements above.
+
+| Grade | Total points |
+|:---:|:---:|
+| A | 90–100 |
+| B | 80–89 |
+| C | 70–79 |
+| D | 60–69 |
+| E | 50–59 |
+| F | fewer than 50 |

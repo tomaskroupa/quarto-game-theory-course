@@ -1,0 +1,654 @@
+---
+title: "Normal-form games"
+---
+
+## Introduction and motivation
+
+Game theory is the mathematical study of interactive decision-making, where multiple agents pursue their own objectives and each player’s outcome depends on the decisions made by all players.
+
+The defining feature is *strategic interdependence*: the outcome depends on
+the choices of several decision-makers, and what is best for one player can
+depend on what the others choose. Players may be people, firms, institutions,
+or autonomous agents. Applications include bargaining, markets, auctions,
+voting, security, cost allocation, and multi-agent learning.
+
+A utility function represents a player's preferences over outcomes. Utility
+need not be money, and utility maximization need not mean selfish behavior. If
+a player values fairness, safety, or another person's welfare, those concerns
+can be part of that player's preferences.
+
+### From optimization to strategic reasoning
+
+Ordinary optimization treats the environment as fixed. A decision-maker
+controls the relevant variables and evaluates a single objective. In a game,
+some variables are controlled by other decision-makers who are optimizing too.
+
+| Optimization | Game theory |
+|---|---|
+| One decision-maker | Several decision-makers |
+| One objective | Each player has an objective |
+| The decision-maker controls the variables | The outcome depends on everyone's choices |
+| What is my best feasible decision? | What is best when others choose strategically too? |
+
+Game theory extends optimization rather than replacing it. Once the opponents'
+choices are fixed, a player's problem is again an optimization problem. The
+difficulty is to make the players' optimization problems mutually consistent.
+
+### A brief perspective
+
+The modern theory grew from the minimax analysis of two-player zero-sum games
+[@vonneumann1928]. Nash equilibrium supplied a general consistency condition
+for non-cooperative games [@nash1951], while the Shapley value formalized a
+method for allocating the gains from cooperation [@shapley1953]. Auction and
+mechanism design later made strategic reasoning part of the design of markets
+and institutions [@vickrey1961; @myerson1981].
+
+### From human players to artificial agents
+
+The word *player* first suggests a person, but the formal concept is more
+abstract: a player is any decision-making entity to which we assign available
+strategies and preferences over outcomes. It may therefore represent a person,
+a firm, an institution, a software agent, or an entire platform.
+
+Strategic interaction among humans has not disappeared, but more decisions are
+now delegated to algorithms or mediated by computational systems:
+
+- trading algorithms interact in financial markets;
+- ride-hailing and airline platforms update prices dynamically;
+- recommender systems influence which alternatives users encounter;
+- users, developers, and other agents can strategically influence the behavior
+  of systems built around large language models;
+- self-play and adversarial training place learned agents in deliberate
+  competition.
+
+Games have also become important testbeds for artificial intelligence:
+AlphaGo, DeepStack, and AlphaStar demonstrated strong performance in settings
+with very different action spaces and information structures
+[@silver2016; @moravcik2017; @vinyals2019].
+
+This shift raises a conceptual and practical challenge. For an artificial
+player, we must decide what counts as its information, objective, and strategy;
+we must also ask whether behavior observed in a test predicts behavior after
+deployment. Kovařík and coauthors argue that advanced systems may recognize
+and respond strategically to evaluation itself. Game-theoretic models can make
+the resulting assumptions explicit and help scrutinize evaluation-based safety
+claims [@kovarik2025testing]. Thus games are not only environments in which AI
+systems act: they can also become controlled tests of competition,
+coordination, manipulation, and response to incentives.
+
+This chapter develops the first two solution methods for normal-form games:
+dominance and pure-strategy Nash equilibrium. It also distinguishes strategic
+stability from social efficiency and shows how a dynamic game can be converted
+to normal form.
+
+## Taxonomy of games
+
+Games can be classified along several related dimensions. The categories in
+different rows can be combined: a single game may be dynamic, finite,
+general-sum, non-cooperative, complete-information, and perfect-information at
+the same time.
+
+| Modelling question | Main alternatives |
+|---|---|
+| How are choices represented? | normal form; extensive form |
+| Is the focus on individual choices or coalitions? | non-cooperative; cooperative or coalitional |
+| When are choices made? | static; dynamic |
+| What is observed during play? | perfect information; imperfect information |
+| What is known about the game's structure? | complete information; incomplete information |
+| How large are the strategy sets? | finite; infinite |
+| How are players' interests related? | zero-sum; general-sum |
+
+The **normal form** records strategies and utilities while suppressing the
+order of moves. The **extensive form** represents possible histories, who moves
+after each history, and what that player observes. A **coalitional game**
+instead emphasizes what groups of players can achieve together and how their
+joint value or cost might be allocated.
+
+The information distinctions answer different questions. **Perfect
+information** means that every player who moves observes the complete history
+of earlier actions. **Complete information** means that the structure of the
+game - including the players, strategy sets, and utility functions - is common
+knowledge. A simultaneous auction can therefore have imperfect information
+during play and, when valuations are private, incomplete information about the
+game's payoff-relevant data.
+
+Three examples indicate the scope of the taxonomy:
+
+- A sealed-bid auction is naturally described by simultaneous bids and can be
+  represented in normal form.
+- A sequence of observed decisions is naturally drawn as an extensive-form
+  tree.
+- Connecting several cities to a shared provider motivates a coalitional cost
+  game: the central question is what each coalition can build and how the cost
+  should be shared.
+
+The [topic guide](../course-info/topics.qmd) shows where these modelling
+traditions are developed later in the book.
+
+## Normal-form games and examples
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition: Normal-form game"}
+
+A **normal-form game**, also called a **strategic game**, is a tuple
+
+$$
+G=\left(N,(S_i)_{i\in N},(u_i)_{i\in N}\right),
+$$
+
+where
+
+- $N=\{1,\ldots,n\}$ is a nonempty player set;
+- $S_i$ is the nonempty set of pure strategies available to player $i$;
+- $u_i$ is player $i$'s utility function,
+
+  $$
+  u_i:\prod_{j\in N}S_j\longrightarrow\mathbb R.
+  $$
+
+The game is **finite** when $N$ and every $S_i$ are finite.
+
+:::
+
+### Profiles and opponents
+
+The set of pure-strategy profiles is
+
+$$
+\mathbf S=\prod_{i\in N}S_i.
+$$
+
+For player $i$, write
+
+$$
+\mathbf S_{-i}=\prod_{j\ne i}S_j,
+\qquad
+\mathbf s=(s_i,\mathbf s_{-i}).
+$$
+
+Thus $s_i\in S_i$ denotes one strategy of player $i$,
+$\mathbf s\in\mathbf S$ selects one strategy for every player, and
+$\mathbf s_{-i}\in\mathbf S_{-i}$ collects the opponents' strategies. This
+notation makes a unilateral deviation transparent: replace $s_i$ while
+holding $\mathbf s_{-i}$ fixed.
+
+To use a normal-form model, interpret each complete strategy as selected ex
+ante, before the players observe one another's strategy choices:
+
+1. each player selects one strategy; in a dynamic game, that strategy may
+   prescribe later actions after observed histories;
+2. the choices form a profile
+   $\mathbf s=(s_1,\ldots,s_n)\in\mathbf S$;
+3. player $i$ receives utility $u_i(\mathbf s)$.
+
+An **action** is a move at a particular decision point. In a one-stage game, a
+pure strategy consists of one action, so the terms are often used
+interchangeably. In a dynamic game, a strategy is instead a complete
+contingent plan; the final section makes this distinction precise.
+
+### Finite games and payoff matrices
+
+For a finite two-player game, a payoff matrix places player 1's strategies in
+rows and player 2's strategies in columns. The cell at $(s_1,s_2)$ contains
+$(u_1(s_1,s_2),u_2(s_1,s_2))$.
+
+::: {.callout-note appearance="minimal" icon="false" title="Example: Prisoner's dilemma"}
+
+Two prisoners independently choose whether to remain quiet ($C$) or confess
+($D$). Utilities are the negatives of their prison sentences in years.
+
+{{< var games.prisoners_dilemma.matrix >}}
+
+If both remain quiet, each receives a one-year sentence. If only one confesses,
+that prisoner is released and the other receives four years. If both confess,
+each receives three years. The example will show that individually stable
+behavior can be collectively inefficient.
+
+:::
+
+::: {.callout-note appearance="minimal" icon="false" title="Example: Matching pennies"}
+
+A two-player game is **zero-sum** if
+
+$$
+u_1(s_1,s_2)+u_2(s_1,s_2)=0
+\qquad\text{for every }(s_1,s_2)\in S_1\times S_2.
+$$
+
+{{< var games.matching_pennies.matrix >}}
+
+In matching pennies, player 1 wants the two choices to match and player 2 wants
+them to differ. Their interests are exactly opposed. Neither pure strategy is
+always better than the other.
+
+:::
+
+::: {.callout-note appearance="minimal" icon="false" title="Example: Sharing household chores"}
+
+General-sum games need not have either identical or exactly opposed interests.
+Suppose Alice chooses whether to cook or clean while Bob chooses whether to
+shop or take out the trash:
+
+{{< var games.household_chores.matrix >}}
+
+The four payoff sums are not constant, and best replies cycle around the
+matrix. This game will provide a general-sum example without a pure-strategy
+equilibrium.
+
+:::
+
+### An infinite example: sealed-bid auctions
+
+One object is for sale to bidders $N=\{1,\ldots,n\}$, where $n\ge 2$.
+Bidder $i$ values it at
+$v_i>0$ and submits a bid $b_i\in S_i=[0,\infty)$. Let
+
+$$
+\bar b_i=\max_{j\ne i}b_j.
+$$
+
+If bidder $i$ ties for the highest bid, let $k$ be the number of all bidders
+tied at that bid, including $i$, and select the winner uniformly among them.
+
+In a **first-price auction**, the highest bidder wins and pays their own bid:
+
+$$
+u_i^{\mathrm{I}}(\mathbf b)=
+\begin{cases}
+0, & b_i<\bar b_i,\\
+(v_i-\bar b_i)/k, & b_i=\bar b_i,\\
+v_i-b_i, & b_i>\bar b_i.
+\end{cases}
+$$ {#eq-first-price-utility}
+
+In a **second-price auction**, the highest bidder wins and pays the highest
+opposing bid:
+
+$$
+u_i^{\mathrm{II}}(\mathbf b)=
+\begin{cases}
+0, & b_i<\bar b_i,\\
+(v_i-\bar b_i)/k, & b_i=\bar b_i,\\
+v_i-\bar b_i, & b_i>\bar b_i.
+\end{cases}
+$$ {#eq-second-price-utility}
+
+Both are normal-form games with infinite strategy sets. Their different
+payment rules create different incentives. We will use the second-price
+auction below as an example of weak dominance; a later chapter studies auctions
+under incomplete information.
+
+## Dominance
+
+### Rational choice
+
+We model a rational player as choosing a strategy that maximizes their utility,
+given the available information about the opponents' choices. Rationality is
+conditional: the best strategy can depend on what others do. It also imposes
+no particular moral content because the utility function itself represents
+what the player values.
+
+Dominance provides a useful exception to this dependence. If one strategy is
+worse than another against every possible profile of opponents, a
+utility-maximizing player can discard it without predicting what the opponents
+will do.
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition: Strict and weak dominance"}
+
+For $s_i,t_i\in S_i$:
+
+- $t_i$ is **strictly dominated** by $s_i$ if
+
+  $$
+  u_i(s_i,\mathbf s_{-i})>u_i(t_i,\mathbf s_{-i})
+  \quad\text{for every }\mathbf s_{-i}\in\mathbf S_{-i};
+  $$
+
+- $t_i$ is **weakly dominated** by $s_i$ if
+
+  $$
+  u_i(s_i,\mathbf s_{-i})\ge u_i(t_i,\mathbf s_{-i})
+  \quad\text{for every }\mathbf s_{-i}\in\mathbf S_{-i},
+  $$
+
+  with strict inequality for at least one
+  $\mathbf s_{-i}\in\mathbf S_{-i}$.
+
+A strategy is **strictly dominant** if it strictly dominates every other
+strategy of that player. Weakly dominant strategies are defined analogously.
+
+:::
+
+A rational player never uses a strictly dominated pure strategy. Eliminating
+a weakly dominated strategy requires more care because an equality can matter
+for subsequent strategic comparisons.
+
+### Dominance in the prisoner's dilemma
+
+For player 1,
+
+$$
+u_1(D,C)=0>-1=u_1(C,C),
+\qquad
+u_1(D,D)=-3>-4=u_1(C,D).
+$$
+
+Thus $D$ strictly dominates $C$. The game is symmetric, so $D$ is also
+strictly dominant for player 2. The dominance prediction is therefore
+$(D,D)$, without any belief about the other prisoner's choice.
+
+### Iterated elimination
+
+**Iterated elimination of strictly dominated strategies (IESDS)** applies the
+same reasoning repeatedly:
+
+1. begin with the full strategy sets;
+2. find a pure strategy that is strictly dominated in the current restricted
+   game;
+3. delete it and form the reduced game;
+4. repeat until no further deletion is possible.
+
+{{< var games.dominance_elimination.matrix >}}
+
+This game is solved in three rounds:
+
+1. For Bob, $d$ strictly dominates $e$, so delete $e$.
+2. In the reduced game, $a$ strictly dominates $b$ for Alice, so delete $b$.
+3. Against the remaining row $a$, Bob strictly prefers $d$ to $c$, so delete
+   $c$.
+
+The sole surviving profile is $(a,d)$, with payoff $(1,2)$. The successive
+deletions can be interpreted as increasingly strong assumptions about players'
+rationality and their reasoning about one another. A formal epistemic
+interpretation requires additional machinery.
+
+::: {.callout-important appearance="minimal" icon="false" title="Finite-game property"}
+
+In a finite game, exhaustive elimination of strictly dominated pure strategies
+leaves the same surviving pure strategies regardless of the order of deletion.
+The corresponding statement is false for weak dominance: different deletion
+orders can leave different reduced games.
+
+:::
+
+Many games, including matching pennies and coordination games, contain no
+dominated pure strategies. Dominance is therefore a useful first test rather
+than a universal solution method.
+
+### Truthful bidding in a second-price auction
+
+The second-price utility in @eq-second-price-utility gives an important example
+of weak dominance.
+
+::: {.callout-important appearance="minimal" icon="false" title="Proposition: Truthful bidding"}
+
+In a second-price sealed-bid auction, bidding $b_i=v_i$ is weakly dominant for
+bidder $i$ [@vickrey1961].
+
+:::
+
+To see why, fix the highest opposing bid $m=\bar b_i$.
+
+- If $m<v_i$, truthful bidding wins and yields $v_i-m>0$. Any other bid either
+  produces the same outcome or risks losing this positive surplus.
+- If $m>v_i$, truthful bidding loses and yields $0$. Winning by bidding above
+  $m$ would yield the negative payoff $v_i-m$.
+- If $m=v_i$, winning, tying, and losing all yield at most $0$, while truthful
+  bidding yields $0$.
+
+Thus no alternative bid gives a larger payoff for any opponents' bids, and
+every nontruthful bid is worse for some configuration of opponents' bids.
+
+## Nash equilibrium
+
+Dominance asks whether a player can reject a strategy without predicting the
+opponents. Nash equilibrium instead asks whether all players' choices are
+mutually consistent.
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition: Pure-strategy Nash equilibrium"}
+
+A profile $\mathbf s^*\in\mathbf S$ is a **pure-strategy Nash equilibrium**
+if
+
+$$
+u_i(s_i^*,\mathbf s_{-i}^*)
+\ge u_i(s_i,\mathbf s_{-i}^*)
+\qquad
+\text{for every }i\in N\text{ and }s_i\in S_i.
+$$ {#eq-pure-nash}
+
+Equivalently, no player can gain through a unilateral deviation
+[@nash1951].
+
+:::
+
+Equilibrium is a stability condition. It does not imply uniqueness, fairness,
+or collective desirability, and it does not prevent players from benefiting
+through a coordinated change.
+
+### Best responses
+
+Player $i$'s **best-response correspondence** is
+
+$$
+\operatorname{BR}_i(\mathbf s_{-i})
+=
+\arg\max_{s_i\in S_i}u_i(s_i,\mathbf s_{-i}).
+$$ {#eq-best-response}
+
+It is a correspondence rather than necessarily a function because several
+strategies can tie for the maximum. In a finite game with nonempty strategy
+sets, the set in @eq-best-response is nonempty.
+
+::: {.callout-important appearance="minimal" icon="false" title="Equivalent equilibrium test"}
+
+$$
+\mathbf s^*\text{ is a Nash equilibrium}
+\quad\Longleftrightarrow\quad
+s_i^*\in\operatorname{BR}_i(\mathbf s_{-i}^*)
+\text{ for every }i.
+$$
+
+:::
+
+This equivalence simply rewrites the inequalities in @eq-pure-nash: each
+equilibrium strategy must maximize its player's utility against the opponents'
+equilibrium strategies.
+
+### Finding pure equilibria in a matrix
+
+For each cell of a two-player payoff matrix:
+
+1. hold the column fixed and mark every row that maximizes the first payoff;
+2. hold the row fixed and mark every column that maximizes the second payoff;
+3. retain every cell marked for both players.
+
+The retained cells, and only those cells, are pure-strategy Nash equilibria.
+
+The small games introduced above display several possible patterns:
+
+| Game | Pure-strategy Nash equilibria | Main lesson |
+|---|---|---|
+| Prisoner's dilemma | $(D,D)$ | a unique equilibrium can follow from dominance |
+| Matching pennies | none | pure strategies may be insufficient |
+| Sharing household chores | none | general-sum games may also lack a pure equilibrium |
+| Bach or Stravinski | $(B,B)$ and $(S,S)$ | coordination with conflicting preferences |
+| Coordination game | $(a,a)$ and $(b,b)$ | equilibrium need not select one outcome |
+
+For the last two rows, the payoff matrices are
+
+{{< var games.bach_or_stravinski.matrix >}}
+
+and
+
+{{< var games.coordination.matrix >}}
+
+No pure strategy is dominated in either game. In Bach or Stravinski, the
+players prefer different coordinated outcomes. In the coordination game, both
+prefer $(a,a)$ to $(b,b)$, yet neither player can move from $(b,b)$ to $(a,a)$
+unilaterally.
+
+Matching pennies and the household-chores game show why the next chapter
+introduces mixed strategies. Allowing randomization restores a general
+existence result for finite games; this chapter makes no such claim for pure
+strategies.
+
+### Equilibrium and efficiency
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition: Pareto dominance and optimality"}
+
+A profile $\mathbf s$ **Pareto dominates** a profile $\mathbf t$ if
+
+$$
+u_i(\mathbf s)\ge u_i(\mathbf t)
+\quad\text{for every }i\in N,
+$$
+
+with strict inequality for at least one player. A profile is **Pareto optimal**
+or **Pareto efficient** if no other profile Pareto dominates it.
+
+:::
+
+Pareto optimality uses each player's own utility ranking. It does not compare
+utility levels across players, settle distributional questions, or select
+between two Pareto-optimal profiles.
+
+As one possible aggregate, define utilitarian social welfare by
+
+$$
+w(\mathbf s)=\sum_{i\in N}u_i(\mathbf s).
+$$
+
+::: {.callout-important appearance="minimal" icon="false" title="Proposition: Welfare maximizers are Pareto optimal"}
+
+Every maximizer of $w$ is Pareto optimal. Consequently, every finite
+normal-form game with nonempty strategy sets has at least one Pareto-optimal
+pure-strategy profile.
+
+:::
+
+If $\mathbf s^*$ maximizes $w$ and another profile made every player weakly
+better off and at least one player strictly better off, summing the inequalities
+would give $w(\mathbf s)>w(\mathbf s^*)$, a contradiction. This is a
+sufficient method for finding one Pareto optimum, not a characterization of
+all Pareto optima. In a zero-sum game, every profile is Pareto optimal because
+the sum of utilities is constant.
+
+The distinction from Nash equilibrium is fundamental:
+
+| Game | Strategic stability | Pareto efficiency |
+|---|---|---|
+| Prisoner's dilemma | $(D,D)$ is the unique equilibrium | $(D,D)$ is the only pure profile that is not Pareto optimal |
+| Matching pennies | no pure equilibrium | every pure profile is Pareto optimal |
+| Bach or Stravinski | $(B,B)$ and $(S,S)$ are equilibria | both equilibrium profiles are Pareto optimal |
+| Coordination game | $(a,a)$ and $(b,b)$ are equilibria | only $(a,a)$ is Pareto optimal |
+
+Nash equilibrium concerns unilateral deviations; Pareto optimality concerns
+joint comparisons. Neither concept generally implies the other.
+
+## Dynamic games and their normal form
+
+The normal form can represent a dynamic interaction, but its strategies must
+then be understood as complete plans rather than single moves. The following
+Alice--Bob game makes the conversion explicit.
+
+### The Alice--Bob game
+
+Alice and Bob are planning an evening together. Alice first decides whether
+they should stay home ($a$) or go out ($b$). If they stay home, Bob chooses
+between an action film ($c$) and cooking together ($d$). If they go out, Bob
+chooses a quiet cafe ($e$) or live music ($f$). In the latter case, Alice has
+the final choice between a rock club ($g$) and a jazz club ($h$).
+
+The terminal numbers are preference scores rather than monetary rewards; a
+higher number means that the player likes that complete evening more. Bob's
+favorite outcome is the rock club, whereas Alice's is the jazz club. This
+difference will make their plans depend on who chooses when.
+
+```{mermaid}
+%%| file: ../games/extensive-form/contingent-plans.mmd
+%%| label: fig-contingent-plans
+%%| fig-cap: "Alice and Bob plan an evening in a dynamic game with perfect information. Payoffs are preference scores ordered (Alice, Bob)."
+%%| fig-alt: "Alice first chooses to stay home, action a, or go out, action b. After staying home, Bob chooses an action film, c, or cooking together, d. After going out, Bob chooses a cafe, e, or live music, f; following live music, Alice chooses a rock club, g, or a jazz club, h. The five terminal payoffs are 0 comma 4; 2 comma 1; 1 comma 2; 3 comma 8; and 8 comma 0."
+%%| fig-width: 8
+```
+
+Alice moves first. Bob observes her action and then moves at one of two decision
+nodes. If the history $bf$ occurs, Alice moves again. Every player observes the
+complete preceding history, so the game has perfect information. There are no
+chance moves.
+
+### Strategies as complete contingent plans
+
+A strategy prescribes an action at every decision point where the player might
+move, including decision points that will not be reached when that strategy is
+played. Therefore
+
+$$
+S_A=\{ag,ah,bg,bh\},
+\qquad
+S_B=\{ce,cf,de,df\}.
+$$
+
+Alice's first letter specifies her action at the root and her second letter
+specifies her action after $bf$. Bob's first letter specifies his action after
+$a$ and his second letter specifies his action after $b$.
+
+For example, $ah$ instructs Alice to choose $a$ initially and $h$ if $bf$ were
+reached. The second instruction is off the realized path when Alice chooses
+$a$, but it remains part of her strategy because a strategy must be a complete
+plan.
+
+### Constructing the normal form
+
+To construct the matrix, combine one complete plan for Alice with one complete
+plan for Bob, follow the path induced in @fig-contingent-plans, and place the
+terminal payoff in the corresponding cell:
+
+{{< var games.contingent_plans.matrix >}}
+
+Three cells illustrate the procedure:
+
+- $(ag,df)$ induces $a\to d$ and payoff $(2,1)$;
+- $(bh,cf)$ induces $b\to f\to h$ and payoff $(8,0)$;
+- $(bh,ce)$ induces $b\to e$ and payoff $(1,2)$.
+
+Repeated entries are not mistakes. Under $ag$, for instance, Alice chooses
+$a$ immediately, so her instruction $g$ can never be reached, while Bob's
+instruction after $b$ is off the path for that profile. Both remain because a
+strategy is a complete contingent plan. Some off-path instructions affect play
+against other strategies; others, such as the difference between $ag$ and
+$ah$, produce outcome-equivalent strategies and disappear only in a reduced
+normal form.
+
+The matrix retains the utilities associated with every profile of complete
+plans, but it does not display which actions occur first, what is observed, or
+which instructions lie off the realized path. Different extensive-form games
+can consequently have the same normal form.
+
+### Nash equilibrium and sequential reasoning
+
+Marking best responses in the matrix gives the unique pure-strategy Nash
+equilibrium
+
+$$
+(bh,ce).
+$$
+
+It induces the path $b\to e$ and payoff $(1,2)$. The same outcome follows from
+solving the tree from its terminal decisions:
+
+1. after $bf$, Alice chooses $h$ because $8>3$;
+2. after $b$, Bob chooses $e$ because $2>0$;
+3. after $a$, Bob chooses $c$ because $4>1$;
+4. at the root, Alice chooses $b$ because $1>0$.
+
+Thus Alice proposes going out, but Bob chooses the cafe. Although both would
+prefer the rock-club outcome $(3,8)$ to the cafe outcome $(1,2)$, Alice would
+switch to her preferred jazz club once given the final choice. Bob anticipates
+that choice and avoids live music. The story illustrates how the inability to
+commit to a later action can rule out an outcome that both players prefer.
+
+This agreement is useful but should not be overgeneralized. A normal-form Nash
+equilibrium can be supported by noncredible off-path instructions because the
+matrix suppresses the temporal structure. Later chapters formalize backward
+induction and subgame-perfect equilibrium using the extensive form.

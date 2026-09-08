@@ -1,0 +1,46 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Quarto: Preview textbook",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["preview"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quarto: Render web textbook",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["render"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quarto: Render Typst PDF",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["render", "--profile", "print"],
+      "problemMatcher": []
+    },
+    {
+      "label": "Quarto: Render everything",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Quarto: Render web textbook",
+        "Quarto: Render Typst PDF"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Quarto: Check installation",
+      "type": "shell",
+      "command": "quarto",
+      "args": ["check"],
+      "problemMatcher": []
+    }
+  ]
+}

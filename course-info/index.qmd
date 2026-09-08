@@ -1,0 +1,45 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Course information {.unnumbered}
+
+## Course description
+
+This course introduces the fundamental concepts and applications of game theory, a powerful framework for modeling *strategic interactions between rational agents*. We will explore key aspects of game theory, including strict competition, coordination, and cooperation, while examining its practical applications in areas like *auctions* and *voting*.
+
+
+
+## Prerequisites
+
+Students should have a working knowledge of:
+
+- optimization, in particular the basics of linear programming;
+- linear algebra;
+- probability and statistics;
+- discrete mathematics;
+- programming.
+
+## Recommended reading
+
+Students are encouraged to consult the relevant chapters of the following
+textbooks:
+
+- @shoham2008, *Multiagent Systems: Algorithmic, Game-Theoretic, and Logical
+  Foundations*. Cambridge University Press. [Available
+  online](https://www.masfoundations.org/download.html).
+- @maschler2020, *Game Theory*. Second edition. Cambridge University Press.
+- @kochenderfer2022, *Algorithms for Decision Making*. The MIT Press.
+  [Available online](https://algorithmsbook.com/).
+- @albrecht2024, *Multi-Agent Reinforcement Learning: Foundations and Modern
+  Approaches*. The MIT Press. [Available online](https://www.marl-book.com/).
+
+## Teaching team
+
+- **Lecturer:** [Tomáš Kroupa](https://www.aic.fel.cvut.cz/members/tomas-kroupa)
+- **Teaching assistant:** [David Ryzák](https://cs.fel.cvut.cz/en/people/ryzakdav)
+
+## Contact information
+
+- **Lectures and course organization:** [tomas.kroupa@fel.cvut.cz](mailto:tomas.kroupa@fel.cvut.cz)
+- **Tutorials and semestral projects:** [ryzak.david@fel.cvut.cz](mailto:ryzak.david@fel.cvut.cz)

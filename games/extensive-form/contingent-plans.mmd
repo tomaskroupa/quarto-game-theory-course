@@ -1,0 +1,24 @@
+flowchart TD
+  A0(("Alice"))
+  Ba(("Bob"))
+  Bb(("Bob"))
+  Abf(("Alice"))
+  Tac["(0, 4)"]
+  Tad["(2, 1)"]
+  Tbe["(1, 2)"]
+  Tbg["(3, 8)"]
+  Tbh["(8, 0)"]
+
+  A0 -->|"a: stay home"| Ba
+  A0 -->|"b: go out"| Bb
+  Ba -->|"c: action film"| Tac
+  Ba -->|"d: cook together"| Tad
+  Bb -->|"e: cafe"| Tbe
+  Bb -->|"f: live music"| Abf
+  Abf -->|"g: rock club"| Tbg
+  Abf -->|"h: jazz club"| Tbh
+
+  classDef decision fill:#ffffff,stroke:#111111,stroke-width:2px,color:#111111;
+  classDef terminal fill:#ffffff,stroke:#ffffff,color:#111111;
+  class A0,Ba,Bb,Abf decision;
+  class Tac,Tad,Tbe,Tbg,Tbh terminal;

@@ -1,0 +1,53 @@
+project:
+  type: book
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "!_drafts/"
+
+book:
+  title: "Computational Game Theory"
+  subtitle: "Course information and materials"
+  author: "Tomáš Kroupa"
+  output-file: "computational-game-theory"
+  search: true
+  page-navigation: true
+
+  chapters:
+    - index.qmd
+
+    - part: "Course Info"
+      chapters:
+        - course-info/index.qmd
+        - course-info/schedule.qmd
+        - course-info/topics.qmd
+        - course-info/tutorial-topics.qmd
+        - course-info/assessment.qmd
+        - course-info/semestral-project.qmd
+        - course-info/semestral-projects.qmd
+
+    - part: "Textbook"
+      chapters:
+        - lectures/01-strategic-games.qmd
+
+  appendices:
+    - games/normal-form-game-catalogue.qmd
+    - references.qmd
+
+bibliography: references.bib
+lang: en
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/book.scss
+    toc: true
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    html-math-method: mathjax
+
+execute:
+  freeze: auto

@@ -1,0 +1,8 @@
+# Quarto 1.9+ renders books through the bundled Typst orange-book format.
+project:
+  output-dir: _site/downloads
+
+format: typst
+toc: true
+number-sections: true
+

@@ -1,0 +1,22 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: "Lato", "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: "Fantasque Sans Mono", "SFMono-Regular", Consolas, monospace;
+$primary: #155a8a;
+$link-color: #155a8a;
+$body-color: #16191d;
+
+/*-- scss:rules --*/
+
+.quarto-title-block .title {
+  color: #123f61;
+}
+
+.math.display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+table {
+  font-variant-numeric: tabular-nums;
+}
