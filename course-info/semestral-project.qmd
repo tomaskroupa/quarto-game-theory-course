@@ -120,7 +120,7 @@ Questions may also cover individual contributions, limitations, validation, and 
 | Live defense | Individual contribution, limitations, and AI use | 2 | The student explains their contribution, understands the complete core solution, identifies limitations, and accounts for any AI assistance. |
 | **Total** |  | **30** | |
 
-: Semestral project evaluation {#tbl-semestral-project-evaluation}
+: Semestral project evaluation {#tbl-semestral-project-evaluation tbl-colwidths="[15,25,8,52]"}
 
 ## AI policy {#sec-semestral-project-ai-policy}
 

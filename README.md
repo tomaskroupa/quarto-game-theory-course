@@ -10,7 +10,9 @@ Source files for the course website and textbook by Tomáš Kroupa, built with
 - `course-info/`: course information and semester-project instructions.
 - `lectures/`: textbook chapters.
 - `games/`: game catalogue and diagrams.
-- `_quarto.yml`: book structure, navigation, and website configuration.
+- `_quarto.yml`: shared book configuration.
+- `_quarto-web.yml`: website navigation and course pages.
+- `_quarto-print.yml`: study-only PDF chapters and layout.
 - `_variables.yml` and `references.bib`: shared game definitions and bibliography.
 
 ## Preview and build

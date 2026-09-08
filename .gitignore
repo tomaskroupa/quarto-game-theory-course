@@ -5,6 +5,7 @@
 /site_libs/
 /index.html
 /index.typ
+/index.print.typ
 /lectures/*.html
 /lectures/*_files/
 __pycache__/

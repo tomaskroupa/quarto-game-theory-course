@@ -1,0 +1,30 @@
+book:
+  chapters:
+    - index.qmd
+
+    - part: "Course Info"
+      chapters:
+        - course-info/index.qmd
+        - course-info/schedule.qmd
+        - course-info/topics.qmd
+        - course-info/tutorial-topics.qmd
+        - course-info/assessment.qmd
+        - course-info/semestral-project.qmd
+        - course-info/semestral-projects.qmd
+
+    - part: "Textbook"
+      chapters:
+        - lectures/01-strategic-games.qmd
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/book.scss
+    toc: true
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true
+    html-math-method: mathjax
+

@@ -2,7 +2,18 @@
 project:
   output-dir: _site/downloads
 
-format: typst
+book:
+  subtitle: "Textbook"
+  chapters:
+    - index.print.qmd
+    - lectures/01-strategic-games.qmd
+
+format:
+  typst:
+    template-partials:
+      - styles/typst-show.typ
 toc: true
 number-sections: true
-
+filters:
+  - path: filters/print-empty-title.lua
+    at: post-quarto
