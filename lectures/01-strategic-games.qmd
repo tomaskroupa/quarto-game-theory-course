@@ -322,7 +322,7 @@ same reasoning repeatedly:
 3. delete it and form the reduced game;
 4. repeat until no further deletion is possible for any player.
 
-Consider the following game as an example.
+Consider the following game between Alice (row player) and Bob (column player) as an example.
 
 {{< var games.dominance_elimination.matrix >}}
 
@@ -428,13 +428,8 @@ equilibrium strategies. $\square$
 
 ### Finding pure equilibria
 
-For each cell of a two-player payoff table:
-
-1. hold the column fixed and mark every row that maximizes the first payoff;
-2. hold the row fixed and mark every column that maximizes the second payoff;
-3. retain every cell marked for both players.
-
-The retained cells, and only those cells, are pure-strategy Nash equilibria.
+In each column, mark player 1’s highest payoff. In each row, mark player 2’s highest payoff. Include all ties.
+A cell is a pure-strategy Nash equilibrium exactly when both players’ payoffs are marked.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: Bach or Stravinski"}
 
