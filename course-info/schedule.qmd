@@ -38,7 +38,7 @@ subtitle: "Computational Game Theory · Winter semester 2026/2027"
 
 | Week | Date | Topic | Instructor |
 |---:|---|---|:---:|
-| 1 |  22 Sep  |  | DR |
+| 1 |  22 Sep  | Prerequisities: linear programming, minimax and maximin. Basic principles of solving games. | DR |
 | 2 |  29 Sep  | | DR |
 | 3 |  6 Oct  | | DR |
 | 4 |  13 Oct  | | DR |
