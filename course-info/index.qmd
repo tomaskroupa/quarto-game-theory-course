@@ -42,4 +42,5 @@ textbooks:
 ## Contact information
 
 - **Lectures and course organization:** [tomas.kroupa@fel.cvut.cz](mailto:tomas.kroupa@fel.cvut.cz)
+- **Office hours (Tomáš Kroupa):** Every Thursday, 15:00–16:30, in room [E-402](https://fel.cvut.cz/cs/fakulta/lide/951-tomas-kroupa) (Resslova 9).
 - **Tutorials and semestral projects:** [ryzak.david@fel.cvut.cz](mailto:ryzak.david@fel.cvut.cz)
