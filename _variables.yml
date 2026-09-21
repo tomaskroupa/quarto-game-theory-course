@@ -1,4 +1,5 @@
 # Keep all reusable normal-form games in this one file.
+# Write payoff-table cells as x, y without surrounding parentheses.
 # Insert a matrix with, for example:
 # {{< var games.prisoners_dilemma.matrix >}}
 
@@ -9,8 +10,8 @@ games:
       $$
       \begin{array}{c|cc}
         & C & D \\ \hline
-        C & (-1,-1) & (-4,0) \\
-        D & (0,-4)  & (-3,-3)
+        C & -1, -1 & -4, 0 \\
+        D & 0, -4  & -3, -3
       \end{array}
       $$
 
@@ -20,8 +21,8 @@ games:
       $$
       \begin{array}{c|cc}
         & H & T \\ \hline
-        H & (1,-1)  & (-1,1) \\
-        T & (-1,1)  & (1,-1)
+        H & 1, -1  & -1, 1 \\
+        T & -1, 1  & 1, -1
       \end{array}
       $$
 
@@ -31,8 +32,8 @@ games:
       $$
       \begin{array}{c|cc}
         & \text{Shop} & \text{Trash} \\ \hline
-        \text{Cook}  & (2,0) & (0,1) \\
-        \text{Clean} & (0,2) & (1,0)
+        \text{Cook}  & 2, 0 & 0, 1 \\
+        \text{Clean} & 0, 2 & 1, 0
       \end{array}
       $$
 
@@ -42,8 +43,8 @@ games:
       $$
       \begin{array}{c|cc}
         & B & S \\ \hline
-        B & (2,1) & (0,0) \\
-        S & (0,0) & (1,2)
+        B & 2, 1 & 0, 0 \\
+        S & 0, 0 & 1, 2
       \end{array}
       $$
 
@@ -53,8 +54,8 @@ games:
       $$
       \begin{array}{c|cc}
         & a & b \\ \hline
-        a & (2,2) & (0,0) \\
-        b & (0,0) & (1,1)
+        a & 2, 2 & 0, 0 \\
+        b & 0, 0 & 1, 1
       \end{array}
       $$
 
@@ -64,8 +65,8 @@ games:
       $$
       \begin{array}{c|ccc}
         & c & d & e \\ \hline
-        a & (1,0) & (1,2) & (0,1) \\
-        b & (0,3) & (0,1) & (2,0)
+        a & 1, 0 & 1, 2 & 0, 1 \\
+        b & 0, 3 & 0, 1 & 2, 0
       \end{array}
       $$
 
@@ -75,9 +76,9 @@ games:
       $$
       \begin{array}{c|cccc}
         & ce & cf & de & df \\ \hline
-        ag & (0,4) & (0,4) & (2,1) & (2,1) \\
-        ah & (0,4) & (0,4) & (2,1) & (2,1) \\
-        bg & (1,2) & (3,8) & (1,2) & (3,8) \\
-        bh & (1,2) & (8,0) & (1,2) & (8,0)
+        ag & 0, 4 & 0, 4 & 2, 1 & 2, 1 \\
+        ah & 0, 4 & 0, 4 & 2, 1 & 2, 1 \\
+        bg & 1, 2 & 3, 8 & 1, 2 & 3, 8 \\
+        bh & 1, 2 & 8, 0 & 1, 2 & 8, 0
       \end{array}
       $$
