@@ -54,7 +54,7 @@ subtitle: "Computational Game Theory · Winter semester 2026/2027"
 | — |  22, 29 Dec  | *No class — winter holiday* | - |
 | 14 |  5 Jan | | DR |
 
-: Tutorial schedule for winter semester 2026/2027 {#tbl-tutorial-schedule}
+: Tutorial schedule for winter semester 2026/2027 {#tbl-tutorial-schedule tbl-colwidths="[10,18,57,15]"}
 
 ## Instructor abbreviations
 
