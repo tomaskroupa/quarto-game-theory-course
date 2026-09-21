@@ -7,7 +7,6 @@ book:
         - course-info/index.qmd
         - course-info/schedule.qmd
         - course-info/topics.qmd
-        - course-info/tutorial-topics.qmd
         - course-info/assessment.qmd
         - course-info/semestral-project.qmd
         - course-info/semestral-projects.qmd
