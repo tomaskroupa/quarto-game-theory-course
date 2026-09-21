@@ -209,13 +209,19 @@ $$
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: Matching pennies"}
 
-
+Two players each place a coin under their hand, choosing whether to show heads
+($H$) or tails ($T$). They then reveal their coins simultaneously, so neither
+can observe the other's choice before making their own. If the coins show the
+same side, player 2 pays one unit to player 1. If they show different sides,
+player 1 pays one unit to player 2. Taking each player's net gain as their
+payoff gives the following game:
 
 {{< var games.matching_pennies.matrix >}}
 
-In matching pennies, player 1 wants the two choices to match and player 2 wants
-them to differ. Their interests are exactly opposed. Neither pure strategy is
-always better than the other.
+Player 1 therefore wants the two choices to match, while player 2 wants them
+to differ. Their interests are exactly opposed: every gain for one player is
+an equal loss for the other. Neither heads nor tails is always the better
+choice.
 
 :::
 
@@ -223,11 +229,24 @@ General-sum games need not have either identical or exactly opposed interests.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: Sharing household chores"}
 
+Alice and Bob share a flat, and each has time for one chore before the evening.
+Alice chooses whether to cook or clean, while Bob chooses whether to shop or
+take out the trash. They choose independently, without knowing what the other
+will do.
 
-Suppose Alice chooses whether to cook or clean while Bob chooses whether to
-shop or take out the trash:
+Alice likes their efforts to contribute to the same goal: her favourite outcome
+is cooking a meal while Bob shops for groceries, followed by cleaning the flat
+while he takes out the trash. Bob would rather cover different household needs.
+His favourite outcome is to restock the groceries while Alice cleans; his
+second choice is to take out the trash while she cooks. Each assigns a score
+of $2$ to their favourite outcome, $1$ to their second choice, and $0$ to the
+remaining two outcomes. Alice's payoff is listed first:
 
 {{< var games.household_chores.matrix >}}
+
+These payoffs represent satisfaction with the combination of chores, rather
+than payments between the roommates. Their preferences differ, but a gain for
+one need not be an equal loss for the other. 
 
 :::
 
@@ -598,5 +617,3 @@ prefer the rock-club outcome $(3,8)$ to the cafe outcome $(1,2)$, Alice would
 switch to her preferred jazz club once given the final choice. Bob anticipates
 that choice and avoids live music. The story illustrates how the inability to
 commit to a later action can rule out an outcome that both players prefer.
-
-
