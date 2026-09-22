@@ -24,6 +24,7 @@ book:
 
   appendices:
     - games/normal-form-game-catalogue.qmd
+    - games/extensive-form-game-catalogue.qmd
     - references.qmd
 
 bibliography: references.bib
