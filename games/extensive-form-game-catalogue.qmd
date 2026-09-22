@@ -1,0 +1,13 @@
+# Extensive-form game catalogue {.unnumbered}
+
+## Alice–Bob game
+
+The game tree from [Strategic games](../lectures/01-strategic-games.qmd#the-alicebob-game).
+
+```{mermaid}
+%%| file: extensive-form/contingent-plans.mmd
+%%| label: fig-catalogue-alice-bob
+%%| fig-cap: "Alice and Bob plan an evening. Payoffs are preference scores ordered (Alice, Bob)."
+%%| fig-alt: "Alice first chooses to stay home, action a, or go out, action b. After staying home, Bob chooses an action film, c, or cooking together, d. After going out, Bob chooses a cafe, e, or live music, f; following live music, Alice chooses a rock club, g, or a jazz club, h. The five terminal payoffs are 0 comma 4; 2 comma 1; 1 comma 2; 3 comma 8; and 8 comma 0."
+%%| fig-width: 8
+```
