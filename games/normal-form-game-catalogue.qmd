@@ -37,6 +37,10 @@ definitions.
 
 {{< var games.expected_utility.matrix >}}
 
+## Indifference is not sufficient
+
+{{< var games.indifference_not_sufficient.matrix >}}
+
 ## Penalty kicks
 
 Rows are the kicker's choices and columns are the goalkeeper's choices.

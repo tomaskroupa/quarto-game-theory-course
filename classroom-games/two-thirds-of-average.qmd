@@ -20,7 +20,7 @@ before any current-round submissions are revealed. The instructor computes
 the arithmetic mean of *all* valid guesses and takes two thirds of that mean as the *target*. Every player earns **100 minus their absolute distance from the target**. The objective is to maximize one's own game points.
 
 The classroom procedure used three rounds with $6$ players. In each round, players made their individual choices. After seeing the  guesses, mean, target, and scores, they made
-another individual choice and. This repeated until the third round, when the total results were revealed.
+another individual choice. This repeated until the third round, when the total results were revealed.
 
 The analysis below concerns the **one-round game**. In the three-round
 activity, a full strategy would specify choices following possible histories
@@ -32,8 +32,8 @@ not by itself guarantee that play will approach an equilibrium.
 The classic experiment in @nagel1995 awards a fixed prize to the player
 closest to the target, divided equally in a tie. That is a different payoff
 rule. Continuous payoffs based on absolute distance are studied by
-@gueth2002. Our model is is a specialization of their general family.
-The best-response here are derived for the
+@gueth2002. Our model is a specialization of their general family.
+The best responses here are derived for the
 distance payoff and must not be transferred to a winner-only prize rule.
 
 ## Normal-form model {#sec-beauty-model .unnumbered}
@@ -221,7 +221,7 @@ constant 100 would not change any best response or equilibrium.
 The unconstrained ideal strategy is still
 
 $$
-r_i(\mathbf s_i)=\frac{p}{n-p}\sum_{j\ne i}s_j
+r_i(\mathbf s_{-i})=\frac{p}{n-p}\sum_{j\ne i}s_j
 =q_p\bar s_{-i},
 $$
 
@@ -253,8 +253,8 @@ Let $c=\Pi_{[a,b]}(0)$. The unique Nash equilibrium in pure strategies is $(c,\l
 
 :::
 
-*Proof.*  We will introduce this simplified notation first. Let $F(\mathbf s)$ be the right-hand side of
-@eq-beauty-projected-br. At the unanimous profile $\mathbf s=(c,\ldots,c)$, we get $F(\mathbf s)=\Pi_{[a,b]}(q_pc)=c$, so this profile is an equilibrium.
+*Proof.*  We will introduce this simplified notation first. Let $F_i(\mathbf s)$ be the right-hand side of
+@eq-beauty-projected-br. At the unanimous profile $\mathbf s=(c,\ldots,c)$, we get $F_i(\mathbf s)=\Pi_{[a,b]}(q_pc)=c$, so this profile is an equilibrium.
 
 Projection onto an interval cannot increase distances of the arguments. Therefore, for any
 two profiles $\mathbf s,\mathbf t$,
@@ -306,7 +306,7 @@ The following analysis contains six valid submissions in each of three rounds.
 | P05 | 86.4444 | 100 | 98.8889 |
 | P06 | 86.5556 | 94 | 99.8889 |
 
-We summarizes the results across the three rounds using selected statistics.
+We summarize the results across the three rounds using selected statistics.
 
 | Statistic | Round 1 | Round 2 | Round 3 |
 |:---|---:|---:|---:|
