@@ -11,6 +11,8 @@
 /course-info/*.html
 /course-info/*_files/
 /games/*_files/
+/README.html
+/README_files/
 
 # Keep local Python tools and notebooks out of the public repository.
 *.py

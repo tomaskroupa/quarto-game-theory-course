@@ -442,7 +442,7 @@ It is easy to see that the only pure Nash equilibria are $(B,B)$ and $(S,S)$.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: Coordination game"}
 
-Two people want to meet, but they cannot communicate in advance. They must independently choose between two possible meeting places, say the station $a$ or the café $b$. They mainly care about choosing the same place; neither location is intrinsically better.
+Two people want to meet, but they cannot communicate in advance. They must independently choose between two possible meeting places, say the station $a$ or the café $b$. They mainly care about choosing the same place, but some location is preferred by both.
 
 {{< var games.coordination.matrix >}}
 
