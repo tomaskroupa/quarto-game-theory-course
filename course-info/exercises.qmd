@@ -1,0 +1,16 @@
+---
+subtitle: "Computational Game Theory · Winter semester 2026/2027"
+---
+
+# Exercises {.unnumbered}
+
+## Exercise collection
+
+[Download exercises (PDF)](../exercises/exercises.pdf)
+
+**PDF last updated:** 25 September 2026.
+
+The collection grows throughout the semester. Use the link above to download
+the latest version.
+
+

@@ -1,0 +1,30 @@
+Two Thirds of the Average
+Score = 100 - absolute distance from (2/3)*mean.
+Values as fractions are exact. Display decimals are approximate.
+
+Round 1; n=6; mean=61/3; target=122/9
+Median=14; mean error=20; zero guesses=2
+P01	guess=28	distance=130/9	points=770/9 (~85.5556)
+P02	guess=1	distance=113/9	points=787/9 (~87.4444)
+P03	guess=0	distance=122/9	points=778/9 (~86.4444)
+P04	guess=66	distance=472/9	points=428/9 (~47.5556)
+P05	guess=0	distance=122/9	points=778/9 (~86.4444)
+P06	guess=27	distance=121/9	points=779/9 (~86.5556)
+
+Round 2; n=6; mean=9/2; target=3
+Median=3; mean error=19/6; zero guesses=1
+P01	guess=11	distance=8	points=92 (~92)
+P02	guess=1	distance=2	points=98 (~98)
+P03	guess=3	distance=0	points=100 (~100)
+P04	guess=0	distance=3	points=97 (~97)
+P05	guess=3	distance=0	points=100 (~100)
+P06	guess=9	distance=6	points=94 (~94)
+
+Round 3; n=6; mean=4/3; target=8/9
+Median=1; mean error=4/9; zero guesses=0
+P01	guess=1	distance=1/9	points=899/9 (~99.8889)
+P02	guess=2	distance=10/9	points=890/9 (~98.8889)
+P03	guess=1	distance=1/9	points=899/9 (~99.8889)
+P04	guess=1	distance=1/9	points=899/9 (~99.8889)
+P05	guess=2	distance=10/9	points=890/9 (~98.8889)
+P06	guess=1	distance=1/9	points=899/9 (~99.8889)

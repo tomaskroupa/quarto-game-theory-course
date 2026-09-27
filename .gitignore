@@ -10,6 +10,12 @@
 /lectures/*_files/
 /course-info/*.html
 /course-info/*_files/
+/games/*_files/
+
+# Keep local Python tools and notebooks out of the public repository.
+*.py
+*.pyw
+*.ipynb
 __pycache__/
 *.py[cod]
 .DS_Store
