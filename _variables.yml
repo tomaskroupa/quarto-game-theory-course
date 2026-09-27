@@ -82,3 +82,59 @@ games:
         bh & 1, 2 & 8, 0 & 1, 2 & 8, 0
       \end{array}
       $$
+
+  expected_utility:
+    name: "Expected utility and partial support"
+    matrix: |
+      $$
+      \begin{array}{c|ccc}
+        & x & y & z \\ \hline
+        a & 1, 7 & 1, 5 & 3, 4 \\
+        b & 2, 3 & 0, 4 & 0, 6
+      \end{array}
+      $$
+
+  indifference_not_sufficient:
+    name: "Indifference is not sufficient"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & l & r \\ \hline
+        a & 1, 0 & 0, 1 \\
+        b & 0, 1 & 1, 0 \\
+        c & 0.6, 0 & 0.6, 0
+      \end{array}
+      $$
+
+  penalty_kicks:
+    name: "Penalty kicks: scoring probabilities"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & u & n \\ \hline
+        u & 0.58 & 0.95 \\
+        n & 0.93 & 0.70
+      \end{array}
+      $$
+
+  professors_dilemma:
+    name: "Professor's dilemma"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & \text{Listen} & \text{Sleep} \\ \hline
+        \text{Prepare} & 10^6, 10^6 & -10, 0 \\
+        \text{Slack off} & 0, -10 & 0, 0
+      \end{array}
+      $$
+
+  good_samaritan:
+    name: "Good Samaritan: two bystanders"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & a & \bar a \\ \hline
+        a & 9, 9 & 9, 10 \\
+        \bar a & 10, 9 & 0, 0
+      \end{array}
+      $$

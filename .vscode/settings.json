@@ -1,0 +1,5 @@
+{
+  "quarto.render.previewType": "internal",
+  "quarto.render.renderOnSave": true,
+  "python.terminal.activateEnvironment": false
+}

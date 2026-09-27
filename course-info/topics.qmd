@@ -20,6 +20,7 @@ Nash equilibrium formalizes mutual strategic stability: each player's strategy m
 
 **Key concepts:** mixed strategies; expected utility; mixed-strategy Nash equilibrium; best-response conditions; Nash's existence theorem; indifference conditions; supports of equilibrium strategies.
 
+
 ## Computing Nash equilibrium {#sec-topic-computing-nash-equilibrium}
 
 This topic turns the equilibrium conditions into concrete computational procedures for finite general-sum games. Candidate supports determine which actions may receive positive probability, while the remaining equilibrium conditions test whether the candidate is valid.

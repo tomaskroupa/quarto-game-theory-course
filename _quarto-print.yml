@@ -7,6 +7,10 @@ book:
   chapters:
     - index.print.qmd
     - lectures/01-strategic-games.qmd
+    - lectures/02-mixed-strategy-nash-equilibrium.qmd
+    - part: classroom-games/index.qmd
+      chapters:
+        - classroom-games/two-thirds-of-average.qmd
 
 format:
   typst:
@@ -16,4 +20,6 @@ toc: true
 number-sections: true
 filters:
   - path: filters/print-empty-title.lua
+    at: post-quarto
+  - path: filters/print-payoff-spacing.lua
     at: post-quarto

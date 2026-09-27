@@ -32,3 +32,24 @@ definitions.
 ## Strategic form of the dynamic game
 
 {{< var games.contingent_plans.matrix >}}
+
+## Expected utility and partial support
+
+{{< var games.expected_utility.matrix >}}
+
+## Penalty kicks
+
+Rows are the kicker's choices and columns are the goalkeeper's choices.
+Entries give scoring probabilities; the goalkeeper's utility is their negative.
+
+{{< var games.penalty_kicks.matrix >}}
+
+## Professor's dilemma
+
+{{< var games.professors_dilemma.matrix >}}
+
+## Good Samaritan: two bystanders
+
+Action $a$ means providing aid and $\bar a$ means not providing aid.
+
+{{< var games.good_samaritan.matrix >}}
