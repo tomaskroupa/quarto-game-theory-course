@@ -14,6 +14,7 @@ book:
     - part: "Textbook"
       chapters:
         - lectures/01-strategic-games.qmd
+        - lectures/02-mixed-strategy-nash-equilibrium.qmd
 
 format:
   html:
