@@ -1,18 +1,8 @@
 # Experimental Classroom Games {.unnumbered}
 
-These activities connect strategic reasoning with observed play. Each game
-provides rules, a normal-form model, a mathematical analysis, and a discussion
+Each game provides rules, a mathematical analysis, and a discussion
 of the classroom results. The collection will grow as further games are
 played in the course.
 
-The distinction between a model and its interpretation is central: an
-equilibrium describes mutually consistent best responses, while actual
-choices also depend on expectations, experience, and communication. Classroom
-records let us examine this distinction without treating a small group as a
-controlled study of human behaviour.
-
-- [Two Thirds of the Average](two-thirds-of-average.qmd): a guessing game
-  about others' choices and reasoning, with a continuous-distance payoff,
-  a complete best-response and dominance analysis, and results from six
-  players over three rounds.
+- [Two Thirds of the Average](two-thirds-of-average.qmd), 22 September 2026
 

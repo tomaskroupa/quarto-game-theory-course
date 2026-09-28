@@ -17,9 +17,12 @@ computational methods used in the course.
 [Download textbook (PDF)](downloads/computational-game-theory.pdf)
 :::
 
+## Exercise Collection
+
+[Check the updated exercises](course-info/exercises.qmd)
+
+
 ## Experimental Classroom Games
 
-Play a strategic game, analyse its incentives, and compare its predictions
-with the choices observed in class.
 
 [Explore the classroom games](classroom-games/index.qmd)
