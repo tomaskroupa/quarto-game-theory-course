@@ -5,6 +5,10 @@ lecture inserts a selected matrix with a Quarto variable shortcode, for example
 `games.prisoners_dilemma.matrix`. The catalogue below renders those same
 definitions.
 
+## Instigation game
+
+{{< var games.instigation.matrix >}}
+
 ## Prisoner's dilemma
 
 {{< var games.prisoners_dilemma.matrix >}}
