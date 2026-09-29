@@ -195,13 +195,13 @@ $$
 
 *Proof.* Necessity follows because pure strategies are mixed strategies.
 Conversely, suppose all the displayed inequalities hold. For any mixed
-strategy $p_i$, ([-@eq-mixed-weighted-average]) gives
+strategy $p_i$, identity ([-@eq-mixed-weighted-average]) gives
 
 $$
 \begin{aligned}
 U_i(p_i,\mathbf p_{-i}^*)
 &=\sum_{s_i\in S_i}p_i(s_i)U_i(s_i,\mathbf p_{-i}^*)\\
-&\le\sum_{s_i\in S_i}p_i(s_i)U_i(\mathbf p^*)
+&\le\sum_{s_i\in S_i}p_i(s_i)U_i(\mathbf p^*)=U_i(\mathbf p^*)\sum_{s_i\in S_i}p_i(s_i)
 =U_i(\mathbf p^*).
 \end{aligned} 
 $$
@@ -328,8 +328,8 @@ the support gives a higher payoff.
 
 ### The support characterization {#sec-mixed-support-condition}
 
-Indifference among used pure strategies is necessary for an equilibrium. The question remains if an unused choice outside the support might
-still be better. To state the full condition, distinguish pure from mixed
+Indifference among used pure strategies is necessary for an equilibrium. The question remains if an unused strategy outside the support might
+still be better. To state the necessary and sufficient condition for equilibrium, distinguish pure from mixed
 best responses:
 
 $$
@@ -339,30 +339,52 @@ U_i(s_i,\mathbf p_{-i}).
 $$ 
 
 The set $B_i(\mathbf p_{-i})$ consists of pure strategies, whereas $\operatorname{BR}_i(\mathbf p_{-i})$
-consists of probability distributions.
+consists of probability distributions. Since $S_i$ is finite, $B_i(\mathbf p_{-i})\neq \emptyset$.
 
 ::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
 
-A profile $\mathbf p^*$ is a Nash equilibrium if and only if
+A profile of mixed strategies $\mathbf p^*$ is a Nash equilibrium if and only if
 
 $$
 \operatorname{spt}(p_i^*)\subseteq B_i(\mathbf p_{-i}^*)
 \qquad\text{for every }i\in N.
 $$ {#eq-support-BR}
 
-Equivalently, condition ([-@eq-support-BR]) says that for every player $i$:
-
-- every choice in the support gives expected utility $U_i(\mathbf p^*)$;
-- every choice outside the support gives expected utility at most $U_i(\mathbf p^*)$.
-
 :::
 
-*Proof.* At an equilibrium, indifference identifies the payoff of each used
-choice with $U_i(\mathbf p^*)$, and the pure-deviation condition rules out
-any higher payoff. Conversely, if every pure strategy in the support is a pure best response,
-their weighted average equals the maximum pure-choice payoff. No pure
-deviation can improve it, and hence no mixed deviation can improve it.
-$\square$
+
+*Proof.* Let $\mathbf p^*$ be an equilibrium. For any pure strategy $s_i\in \operatorname{spt}(p_i^*)$, the indifference principle says that
+$$
+U_i(s_i,\mathbf p_{-i}^*) = U_i(\mathbf p^*).
+$$
+For any pure strategy $s_i \in S_i\setminus \operatorname{spt}(p_i^*)$, the pure deviation condition is
+$$
+U_i(s_i,\mathbf p_{-i}^*) \le U_i(\mathbf p^*)
+$$
+Therefore,
+$$
+U_i(\mathbf p^*) = \max_{s_i\in S_i} U_i(s_i,\mathbf p_{-i}^*),
+$$
+which proves inclusion ([-@eq-support-BR]). 
+
+ Conversely, let ([-@eq-support-BR]) hold for a profile $\mathbf p^*$. Then 
+$$
+\begin{aligned}
+U_i(\mathbf p^*) & = \sum_{s_i \in  \operatorname{spt}(p_i^*)} p_i^*(s_i)U_i(s_i,\mathbf p_{-i}^*)=\sum_{s_i \in  \operatorname{spt}(p_i^*)} p_i^*(s_i)\max_{t_i\in S_i}U_i(t_i,\mathbf p_{-i}^*) \\
+& = \max_{t_i\in S_i}U_i(t_i,\mathbf p_{-i}^*) \cdot \sum_{s_i \in  \operatorname{spt}(p_i^*)} p_i^*(s_i)=\max_{t_i\in S_i}U_i(t_i,\mathbf p_{-i}^*),
+\end{aligned}
+$$
+where ([-@eq-support-BR]) was used in the second equality. The derived identity 
+$$
+U_i(\mathbf p^*) = \max_{t_i\in S_i}U_i(t_i,\mathbf p_{-i}^*)
+$$
+means that $\mathbf p^*$ is a Nash equilibrium. $\square$
+
+
+Equivalently, condition ([-@eq-support-BR]) says that for every player $i$:
+
+- every strategy in the support gives expected utility $U_i(\mathbf p^*)$;
+- every strategy outside the support gives expected utility at most $U_i(\mathbf p^*)$.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: An equilibrium with partial support"}
 
