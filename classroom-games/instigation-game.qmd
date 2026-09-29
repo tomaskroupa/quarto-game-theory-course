@@ -1,0 +1,259 @@
+# Instigation Game {.unnumbered}
+
+Increasing the punishment for theft seems a natural way to discourage a
+thief. The *instigation game* of @gonzalezdiaz2010 shows why the response of
+the person responsible for preventing theft also matters. A policy changes
+incentives and the resulting equilibrium depends on both players' best
+responses.
+
+In the classroom activity, students act as *policy* or *mechanism designers*. They predict
+the effects of changing the game's parameters and compare policies for
+protecting a diamond.
+
+## The situation and the payoffs {#sec-instigation-situation .unnumbered}
+
+A museum employs a guard to protect a diamond. A thief decides whether to
+*attempt* to steal it. The guard decides whether to *sleep* or remain awake.
+Neither player observes the other's current choice before choosing. The
+rules and payoffs are known to both players.
+
+If the thief attempts theft while the guard sleeps, the thief obtains the
+diamond and the guard is dismissed. If the guard is awake, the attempt fails:
+the thief is caught and punished, and the guard receives a reward. If the
+thief stays out, the guard can enjoy undisturbed sleep or remain awake without
+receiving a reward.
+
+The five parameters of the game are *strictly positive real numbers*:
+
+| Parameter | Meaning |
+|:--:|:--|
+| $d$ | The thief's gain (diamond) from a successful theft. |
+| $v$ | The thief's loss when caught and punished. |
+| $t$ | The guard's loss after an unprevented theft. |
+| $m$ | The guard's reward (medal) for catching the thief. |
+| $r$ | The guard's benefit from sleeping when the thief stays out. |
+
+: {tbl-colwidths="[12,88]"}
+
+For example, $v$ measures the asbtract utility loss associated
+with punishment, not necessarily a number of years in prison. 
+
+## Normal-form model {#sec-instigation-model .unnumbered}
+
+Player $1$ is the thief and player $2$ is the guard. Their pure-strategy
+sets are
+
+$$
+S_1=\{a,\neg a\},\qquad S_2=\{s,\neg s\}.
+$$
+
+Here $a$ means attempt theft, $\neg a$ means stay out, $s$ means sleep, and
+$\neg s$ means remain awake. The utility functions $u_1$ and $u_2$ are
+specified by the table
+
+{{< var games.instigation.matrix >}}
+
+The thief chooses a row and the guard chooses a column. Each cell lists the
+thief's payoff followed by the guard's payoff. A **successful theft** occurs only at $(a,s)$, whereas a **capture**
+occurs only at $(a,\neg s)$. Distinguishing these events is essential when
+evaluating a policy.
+
+
+## Mixed strategies {#sec-instigation-mixed .unnumbered}
+
+It is clear that the game has no equilibrium in pure strategies. Following @sec-mixed-strategies, let $p_i\in\Delta_i$ be player $i$'s mixed
+strategy and let $\mathbf p=(p_1,p_2)\in\boldsymbol\Delta$. Write
+
+$$
+x=p_1(a),\qquad y=p_2(s).
+$$
+
+ Against the guard's mixed strategy, the thief obtains
+
+$$
+U_1(a,p_2)=yd-(1-y)v,\qquad U_1(\neg a,p_2)=0.
+$$ 
+
+Against the thief's mixed strategy, the guard obtains
+
+$$
+U_2(s,p_1)=(1-x)r-xt,\qquad U_2(\neg s,p_1)=xm.
+$$ 
+
+The expected utilities at the full mixed profile are
+
+$$
+\begin{aligned}
+U_1(\mathbf p)&=x\bigl(yd-(1-y)v\bigr),\\
+U_2(\mathbf p)&=y\bigl((1-x)r-xt\bigr)+(1-y)xm.
+\end{aligned}
+$$
+
+
+### Best responses to mixed strategies {.unnumbered}
+
+Identifying pure strategies with degenerate mixed strategies, we obtain
+
+$$
+\operatorname{BR}_1(p_2)=
+\begin{cases}
+\{\neg a\},& y<\dfrac{v}{v+d},\\[4pt]
+\Delta_1,& y=\dfrac{v}{v+d},\\[4pt]
+\{a\},& y>\dfrac{v}{v+d},
+\end{cases}
+$$ 
+
+and
+
+$$
+\operatorname{BR}_2(p_1)=
+\begin{cases}
+\{s\},& x<\dfrac{r}{t+r+m},\\[4pt]
+\Delta_2,& x=\dfrac{r}{t+r+m},\\[4pt]
+\{\neg s\},& x>\dfrac{r}{t+r+m}.
+\end{cases}
+$$ 
+
+
+## Computing the Nash equilibrium {#sec-instigation-equilibrium .unnumbered}
+
+Every equilibrium must be completely mixed. If either player used a pure
+strategy, the other player's unique best response would also be pure. That
+would yield a pure equilibrium, a contradiction.
+Therefore both pure strategies of each player belong to the support and we compute them using @sec-mixed-indifference.
+
+Indifference for the thief requires
+
+$$
+yd-(1-y)v=0
+\quad\Longleftrightarrow\quad
+y=\frac{v}{v+d}.
+$$
+
+Indifference for the guard requires
+
+$$
+(1-x)r-xt=xm
+\quad\Longleftrightarrow\quad
+x=\frac{r}{t+r+m}.
+$$
+There are no
+strategies outside the supports, so @sec-mixed-support-condition shows that the following profile of mixed strategies is a unique equilibrium:
+
+$$
+p_1^*(a)=x^*=\frac{r}{t+r+m},\qquad
+p_2^*(s)=y^*=\frac{v}{v+d}.
+$$ {#eq-instigation-equilibrium}
+
+The equilibrium expected utilities are
+
+$$
+U_1(\mathbf p^*)=0,\qquad
+U_2(\mathbf p^*)=\frac{mr}{t+r+m}.
+$$
+
+
+## Outcome probabilities {#sec-instigation-outcomes .unnumbered}
+
+At any mixed profile $\mathbf p$, the probability of *successful theft* is $xy$ and the probability of *capture* is $x(1-y)$. In particular, at equilibrium $\mathbf p^*$, these probabilities are 
+
+$$
+\frac{rv}{(t+r+m)(v+d)}, \quad \frac{rd}{(t+r+m)(v+d)},
+$$ {#eq-instigation-outcomes}
+
+respectively.  
+
+## How the parameters change the equilibrium {#sec-instigation-parameters .unnumbered}
+
+Change one parameter at a time, holding the others fixed. The following
+comparisons follow from formulas ([-@eq-instigation-equilibrium]) and
+([-@eq-instigation-outcomes]).
+
+| Parameter increased | Attempt $x^*$ | Sleep $y^*$ | Successful theft $x^*y^*$ |
+|:--|:--:|:--:|:--:|
+| Thief's punishment $v$ | - | $\uparrow$ | $\uparrow$ |
+| Value to the thief $d$ | - | $\downarrow$ | $\downarrow$ |
+| Guard's loss $t$ | $\downarrow$ | - | $\downarrow$ |
+| Capture reward $m$ | $\downarrow$ | - | $\downarrow$ |
+| Sleep benefit $r$ | $\uparrow$ | - | $\uparrow$ |
+
+: {tbl-colwidths="[34,22,22,22]"}
+
+
+## Policies in the classroom experiment {#sec-instigation-policies .unnumbered}
+
+The classroom polls use the baseline
+
+$$
+d=v=4,\qquad t=r=m=2.
+$$
+
+At this baseline, $x^*=1/3$ and $y^*=1/2$. Successful theft and capture have the same probability $1/6$.
+
+The three poll questions are:
+
+1. Start from $d = v = 4$ and $p = r = m = 2$. Raise only the thief's punishment loss $v$ to $12$. When both players adjust to the new mixed Nash equilibrium, what happens to attempted theft?
+2. Keep the same change: $v$ rises from $4$ to $12$, with $d = 4$ and $p = r = m = 2$. At the new mixed Nash equilibrium, what happens to successful theft per opportunity?
+3. Now, reset to $d = v = 4$ and $p = r = m = 2$. Which single policy achieves attempted theft at most $20\%$ and successful theft at most $10\%$ at the mixed Nash equilibrium?
+
+### Harsher punishment: attempted and successful theft {.unnumbered}
+
+Two first polls increase only $v$ from $4$ to $12$. Substitution into
+([-@eq-instigation-equilibrium]) gives
+
+$$
+x^*=\frac13,\qquad y^*=\frac34.
+$$
+
+Thus **attempted theft is unchanged**, while **successful theft increases**
+from $1/6$ to $1/4$. Capture becomes less frequent, falling from $1/6$ to
+$1/12$. Fewer captures alone would therefore be misleading evidence of
+greater deterrence in this model.
+
+If the guard continued
+to sleep with probability $1/2$, an attempt would give expected utility
+$\tfrac12\cdot 4-\tfrac12\cdot 12=-4$, so the thief would strictly prefer staying out.
+That sleeping probability is not the guard's new equilibrium probability.
+
+### Choosing a policy that meets the target {.unnumbered}
+
+The third poll resets all parameters to baseline. Its target is to reduce
+attempted theft to at most $20\%$ and successful theft to at most $10\%$.
+The proposed policies are a larger capture reward, harsher punishment for
+the thief, and a constant addition to the guard's payoffs.
+
+Increasing only $m$ from $2$ to $6$ gives
+
+$$
+x^*=\frac{2}{2+2+6}=\frac15,\qquad
+y^*=\frac12,\qquad x^*y^*=\frac1{10}.
+$$
+
+The capture reward meets both targets, while the harsher punishment $v=12$ does
+not.
+
+For the constant-payment policy, define a modified guard utility by
+
+$$
+\widetilde u_2(\mathbf s)=u_2(\mathbf s)+4
+\qquad\text{for every }\mathbf s\in\mathbf S.
+$$
+
+Then $\widetilde U_2(\mathbf p)=U_2(\mathbf p)+4$ for every mixed profile.
+All payoff differences are preserved, so both players' best responses and
+the equilibrium are unchanged. 
+
+| Policy | Attempt | Sleep | Successful theft | Capture |
+|:--|:--:|:--:|:--:|:--:|
+| Baseline | $1/3$ | $1/2$ | $1/6$ | $1/6$ |
+| Thief's punishment $v=12$ | $1/3$ | $3/4$ | $1/4$ | $1/12$ |
+| Capture reward $m=6$ | $1/5$ | $1/2$ | $1/10$ | $1/10$ |
+| All guard payoffs increased by $4$ | $1/3$ | $1/2$ | $1/6$ | $1/6$ |
+
+: {tbl-colwidths="[40,15,15,18,12]"}
+
+ The poll responses concern
+students' predictions about this model, rather than their behaviour as thieves
+or guards. Nash equilibrium is the used prediction rule here. Owing to time constraints, only the first poll was conducted. An overwhelming majority of the approximately 20 students predicted that harsher punishment would decrease attempted theft. Only one student selected the equilibrium prediction that it would remain unchanged. *The responses highlight the intuitive appeal of deterrence, while the model shows how the guard’s adjustment—sleeping more often—offsets the increased punishment and leaves the equilibrium probability of attempted theft unchanged.*
+
+

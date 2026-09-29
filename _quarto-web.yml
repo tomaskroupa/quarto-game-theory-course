@@ -24,6 +24,7 @@ book:
     - part: classroom-games/index.qmd
       chapters:
         - classroom-games/two-thirds-of-average.qmd
+        - classroom-games/instigation-game.qmd
 
 format:
   html:

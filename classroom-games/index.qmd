@@ -1,8 +1,8 @@
 # Experimental Classroom Games {.unnumbered}
 
-Each game provides rules, a mathematical analysis, and a discussion
-of the classroom results. The collection will grow as further games are
+Each game provides rules and a mathematical analysis. Classroom results are
+added after the activity has been run. The collection will grow as further games are
 played in the course.
 
 - [Two Thirds of the Average](two-thirds-of-average.qmd), 22 September 2026
-
+- [Instigation Game](instigation-game.qmd), 29 September 2026

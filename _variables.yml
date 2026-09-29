@@ -4,6 +4,17 @@
 # {{< var games.prisoners_dilemma.matrix >}}
 
 games:
+  instigation:
+    name: "Instigation game"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & s & \neg s \\ \hline
+        a & d, -t & -v, m \\
+        \neg a & 0, r & 0, 0
+      \end{array}
+      $$
+
   prisoners_dilemma:
     name: "Prisoner's dilemma"
     matrix: |
