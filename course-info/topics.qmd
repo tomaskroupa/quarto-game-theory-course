@@ -23,11 +23,10 @@ Nash equilibrium formalizes mutual strategic stability: each player's strategy m
 
 ## Computing Nash equilibrium {#sec-topic-computing-nash-equilibrium}
 
-We compute Nash equilibria from the full game using support enumeration and Turocy's logit homotopy method. The lecture develops logit quantal response equilibrium (QRE) and its Nash limits, with a Julia demonstration of computation and independent accuracy checks.
+We compute Nash equilibria using support enumeration and Turocy's logit homotopy method. The lecture develops logit quantal response equilibrium (QRE) and the computation of approximate  Nash equilibrium as its limit.
 
-**Key concepts:** maximum deviation incentive; $\epsilon$-Nash equilibrium; computational complexity; support enumeration; logit QRE; homotopy continuation; `LogitNash.jl`.
+**Key concepts:** maximum deviation incentive; $\epsilon$-Nash equilibrium; support enumeration; logit QRE; homotopy continuation.
 
-[Read Lecture 3](../lectures/03-computing-nash-equilibrium.qmd) · [Open the Julia notebook in Colab](https://colab.research.google.com/github/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/julia/03-logit-method.ipynb)
 
 ## Two-player zero-sum games {#sec-topic-zero-sum-games}
 
