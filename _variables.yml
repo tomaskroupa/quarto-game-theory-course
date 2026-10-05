@@ -4,6 +4,17 @@
 # {{< var games.prisoners_dilemma.matrix >}}
 
 games:
+  two_route_congestion:
+    name: "Two drivers choosing between two routes"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & e_1 & e_2 \\ \hline
+        e_1 & -3, -3 & -1, -2 \\
+        e_2 & -2, -1 & -2, -2
+      \end{array}
+      $$
+
   instigation:
     name: "Instigation game"
     matrix: |

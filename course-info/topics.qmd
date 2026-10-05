@@ -23,9 +23,11 @@ Nash equilibrium formalizes mutual strategic stability: each player's strategy m
 
 ## Computing Nash equilibrium {#sec-topic-computing-nash-equilibrium}
 
-This topic turns the equilibrium conditions into concrete computational procedures for finite general-sum games. Candidate supports determine which actions may receive positive probability, while the remaining equilibrium conditions test whether the candidate is valid.
+We compute Nash equilibria from the full game using support enumeration and Turocy's logit homotopy method. The lecture develops logit quantal response equilibrium (QRE) and its Nash limits, with a Julia demonstration of computation and independent accuracy checks.
 
-**Key concepts:** $\epsilon$-Nash equilibrium; support enumeration method; optimization formulation of Nash equilibrium; best response dynamics; potential games.
+**Key concepts:** maximum deviation incentive; $\epsilon$-Nash equilibrium; computational complexity; support enumeration; logit QRE; homotopy continuation; `LogitNash.jl`.
+
+[Read Lecture 3](../lectures/03-computing-nash-equilibrium.qmd) · [Open the Julia notebook in Colab](https://colab.research.google.com/github/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/julia/03-logit-method.ipynb)
 
 ## Two-player zero-sum games {#sec-topic-zero-sum-games}
 
@@ -41,9 +43,9 @@ The course next studies solution concepts that allow correlation or an explicit 
 
 ## Learning in games {#sec-topic-learning}
 
-Learning models describe how play evolves when agents adapt from repeated interaction instead of solving an equilibrium in advance. The central question is when simple update rules converge to equilibrium behavior or guarantee low regret.
+Learning models describe how play evolves when agents adapt from repeated interaction instead of solving an equilibrium in advance. Each model specifies what players know about payoffs and what they observe after play. Sequential best-response dynamics provides a first example, and potential games explain when strict unilateral improvements reach a pure equilibrium. The central question is when update rules converge to equilibrium behavior or guarantee low regret.
 
-**Key concepts:** fictitious play; empirical distributions of play; convergence of fictitious play; regret minimization; regret matching.
+**Key concepts:** players' information and feedback; sequential best-response dynamics; potential games; finite improvement property; fictitious play; empirical distributions of play; convergence of fictitious play; regret minimization; regret matching.
 
 ## Extensive-form games {#sec-topic-extensive-form-games}
 
@@ -103,5 +105,3 @@ The Shapley value assigns a unique payoff allocation by averaging each player's 
 **Key concepts:** marginal contributions; efficiency; symmetry; the null-player
 property; additivity; the Shapley formula; interpretation as an expected
 marginal contribution.
-
-

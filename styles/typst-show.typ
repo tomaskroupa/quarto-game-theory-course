@@ -34,8 +34,31 @@
   heading-style: 1,
 )
 
-#set math.equation(numbering: equation-numbering)
+// Quarto gives labelled equations an explicit numbering function. Leave
+// ordinary display mathematics unnumbered, as in the HTML edition.
+#set math.equation(numbering: none)
 #set figure(numbering: callout-numbering)
+
+// The source syntax ([-@eq-...]) supplies its own parentheses. Typst's
+// equation numbering includes parentheses, so print only the number for
+// these empty-supplement references, evaluated at the target's location.
+#show ref.where(supplement: []): it => context {
+  let target = it.element
+  if target == none or target.func() != math.equation or it.form != "normal" {
+    it
+  } else {
+    let loc = target.location()
+    let num = counter(math.equation).at(loc).first()
+    let chapters = query(selector(heading.where(level: 1)).before(loc))
+    let bare-number = if chapters != () and chapters.last().numbering == none {
+      numbering("1", num)
+    } else {
+      let pattern = if state("appendix-state", none).at(loc) != none { "A.1" } else { "1.1" }
+      numbering(pattern, counter(heading).at(loc).first(), num)
+    }
+    link(loc, bare-number)
+  }
+}
 
 // The bundled theme adds chapter numbers to running headers even when the
 // heading is unnumbered. Preserve its header for numbered textbook chapters.

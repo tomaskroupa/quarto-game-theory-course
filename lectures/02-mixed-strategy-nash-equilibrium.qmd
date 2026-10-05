@@ -333,20 +333,20 @@ still be better. To state the necessary and sufficient condition for equilibrium
 best responses:
 
 $$
-B_i(\mathbf p_{-i})
+\operatorname{B}_i(\mathbf p_{-i})
 =\underset{s_i\in S_i}{\operatorname{argmax}}
 U_i(s_i,\mathbf p_{-i}).
 $$ 
 
-The set $B_i(\mathbf p_{-i})$ consists of pure strategies, whereas $\operatorname{BR}_i(\mathbf p_{-i})$
-consists of probability distributions. Since $S_i$ is finite, $B_i(\mathbf p_{-i})\neq \emptyset$.
+The set $\operatorname{B}_i(\mathbf p_{-i})$ consists of pure strategies, whereas $\operatorname{BR}_i(\mathbf p_{-i})$
+consists of probability distributions. Since $S_i$ is finite, $\operatorname{B}_i(\mathbf p_{-i})\neq \emptyset$.
 
 ::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
 
 A profile of mixed strategies $\mathbf p^*$ is a Nash equilibrium if and only if
 
 $$
-\operatorname{spt}(p_i^*)\subseteq B_i(\mathbf p_{-i}^*)
+\operatorname{spt}(p_i^*)\subseteq \operatorname{B}_i(\mathbf p_{-i}^*)
 \qquad\text{for every }i\in N.
 $$ {#eq-support-BR}
 

@@ -18,6 +18,8 @@
 *.py
 *.pyw
 *.ipynb
+# Publish the Julia companion notebooks used by the course.
+!/notebooks/julia/*.ipynb
 __pycache__/
 *.py[cod]
 .DS_Store

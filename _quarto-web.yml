@@ -1,6 +1,7 @@
 project:
   resources:
     - exercises/*.pdf
+    - notebooks/julia/*.ipynb
 
 book:
   chapters:
@@ -20,6 +21,7 @@ book:
       chapters:
         - lectures/01-strategic-games.qmd
         - lectures/02-mixed-strategy-nash-equilibrium.qmd
+        - lectures/03-computing-nash-equilibrium.qmd
 
     - part: classroom-games/index.qmd
       chapters:
