@@ -276,19 +276,18 @@ $$
 \frac{\operatorname{QR}_i^\lambda(\mathbf p_{-i})(s_i)}
 {\operatorname{QR}_i^\lambda(\mathbf p_{-i})(t_i)}
 =\exp(\lambda(U_i(s_i,\mathbf p_{-i})-U_i(t_i,\mathbf p_{-i}))).
-$$ {#eq-computing-logit-odds}
+$$ 
 
-Thus, if one strategy gives an additional utility $d>0$, its probability
-relative to the other is multiplied by $e^{\lambda d}$. For example, with $S_i=\{a,b\}$ and payoff difference
-$d=U_i(a,\mathbf p_{-i})-U_i(b,\mathbf p_{-i})>0$, we get
+For example, if $S_i=\{a,b\}$ and 
+$d(\mathbf p_{-i})=U_i(a,\mathbf p_{-i})-U_i(b,\mathbf p_{-i})>0$, we get
 
 $$
 \operatorname{QR}_i^\lambda(\mathbf p_{-i})(a)
-=\frac{e^{\lambda d}}{1+e^{\lambda d}}, \qquad \operatorname{QR}_i^\lambda(\mathbf p_{-i})(b)
-=\frac{1}{1+e^{\lambda d}}.
-$$
+=\frac{e^{\lambda d(\mathbf p_{-i})}}{1+e^{\lambda d(\mathbf p_{-i})}}, \qquad \operatorname{QR}_i^\lambda(\mathbf p_{-i})(b)
+=\frac{1}{1+e^{\lambda d(\mathbf p_{-i})}}.
+$${#eq-computing-logit-odds}
 
-The relevant quantity here is the product $\lambda d$, not precision alone. Adding the same constant to all of a player's payoffs leaves the response
+The relevant quantity here is the product $\lambda d(\mathbf p_{-i})$, not precision alone. Adding the same constant to all of a player's payoffs leaves the response
 unchanged. Multiplying all payoffs by $c>0$ and holding $\lambda$ fixed
 has the same effect as replacing $\lambda$ by $c\lambda$ in the original
 game. To preserve the probabilities after this rescaling, replace precision
@@ -311,14 +310,12 @@ A **logit quantal response equilibrium** at precision
 $\lambda$ is a profile $\mathbf p^*\in\boldsymbol\Delta$ satisfying
 
 $$
-p_i^*=\operatorname{QR}_i^\lambda(\mathbf p_{-i}^*)
-\qquad\text{for every }i\in N.
+p_i^*(s_i)=\operatorname{QR}_i^\lambda(\mathbf p_{-i}^*)(s_i)
+\qquad \forall i\in N \quad \forall s_i\in S_i. 
 $$ {#eq-computing-qre}
 
 :::
 
-Expanding the definition, ([-@eq-computing-qre]) says 
-$p_i^*(s_i)=\operatorname{QR}_i^\lambda(\mathbf p_{-i}^*)(s_i)$ for every player $i\in N$ and every pure strategy $s_i\in S_i$.
 The parallel with Nash equilibrium is direct:
 
 $$
@@ -333,7 +330,7 @@ $$
 $$
 
  Both equilibria require consistency between each player's strategy and
-their response to the opponents' strategies. QRE changes the response rule. Equations ([-@eq-computing-qre]) are a simultaneous system of equilibrium conditions. Solving it is a non-trivial problem, in general.
+their response to the opponents' strategies. QRE changes the response rule. QREs conditions ([-@eq-computing-qre]) are a system of nonlinear equations. Solving it is a non-trivial problem, in general.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: Logit QRE in the prisoner's dilemma"}
 
@@ -342,8 +339,8 @@ their response to the opponents' strategies. QRE changes the response rule. Equa
 
 For either player, $D$ gives exactly one unit more utility than $C$,
 regardless of the opponent's action. Hence this difference remains one
-against every mixed strategy of the opponent. Equation
-([-@eq-computing-logit-odds]) therefore gives the unique logit QRE
+against every mixed strategy of the opponent. Formulas
+([-@eq-computing-logit-odds]) and the QRE conditions ([-@eq-computing-qre]) therefore give the unique logit QRE
 
 $$
 p_i^*(D)=\frac{e^\lambda}{1+e^\lambda},
@@ -378,7 +375,7 @@ $$
 ### Existence and uniqueness
 
 For every finite game and every finite $\lambda\geq0$, a logit QRE exists
-[@mckelvey1995]. At $\lambda=0$, the QRE is uniquely the uniform profile. Several QRE may exist for $\lambda >0$. 
+[@mckelvey1995]. At $\lambda=0$, the QRE is the profile of uniform mixed strategies. Several QRE may exist for $\lambda >0$. 
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example"}
 
@@ -404,21 +401,20 @@ $$
 x=0.023787,\qquad x=0.234955,\qquad x=0.999663.
 $$
 
-Each root determines a different logit QRE of the same game at the same
-precision. The figure plots
+Each root determines a different logit QRE. The figure plots
 solutions of ([-@eq-computing-coordination-qre]) as precision varies.
 
 ![Symmetric logit QRE in the coordination game. The blue branch starts at the uniform profile. The orange curve supplies two additional QRE when precision is sufficiently large. The three dots mark  $\lambda=4$. Dashed horizontal lines indicate the probabilities 0, 1/3, and 1 at the corresponding Nash equilibria.](../assets/figures/logit-qre-coordination.svg){width=90% fig-alt="QRE probability x against precision lambda"}
 
-The branch starting at the uniform profile approaches Nash equilibrium $(a,a)$. The other
+The branch starting at the uniform profile approaches pure Nash equilibrium $(a,a)$. The other
 two approach pure Nash equilibrium $(b,b)$ and the mixed Nash equilibrium with
 $p_1(a)=p_2(a)=1/3$. 
 
 :::
 
-The following result [@mckelvey1995; @bland2026] shows that any limit of logit QRE as precision tends to infinity is a Nash equilibrium. 
+The following result [@mckelvey1995] shows that any limit of logit QRE as precision tends to infinity is a Nash equilibrium. 
 
-::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
+::: {.callout-important appearance="minimal" icon="false" title="Theorem"}
 
 Let $\lambda_k\to\infty$, and let $\mathbf p^{(k)}$ be a logit QRE at
  $\lambda_k$. If $\mathbf p^{(k)}\to\mathbf p^*$, then
@@ -427,20 +423,16 @@ $\mathbf p^*$ is a Nash equilibrium.
 :::
 
 
-Its meaning can be read through the support
-condition ([-@eq-support-BR]): any strategy remaining strictly worse at the
-limit must lose its probability as precision increases. Every strategy
-retaining positive limiting probability must therefore be a best response. The proposition does not assert that every Nash equilibrium is reachable from some branch. Degeneracies and
+To understand this result, consider a strategy that is strictly suboptimal against the limiting opponents’ profile. Along the convergent sequence, its payoff remains below that of a better strategy by a positive amount. As precision tends to infinity, the logit response assigns it a probability tending to zero. Consequently, every strategy in the support of the limiting profile is a best response, which is exactly the support characterization of Nash equilibrium ([-@eq-support-BR]). The theorem does not assert that every Nash equilibrium is reachable from some branch. Degeneracies and
 multiple branches require care. Our computational objective will be to
 follow one branch and verify the approximate Nash equilibrium it produces.
 
-### Finite-precision QRE and approximate Nash equilibrium
+### QRE and approximate Nash equilibrium
 
 We emphasize that precision $\lambda$ and tolerance $\epsilon$ for approximate Nash equilibrium have different meanings.
-The former specifies the quantal response model and the latter upper bounds the gain from
-a deviation. A profile of mixed strategies can be a QRE  and still
+The former specifies the quantal response model and the latter upper bounds the maximum unilateral deviation. A profile of mixed strategies can be a QRE  and still
 have substantial deviation incentive, as the Prisoner's dilemma shows. To assess a candidate QRE $\mathbf p$ numerically, check its
-response residual
+*response residual*
 
 $$
 \max_{i\in N}\max_{s_i\in S_i}
@@ -484,9 +476,9 @@ $$
 A numerical method adjusting these probabilities directly may not respect
 those constraints. Therefore, we change variables
 so that every choice of the new real coordinates describes a
-strictly positive probability distribution. We will still have to solve
+strictly positive probability distribution. *We will still have to solve
 the QRE equations, but we will no longer need separate constraints for
-positivity and normalization.
+positivity and normalization.*
 
 For each player $i$, choose one strategy $b_i\in S_i$ as a
 **reference strategy**. It need not be a best response or have any special
@@ -494,7 +486,7 @@ role in the game. Define the **log probability ratio**
 
 $$
 z_i(s_i)=\ln\frac{p_i(s_i)}{p_i(b_i)}
-\qquad\text{for }s_i\in S_i\setminus\{b_i\}.
+\qquad\forall s_i\in S_i\setminus\{b_i\}.
 $$
 
 To recover the probabilities, write
@@ -520,14 +512,14 @@ p_i(s_i)&=\frac{e^{z_i(s_i)}}{1+\sum_{t_i\ne b_i}e^{z_i(t_i)}}
 \end{aligned}
 $$ {#eq-computing-probability-recovery}
 
-Thus, for a fixed reference strategy $b_i$, every completely mixed strategy $p_i$ determines a unique vector of log probability ratios $z_i$. *Conversely, ([-@eq-computing-probability-recovery]) transforms any real vector of the appropriate dimension $z_i$ into a unique completely mixed strategy.* The transformation therefore preserves all QRE.
+Thus, for a fixed reference strategy $b_i$, every completely mixed strategy $p_i$ determines a unique vector of log probability ratios $z_i$. *Conversely, ([-@eq-computing-probability-recovery]) transforms any real vector $z_i$  of the appropriate dimension into a unique completely mixed strategy.* The transformation therefore preserves all QRE.
  A boundary profile with zero probabilities can be
 approached as some log ratios become unbounded. 
 
 
 ### The QRE conditions in the new coordinates
 
-We express the QRE conditions ([-@eq-computing-qre]) for profile $\mathbf p$ using the log ratios:
+We express the QRE conditions ([-@eq-computing-qre]) for profile $\mathbf p$ using the log ratios. In particular, for every player $i$ and any $s_i\neq b_i$,
 
 $$
 z_i(s_i)=
@@ -538,11 +530,10 @@ $$
 
 
 
-The solver now works with the vector $\mathbf z$ containing all players'
-log ratios. Given a trial $\mathbf z$, we recover all probabilities using
+The solver now works with the real vector $\mathbf z$ collecting the coordinates $z_i(s_i)$ for every player $i$ and every non-reference strategy $s_i\ne b_i$. For a fixed $\mathbf z$, we recover all probabilities using
 ([-@eq-computing-probability-recovery]) and then calculate expected
 utilities. We write $\mathbf p_{-i}(\mathbf z)$ for the opponents'
-probabilities obtained in this way. Define the residual for each non-reference strategy:
+probabilities obtained in this way. Define the residual for each non-reference strategy $s_i$:
 
 $$
 F_{i,s_i}(\mathbf z,\lambda)
@@ -560,7 +551,7 @@ $$
 d=\sum_{i\in N}(|S_i|-1),
 $$
 
-a fixed $\lambda$ gives $d$ equations in $d$ unknown log ratios. Continuation
+a fixed $\lambda$ gives $d$ equations in $d$ unknown $z_i(s_i)$. Continuation
 allows $\lambda$ to vary as well, giving $d$ equations in $d+1$ unknowns,
 namely $(\mathbf z,\lambda)$. At $\lambda=0$, the solution is
 $\mathbf z=\mathbf 0$, which represents the uniform profile by ([-@eq-computing-probability-recovery]). This is usually the
