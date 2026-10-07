@@ -574,19 +574,19 @@ For a fixed precision $\lambda$, we solve the system $F(\mathbf z,\lambda)=\math
 
 We now describe how to move from one QRE to the next along the solution
 curve. Denote $\mathbf y=(\mathbf z,\lambda)$. Starting
-at $\mathbf y=(\mathbf 0,0)$, repeat the following steps.
+at $\mathbf y=(\mathbf 0,0)$, repeat the following.
 
-**1. Find the direction of the curve.** At the current solution,
-$F(\mathbf y)=\mathbf 0$. We seek a direction $\mathbf v\in\mathbb R^{d+1}$ in which a small
-movement leaves these residuals unchanged to first order. Therefore, choose
+**1. Find the direction of the curve.** 
+At the current solution, $F(\mathbf y)=\mathbf 0$. To predict a nearby solution, we first find a direction $\mathbf v\in\mathbb R^{d+1}$ tangent to the solution curve. For a small step length $h$, the linear approximation gives
+$$
+F(\mathbf y+h\mathbf v)\approx F(\mathbf y)+h\,DF(\mathbf y)\mathbf v,
+$$
+where $DF(\mathbf y)\in\mathbb R^{d\times(d+1)}$ is the *Jacobian*. Since $F(\mathbf y)=\mathbf 0$, we make the linear term vanish by choosing
 $$
 DF(\mathbf y)\mathbf v=\mathbf 0,
-\qquad \|\mathbf v\|=1,
+\qquad \|\mathbf v\|=1.
 $$
-where $DF(\mathbf y)\in\mathbb R^{d\times(d+1)}$ is the *Jacobian*. When the $d$ rows of the Jacobian are linearly independent, these equations
-determine the *unit tangent* up to its sign. Initially choose the sign that increases
-$\lambda$ and subsequently choose the sign that continues in the previous
-direction.
+If the Jacobian has $d$ linearly independent rows, its nullspace is one-dimensional. Thus there are exactly two unit tangent vectors, pointing in opposite directions along the curve. At the initial point, choose the one that increases $\lambda$. At subsequent points, choose the one whose dot product with the previous tangent is positive, so that we continue along the curve in the same direction.
 
 **2. Predict a nearby point.** Choose a step length $h>0$ and move along
 the tangent to $$\widehat{\mathbf y}=\mathbf y+h\mathbf v.$$ The predicted point
@@ -606,8 +606,7 @@ correction to be perpendicular to the prediction direction. The system ([-@eq-co
 
 ![](../assets/figures/qre-predictor-corrector.svg){width=90% fig-alt="A tangent prediction leaves a curved solution path; a perpendicular correction reaches a nearby point on the path."}
 
-**4. Accept the point and adjust the step.** If correction fails or requires
-too large a change, reduce $h$ and retry from the last accepted point.
+**4. Accept the point and adjust the step.** If correction fails or requires a very large change, reduce $h$ and retry from the last accepted point.
 Otherwise, accept $\mathbf y_{\mathrm{new}}$, recover the corresponding profile $\mathbf p$, and
 compute the maximum deviation incentive $\delta(\mathbf p)$. For the computation of $\epsilon$-Nash
 equilibrium, stop when $\delta(\mathbf p)\leq\epsilon$. If continuing, compute a new tangent and
@@ -618,7 +617,8 @@ The method does not fix precision $\lambda$ beforehand, but rather computes the 
 
 ### Implementation
 
-`LogitNash.jl` [@votroubek2026logitnash] implements the method using log-ratio coordinates and the transformed precision $t=\ln(1+\lambda)$. It combines a quadratic predictor with Newton correction and adapts the step size during tracking.
+The method is implemented in [`gambit-logit`](https://gambitproject.readthedocs.io/en/stable/tools.logit.html) solver written in Python. Here we describe a recent package
+`LogitNash.jl` [@votroubek2026logitnash] implementing the method using log-ratio coordinates and the transformed precision $t=\ln(1+\lambda)$ in the Julia language. It combines a quadratic predictor with Newton correction and adapts the step size during tracking.
 
 The package is registered and supports Julia 1.8 or later. Install it
 with the standard package manager:
@@ -666,8 +666,8 @@ T&1&0
 \end{array}
 $$
 
-The unique Nash equilibrium has $p_i^*(H)=1/(M+1)$ for every player.
-QRE is also symmetric and write $x=p_i(H)$ for their common probability. The
+The unique Nash equilibrium has $p_i^*(H)=1/(M+1)$ for every player $i$.
+QRE is also symmetric and write $x=p_i(H)$ for the common probability. The
 two pure-strategy expected utilities are $(1-x)/M$ and $x$, so the
 condition for QRE expressed using the log-ratio equation ([-@eq-computing-logit-system]) becomes
 
@@ -691,4 +691,7 @@ probabilities and independently computed maximum deviation incentives are approx
 
 :::
 
-The companion [notebook](../notebooks/julia/03-logit-method.ipynb) constructs the game above, calls the solver, and checks its output. It also plots the scalar QRE path for comparison. In the notebook, we compute an approximate Nash equilibrium of the three-player game above and verify its maximum deviation incentive independently. For $M=9$, the returned profile should be close to $p_i(H)=0.1$ for each player, with $\delta(\mathbf p)\leq10^{-6}$ in normalized payoff units.
+The companion Julia notebook constructs the game above, calls the solver, and checks its output:
+[View on GitHub](https://github.com/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/julia/03-logit-method.ipynb) or [Open in Colab](https://colab.research.google.com/github/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/julia/03-logit-method.ipynb).
+
+ It also plots the scalar QRE path for comparison. In the notebook, we compute an approximate Nash equilibrium of the three-player game above and verify its maximum deviation incentive independently. For $M=9$, the returned profile should be close to $p_i(H)=0.1$ for each player, with $\delta(\mathbf p)\leq10^{-6}$ in normalized payoff units.
