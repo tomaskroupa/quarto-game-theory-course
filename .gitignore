@@ -20,6 +20,8 @@
 *.ipynb
 # Publish the Julia companion notebooks used by the course.
 !/notebooks/julia/*.ipynb
+# Publish the Lecture 4 Python companion notebook.
+!/notebooks/python/04-matrix-games-lp.ipynb
 __pycache__/
 *.py[cod]
 .DS_Store

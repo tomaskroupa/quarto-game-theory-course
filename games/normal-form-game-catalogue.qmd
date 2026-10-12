@@ -17,6 +17,21 @@ definitions.
 
 {{< var games.matching_pennies.matrix >}}
 
+## Morra
+
+The row and column strategies $i\text{-}j$ mean raising $i$ fingers and
+guessing that the opponent raises $j$. Entries are the row player's
+payoffs; the column player's utilities are their negatives.
+
+{{< var games.morra.matrix >}}
+
+## A pure saddle point
+
+Entries are the row player's payoffs; the column player minimizes them.
+The saddle point is $(c,d)$ and the value is $7$.
+
+{{< var games.pure_saddle_point.matrix >}}
+
 ## Sharing household chores
 
 {{< var games.household_chores.matrix >}}
