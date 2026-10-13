@@ -6,3 +6,4 @@ played in the course.
 
 - [Two Thirds of the Average](two-thirds-of-average.qmd), 22 September 2026
 - [Instigation Game](instigation-game.qmd), 29 September 2026
+- [Hide the Treasure](hide-the-treasure.qmd): 13 October 2026

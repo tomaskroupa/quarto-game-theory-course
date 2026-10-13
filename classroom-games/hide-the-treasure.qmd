@@ -1,0 +1,23 @@
+# Hide the Treasure {.unnumbered}
+
+The *Hider* hides a treasure in one of two boxes, and the *Seeker*
+chooses one box to search. Neither player observes the other's choice
+before choosing. Box 1 has a stake of *1 point* and Box 2 has a stake of
+*2 points*.
+
+If the Seeker searches the box containing the treasure, the Hider loses
+its stake and the Seeker gains it. If the Seeker searches the other box,
+the Hider gains the stake and the Seeker loses it. Each player aims to maximize their own payoff.
+
+The Hider's strategies $h_1$ and $h_2$ mean hiding in Box 1 and Box 2,
+respectively. The Seeker's strategies $s_1$ and $s_2$ mean searching Box 1
+and Box 2, respectively.
+
+The Hider chooses a row and the Seeker chooses a column. The table gives
+the *Hider's payoff*; the Seeker receives its negative, so the game is
+zero-sum.
+
+{{< var games.hide_the_treasure.matrix >}}
+
+For example, if the Hider chooses $h_2$ and the Seeker chooses $s_1$,
+the Hider gains 2 points and the Seeker loses 2 points.

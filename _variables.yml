@@ -4,6 +4,17 @@
 # {{< var games.prisoners_dilemma.matrix >}}
 
 games:
+  hide_the_treasure:
+    name: "Hide the Treasure"
+    matrix: |
+      $$
+      \begin{array}{c|rr}
+        & s_1 & s_2 \\ \hline
+        h_1 & -1 & 1 \\
+        h_2 & 2 & -2
+      \end{array}
+      $$
+
   morra:
     name: "Morra"
     matrix: |

@@ -17,6 +17,14 @@ definitions.
 
 {{< var games.matching_pennies.matrix >}}
 
+## Hide the Treasure
+
+Rows $h_1,h_2$ mean hiding in Box 1 or Box 2; columns $s_1,s_2$ mean
+searching Box 1 or Box 2.
+Entries give the Hider's payoffs; the Seeker receives their negatives.
+
+{{< var games.hide_the_treasure.matrix >}}
+
 ## Morra
 
 The row and column strategies $i\text{-}j$ mean raising $i$ fingers and
