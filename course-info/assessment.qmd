@@ -23,7 +23,22 @@ from the [Semestral Project Catalogue](semestral-projects.qmd).
 
 ## Midterm test
 
-The examination consists of a 90-minute written test. In selected cases, a brief oral examination may follow to clarify or further discuss the submitted answers.
+The midterm is a *90-minute written test* consisting of **5 problems worth 6 points each**. In selected cases, a brief oral examination may follow to clarify or further discuss the submitted answers. The test covers the **first five lectures**.
+
+*The test assesses only your understanding of the concepts and your ability to apply them.* Calculations will be easy and manageable by hand. Explain your reasoning and the meaning of your answer.
+
+### Examples of problem types
+
+Problems will follow the style of the [course exercises](../exercises/exercises.pdf) and include only simple numbers and small games. Representative tasks are:
+
+- *Model a strategic situation:* Write down the normal form of a game.
+- *Dominance and efficiency:* identify dominated strategies, apply iterated elimination, or determine which outcomes are Pareto optimal in a small utility table.
+- *Nash equilibrium in a $2\times2$ game:* find pure equilibria using best responses, and find a mixed equilibrium using indifference conditions. 
+- *Quantal response:* find a logit response and explain the role of a precision parameter lambda in a small game.
+- *Zero-sum games:* find the maximin and minimax values, check for a saddle point, or compute optimal mixed strategies and the value of a matrix game.
+- *Linear programming:* formulate the linear program for a small matrix game and interpret its constraints.
+- *Alternatives to Nash equilibria:* find a Stackelberg equilibrium, formulate a program to compute correlated equilibrium.
+
 
 ## Course assessment
 
