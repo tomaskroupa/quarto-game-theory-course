@@ -4,6 +4,28 @@
 # {{< var games.prisoners_dilemma.matrix >}}
 
 games:
+  inspection:
+    name: "Inspection game"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & \text{Cheat} & \text{Honest} \\ \hline
+        \text{Audit} & -6, -9 & -1, 0 \\
+        \text{No audit} & -10, 1 & 0, 0
+      \end{array}
+      $$
+
+  stackelberg_commitment:
+    name: "The value of commitment"
+    matrix: |
+      $$
+      \begin{array}{c|cc}
+        & c & d \\ \hline
+        a & 2, 1 & 4, 0 \\
+        b & 1, 0 & 3, 1
+      \end{array}
+      $$
+
   hide_the_treasure:
     name: "Hide the Treasure"
     matrix: |

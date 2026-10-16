@@ -52,6 +52,21 @@ The saddle point is $(c,d)$ and the value is $7$.
 
 {{< var games.coordination.matrix >}}
 
+## Inspection game
+
+The inspection game of [@vonstengel2004, Figure 2], with rows and columns
+reordered. The row player audits and the column player chooses whether
+to cheat; see @sec-stackelberg-commitment.
+
+{{< var games.inspection.matrix >}}
+
+## The value of commitment
+
+The two-player example of [@conitzer2006, Section 2.1]; see
+@sec-stackelberg-ties.
+
+{{< var games.stackelberg_commitment.matrix >}}
+
 ## Iterated-dominance example
 
 {{< var games.dominance_elimination.matrix >}}

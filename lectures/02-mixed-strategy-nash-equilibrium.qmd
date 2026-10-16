@@ -418,7 +418,7 @@ because its expected payoff is strictly lower.
 :::
 
 The inclusion ([-@eq-support-BR]) need not be equality: an unused pure strategy outside the support is allowed to
-tie with those in the support. If the profile is completely mixed, there are no unused strategies, so indifference for every player is sufficient.
+tie with those in the support. The support characterization above also implies that the *completely* mixed profile satisfying the indifference principle is a Nash equilibrium. Indeed, there are no unused strategies and every pure strategy in the support is the best response by the definition.
 
 
 

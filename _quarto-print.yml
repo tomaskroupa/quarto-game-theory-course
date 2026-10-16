@@ -10,6 +10,7 @@ book:
     - lectures/02-mixed-strategy-nash-equilibrium.qmd
     - lectures/03-computing-nash-equilibrium.qmd
     - lectures/04-two-player-zero-sum-games.qmd
+    - lectures/05-alternatives-to-nash-equilibrium.qmd
 
 format:
   typst:
