@@ -21,3 +21,143 @@ zero-sum.
 
 For example, if the Hider chooses $h_2$ and the Seeker chooses $s_1$,
 the Hider gains 2 points and the Seeker loses 2 points.
+
+## Solving the game {#sec-treasure-solution .unnumbered}
+
+There is no pure-strategy Nash equilibrium. If the Seeker finds the
+treasure, the Hider gains by switching boxes. If the Seeker misses it,
+the Seeker gains by switching boxes. Hence we are looking for the mixed strategy equilibrium. Let $p$ and $q$ be the probabilities of choosing $h_1$ and $s_1$, respectively.
+
+### The Hider's optimal strategy {.unnumbered}
+
+Against the Seeker's two pure strategies, the Hider's expected payoffs are
+
+$$
+\begin{aligned}
+U(p,s_1)&=2-3p,\\
+U(p,s_2)&=3p-2.
+\end{aligned}
+$$
+
+The Hider's worst-case expected payoff is therefore
+
+$$
+\min\{2-3p,3p-2\}=-|2-3p|\le0.
+$$
+
+Its maximum is zero attained only at $p=2/3$. With this probability the Hider obtains expected payoff zero
+against every Seeker strategy. Hiding uniformly would give too much
+weight to Box 2, where being found costs twice as much.
+
+### The Seeker's optimal strategy {.unnumbered}
+
+The Seeker minimizes the larger of these two payoffs,
+$$
+\begin{aligned}
+U(h_1,q)&=1-2q,\\
+U(h_2,q)&=4q-2,
+\end{aligned}
+$$
+
+that is, minimizes 
+$$
+\max \{1-2q,4q-2\}.
+$$
+
+The unique minimum is $0$ with $q=1/2$. The unique Nash equilibrium is therefore
+
+$$
+\text{Hider: }\left(\frac23,\frac13\right),
+\qquad
+\text{Seeker: }\left(\frac12,\frac12\right).
+$$
+
+The game's value is *zero*: both players receive expected payoff zero
+at equilibrium. Each equilibrium strategy also guarantees its player
+expected payoff at least zero against every opposing strategy.
+
+
+## Classroom polls: results and explanations {#sec-treasure-polls .unnumbered}
+
+The classroom activity used three hypothetical offers rather than actual
+play of the game. The responses came from a small sample. The proportions below are
+approximate. The third poll was recorded
+only as a majority response, so no percentage is reported for it.
+
+### Poll 1: buying the Hider role {.unnumbered}
+
+*Question.* You can play as the Hider against an opponent who plays
+optimally. What is the largest entry fee you could pay without making
+your expected net payoff negative?
+
+| Proposed fee | Approximate share of responses |
+|:--:|:--|
+| $0$ | No responses |
+| $1/4$ | About $80\%$ |
+| $1/2$ | About $20\%$ |
+| $1$ | No responses |
+
+*Correct answer: $0$.* The Hider's value is zero. An optimal Seeker
+searches each box with probability $1/2$, which gives the Hider expected
+game payoff zero whatever the Hider chooses. With an entry fee $c$, the
+Hider's expected net payoff is therefore
+
+$$
+0-c=-c.
+$$
+
+Every positive fee makes this offer worse than declining it. At a zero
+fee, the Hider is indifferent between entering and declining. This
+conclusion follows from the computed value of this particular game, sinc
+zero-sum games can have nonzero values.
+
+All recorded answers assigned a positive price to the offer. These votes
+alone do not establish why students chose those prices.
+
+### Poll 2: trusting a fair coin {.unnumbered}
+
+*Question.* A player uses one private fair coin flip to choose between
+their two strategies. For whom does this guarantee an expected payoff
+of at least zero, whatever the opponent does?
+
+| Answer | Approximate share of responses |
+|:--|:--|
+| Both players | About $10\%$ |
+| Only the Hider | About $20\%$ |
+| Only the Seeker | About one third |
+| Neither player | About one third |
+
+*Correct answer: only the Seeker.* Searching each box with probability
+$1/2$ gives the Seeker zero expected payoff. Consequently, the Seeker's expected payoff is zero against every mixture
+of the Hider's choices as well. This is a guarantee about expectation, while an individual round can still produce a loss.
+
+
+### Poll 3: exploiting a uniformly hiding opponent {.unnumbered}
+
+*Question.* You are offered the Seeker role. You know that the Hider
+hides in each box with probability $1/2$, independently each round. The
+entry fee is $1/4$ point per round, and you can choose your own search
+strategy. Is the offer profitable in expectation?
+
+*Observed response:* most students chose *YES*. The available record
+does not give a complete YES/NO breakdown.
+
+*Correct answer: YES, by always searching Box 2.* Against this Hider,
+the Seeker's expected game payoffs are $-\frac12$ and $\frac12$  from the two choices of $s_1$ and $s_2$, respectively. Searching Box 2 is therefore the unique best response. Subtracting the
+fee gives expected net payoff
+
+$$
+\frac12-\frac14=\frac14>0,
+$$
+
+which is better than declining. Using a fair coin to search would give
+expected game payoff zero and expected net payoff $-1/4$ after the fee.
+The profitable offer requires taking advantage of the known hiding
+probabilities.
+
+The majority answer agrees with the expected-payoff calculation. A YES
+vote by itself does not tell us whether the student identified the
+required search strategy. There is also no conflict with Poll 1: the
+positive payoff here comes from facing a known, exploitable opponent,
+while Poll 1 specifies an optimal opponent. *Securing the game's value
+and exploiting a particular opposing strategy are different objectives.*
