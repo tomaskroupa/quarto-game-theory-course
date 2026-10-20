@@ -42,7 +42,7 @@ subtitle: "Computational Game Theory · Winter semester 2026/2027"
 | 2 |  29 Sep  | Nash equilibrium 1. | DR |
 | 3 |  6 Oct  | Nash equilibrium 2. | DR |
 | 4 |  13 Oct  | Quantal response. Matrix games. | DR |
-| 5 |  20 Oct  |  | DR |
+| 5 |  20 Oct  | Alternatives to Nash equilibrium | DR |
 | 6 |  27 Oct  |  | DR |
 | 7 |  3 Nov  | **Midterm test**  | - |
 | 8 |  10 Nov  |  | DR |
