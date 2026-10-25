@@ -3,6 +3,7 @@ project:
     - exercises/*.pdf
     - notebooks/julia/*.ipynb
     - notebooks/python/04-matrix-games-lp.ipynb
+    - notebooks/python/06-learning-in-games.ipynb
 
 book:
   chapters:
@@ -25,6 +26,7 @@ book:
         - lectures/03-computing-nash-equilibrium.qmd
         - lectures/04-two-player-zero-sum-games.qmd
         - lectures/05-alternatives-to-nash-equilibrium.qmd
+        - lectures/06-learning-in-games.qmd
 
     - part: classroom-games/index.qmd
       chapters:

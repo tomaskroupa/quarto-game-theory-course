@@ -11,6 +11,7 @@ book:
     - lectures/03-computing-nash-equilibrium.qmd
     - lectures/04-two-player-zero-sum-games.qmd
     - lectures/05-alternatives-to-nash-equilibrium.qmd
+    - lectures/06-learning-in-games.qmd
 
 format:
   typst:

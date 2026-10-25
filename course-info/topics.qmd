@@ -44,7 +44,7 @@ The course next studies solution concepts that allow correlation or an explicit 
 
 Learning models describe how play evolves when agents adapt from repeated interaction instead of solving an equilibrium in advance. Each model specifies what players know about payoffs and what they observe after play. Sequential best-response dynamics provides a first example, and potential games explain when strict unilateral improvements reach a pure equilibrium. The central question is when update rules converge to equilibrium behavior or guarantee low regret.
 
-**Key concepts:** players' information and feedback; sequential best-response dynamics; potential games; finite improvement property; fictitious play; empirical distributions of play; convergence of fictitious play; regret minimization; regret matching.
+**Key concepts:** players' information and feedback; sequential best-response dynamics; potential games; finite convergence of sequential best responses; fictitious play; empirical distributions of play; convergence of fictitious play; regret minimization; regret matching.
 
 ## Extensive-form games {#sec-topic-extensive-form-games}
 

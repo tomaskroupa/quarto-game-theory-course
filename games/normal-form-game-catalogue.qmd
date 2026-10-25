@@ -17,6 +17,32 @@ definitions.
 
 {{< var games.matching_pennies.matrix >}}
 
+## Matching pennies with an asymmetric stake
+
+The zero-sum modification used in @sec-learning-br has the same sequential
+best-response cycle as matching pennies. Its unique equilibrium assigns
+probability $2/1003$ to $H$ for each player.
+
+{{< var games.modified_matching_pennies.matrix >}}
+
+## A zero-sum game with a pure equilibrium and a best-response cycle
+
+The profile $(E,E)$ is a strict pure Nash equilibrium, but sequential best
+responses starting at $(H,H)$ cycle among the four profiles using only
+$H$ and $T$. Consequently, this game is not a potential game. See
+@sec-learning-br-convergence for the argument.
+
+{{< var games.zero_sum_best_response_cycle.matrix >}}
+
+## Shapley's fictitious-play counterexample
+
+This three-action game has a unique uniform Nash equilibrium, but
+fictitious play initialized at $(a,e)$ need not converge to it
+[@shapley1964, Section 5]. See @sec-learning-shapley for the update rule
+and the first blocks of play.
+
+{{< var games.shapley_fictitious_play.matrix >}}
+
 ## Hide the Treasure
 
 Rows $h_1,h_2$ mean hiding in Box 1 or Box 2; columns $s_1,s_2$ mean
@@ -51,6 +77,50 @@ The saddle point is $(c,d)$ and the value is $7$.
 ## Coordination game
 
 {{< var games.coordination.matrix >}}
+
+## Two drivers choosing between two routes
+
+Utilities are negative travel costs. Route $e_1$ costs $1$ with one driver
+and $3$ with two; route $e_2$ costs $2$ with either load. See
+@sec-learning-br-convergence for the convergence argument using a potential.
+
+{{< var games.two_route_congestion.matrix >}}
+
+## Cournot duopoly with seven quantity choices {#sec-game-cournot}
+
+This is a finite instance of the linear Cournot model discussed in
+[@monderer1996]. Alice and Bob operate competing firms. Each simultaneously
+chooses an output quantity $q_i\in\{0,1,\ldots,6\}$. The market price is
+$14-q_1-q_2$, and producing one unit costs $2$, so their profits are
+
+$$
+u_1(q_1,q_2)=q_1(12-q_1-q_2),\qquad
+u_2(q_1,q_2)=q_2(12-q_1-q_2).
+$$
+
+The rows give Alice's quantities and the columns give Bob's:
+
+{{< var games.cournot_duopoly.matrix >}}
+
+An exact potential is
+
+$$
+P(q_1,q_2)=12(q_1+q_2)-q_1^2-q_2^2-q_1q_2.
+$$
+
+Every unilateral utility change equals the corresponding potential change.
+Consequently, strict sequential best-response dynamics terminates by
+@sec-learning-br-convergence. With Alice updating first and ties between new best
+responses resolved toward the smaller quantity, the notebook's initial
+profile $(0,0)$ produces
+
+$$
+(0,0)\to(6,0)\to(6,3)\to(4,3)\to(4,4).
+$$
+
+The potential increases through $0,36,45,47,48$. The pure equilibria are
+$(3,5)$, $(4,4)$, and $(5,3)$, so changing the initial quantities can also
+illustrate different terminal profiles.
 
 ## Inspection game
 
