@@ -43,6 +43,10 @@ functions.* In the last row, the feedback can be supplied as a vector of
 payoffs. Alternatively, the player can reconstruct it from their own payoff
 function and the observed opponents' strategies. 
 
+A Python notebook demonstrating learning in games is
+[available on GitHub](https://github.com/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/python/06-learning-in-games.ipynb)
+or can be [opened in Colab](https://colab.research.google.com/github/tomaskroupa/quarto-game-theory-course/blob/main/notebooks/python/06-learning-in-games.ipynb).
+
 
 ## Best-response dynamics {#sec-learning-br}
 
