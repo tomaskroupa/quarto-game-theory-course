@@ -19,9 +19,9 @@ the next lecture on solving extensive-form games.
 A **history** is a sequence of actions of players from the root of a game tree to a
 node. The empty history $\varnothing$ is the root; $ha$ denotes history
 $h$ followed by action $a$. A **terminal history** ends the game and carries
-a payoff vector. At every other node, the tree specifies the acting player
-and the available actions. In a game of **perfect information**, a player
-knows the entire preceding history whenever it is their turn.
+a payoff vector; in the game tree, it corresponds to a *leaf* of the tree. At every other node, the tree specifies the acting player
+and the available actions. In a extensive-form game of **perfect information**, a player
+knows the entire preceding history whenever it is their turn. Examples include chess, Go, checkers, and tic-tac-toe.
 
 ::: {.callout-note appearance="minimal" icon="false" title="Example: dividing two coins"}
 
@@ -117,8 +117,7 @@ player 1 chooses $2$, yielding the SPE $(2,aaa)$.
 
 ::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
 
-Every finite extensive-form game with perfect information has a
-pure-strategy SPE. 
+Every finite extensive-form game with perfect information has a SPE. 
 
 :::
 
@@ -129,29 +128,11 @@ and the player moving at the current node chooses a best continuation.
 The resulting profile is therefore an equilibrium in this larger
 subgame. Repeat to the root. $\square$
 
-For a fixed number of players, one traversal takes time linear in the
-size of the *explicit tree*. This does not make enormous trees small.
-For two-player zero-sum games, maximizing the moving player's payoff
-is the familiar alternating maximization and minimization of minimax.
+For a fixed number of players, one traversal takes time linear in the size of the *explicit tree*. This does not make enormous trees small. When several actions give the moving player the same maximal continuation payoff, different tie-breaking choices may produce different subgame-perfect equilibria. For two-player zero-sum games, maximizing the moving player’s payoff is the familiar alternating maximization and minimization of minimax.
 
-Full-tree backward induction is infeasible for large board games, but
-selective search and evaluation can nevertheless achieve superhuman
-performance. In chess, **Deep Blue** defeated reigning world champion
-Garry Kasparov in 1997, combining parallel search with a sophisticated
-evaluation function [@campbell2002]. In Go, **AlphaGo Zero** (2017)
-combined neural-network guidance with Monte Carlo tree search and
-learned entirely through self-play, defeating the earlier
-champion-beating AlphaGo by 100 games to zero [@silver2017zero].
-**AlphaZero** (2018) generalized this approach to chess, shogi, and Go,
-outperforming leading programs in each game [@silver2018alphazero].
+Although full-tree backward induction is infeasible for large board games, search and evaluation can achieve superhuman play: *Deep Blue* defeated Kasparov in chess (1997) [@campbell2002], *AlphaGo Zero* mastered Go through self-play (2017) [@silver2017zero], and *AlphaZero* outperformed leading programs in chess, shogi, and Go (2018) [@silver2018alphazero].
 
-These results demonstrate superhuman playing strength, but do not
-constitute mathematical solutions of the games: they do not certify
-the minimax value of the initial position or guarantee optimal play.
-A distinct milestone was the **weak solution of English draughts
-(checkers)** in 2007: a computational proof established that the initial
-position is a draw and provided strategies guaranteeing at least a
-draw for either side against any opponent [@schaeffer2007].
+Superhuman performance does not imply a mathematical solution. By contrast, checkers was *weakly solved* in 2007: the initial position is provably a draw under optimal play [@schaeffer2007].
 
 ### Chance nodes {#sec-efg-chance}
 
@@ -170,7 +151,7 @@ probabilities are part of the rules of the game and are known to
 the players. *Chance is compatible with perfect information if
 each player knows all preceding player actions and chance outcomes
 whenever it is their turn to act*. For example, publicly observed
-dice rolls introduce randomness without hiding the preceding
+dice rolls in backgammon introduce randomness without hiding the preceding
 history.
 
 
@@ -451,11 +432,13 @@ probability at each two-action information set. For example, prescribing a call 
 $I_2(Q,b)$ means calling with probability $1/3$ both at $(J,Q,b)$
 and at $(K,Q,b)$.
 
+In the table we summarize the properties of the three types of strategies discussed above.
+
 | Strategy | What is randomized? | Size for one player of  Kuhn-poker|
 |:--|:--|:--|
-| Pure | Nothing | 6 actions |
-| Mixed | A pure strategy before play | 63 free probabilities |
-| Behavioral | An action when an information set is reached | 6 free probabilities |
+| *Pure* | Nothing | 6 actions |
+| *Mixed* | A pure strategy before play | 63 free probabilities |
+| *Behavioral* | An action when an information set is reached | 6 free probabilities |
 
 ### Evaluating a behavioral profile {#sec-efg-evaluation}
 
@@ -610,33 +593,32 @@ $1-q$ for $B$, $q^2$ for $AA$, and $q(1-q)$ for $AB$. In particular, the history
 
 ## Why finding equilibria becomes harder {#sec-efg-computation-barriers}
 
-Nash equilibrium remains well-defined under imperfect information, but information sets prevent us from solving decision nodes independently as in backward induction for perfect-information games. Moreover, pure-strategy Nash equilibria need not exist, as illustrated by the extensive-form representation of matching pennies in @sec-efg-normal-form-encoding.
+A Nash equilibrium of an extensive-form game with perfect information is a Nash equilibrium
+of its induced normal-form game. For an imperfect-information game with
+perfect recall, Kuhn's theorem allows us to express this condition
+directly using behavioral strategies.
 
-*Decisions at indistinguishable nodes are coupled.* In the
-Kuhn-poker information set $I_2(Q,b)$, calling is preferable against
-$J$ and folding against $K$. Choosing the better action separately
-at each node would use the opponent's hidden card. 
+::: {.callout-note appearance="minimal" icon="false" title="Definition"}
 
-*The relevant probabilities depend on earlier play.* Conditional
-on holding $Q$, the opponent initially has $J$ or $K$ with equal
-probability. After observing a bet, these probabilities depend on
-how often each card is bet. If the opening bet probabilities are
-$b_J$ and $b_K$ with $b_J+b_K>0$, then
+In an imperfect-information game with perfect recall, a behavioral-strategy
+profile $\boldsymbol\beta^*=(\beta_1^*,\ldots,\beta_n^*)$ is a **Nash
+equilibrium** if
 
 $$
-\Pr(J\mid Q,\text{opponent bets})
-=\frac{b_J}{b_J+b_K}.
+U_i(\beta_i^*,\boldsymbol\beta_{-i}^*)
+\geq U_i(\beta_i,\boldsymbol\beta_{-i}^*)
 $$
 
-Thus a later decision depends on strategies earlier in the tree.
+for every player $i$ and every behavioral strategy $\beta_i$ of that
+player.
 
-*Expanding the normal form is expensive.* A player with $m$
-binary information sets has $2^m$ pure strategies. The normal form can
-therefore be exponentially larger than the tree, even though a
-behavioral strategy has a short description. 
+:::
+
+A unilateral deviation may change a player's prescribed behavior at any or all information sets, while the other players' strategies remain fixed. Nash equilibrium is therefore well-defined under imperfect information. However, decisions at nodes in the same information set must use the same action distribution, preventing the independent optimization used in backward induction. Pure-strategy equilibria may also fail to exist, as illustrated by the extensive-form representation of matching pennies in @sec-efg-normal-form-encoding.
+
 
 These obstacles call for methods that respect information sets.
  The next lecture
-develops sequence form and counterfactual regret minimization.
+develops *sequence form* and *counterfactual regret minimization*.
 
 
