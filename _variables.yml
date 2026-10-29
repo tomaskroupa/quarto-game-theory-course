@@ -1,7 +1,8 @@
-# Keep all reusable normal-form games in this one file.
+# Keep all reusable games in this one file.
 # Write payoff-table cells as x, y without surrounding parentheses.
 # Insert a matrix with, for example:
 # {{< var games.prisoners_dilemma.matrix >}}
+# Extensive-form entries share rules and register their canonical diagram paths.
 
 games:
   cournot_duopoly:
@@ -161,6 +162,12 @@ games:
 
   matching_pennies:
     name: "Matching pennies"
+    extensive_rules: |
+      Player 1 chooses $H$ or $T$. Player 2 then chooses $H$ or $T$
+      *without observing player 1's choice*. Player 1 receives $1$ when
+      the choices match and $-1$ otherwise; player 2 receives the opposite
+      payoff. The two decision nodes of player 2 form one information set.
+    extensive_diagram: "../games/extensive-form/matching-pennies.svg"
     matrix: |
       $$
       \begin{array}{c|cc}
@@ -290,3 +297,66 @@ games:
         \bar a & 10, 9 & 0, 0
       \end{array}
       $$
+
+  two_coin_bargaining:
+    name: "Dividing two coins"
+    rules: |
+      Player 1 proposes how to divide two coins, choosing an amount
+      $k\in\{0,1,2\}$ to keep. Player 2 either
+      accepts ($a$) or rejects ($r$). Acceptance gives payoffs $(k,2-k)$;
+      rejection gives $(0,0)$.
+    diagram: "../games/extensive-form/two-coin-bargaining.svg"
+
+  chance_moves:
+    name: "A game with chance moves"
+    rules: |
+      Player 1 first chooses $a$ or $b$. After $a$, player 2 chooses
+      $c$ or $d$, leading to outcomes $o_1$ or $o_2$, respectively.
+      After $b$, chance ends the game at $o_3$ with probability $1/2$
+      and otherwise gives player 1 another decision. Player 1 then
+      chooses $e$ or $f$. Action $f$ leads to $o_7$; action $e$ leads
+      to a second chance move, with outcomes $o_4,o_5,o_6$ having
+      probabilities $1/4,1/2,1/4$, respectively. All earlier actions
+      and chance outcomes are observed whenever a player acts, so
+      this game has perfect information.
+    diagram: "../games/extensive-form/chance-moves.svg"
+
+  poker_endgame:
+    name: "A basic poker endgame"
+    rules: |
+      Both players ante one chip. Chance gives player 1 a winning card
+      $W$ with probability $1/4$ or a losing card $L$ with probability
+      $3/4$. Only player 1 sees the card; player 2 receives no card.
+      Player 1 may check, ending in a showdown, or bet two more chips.
+      After a bet, player 2 may fold or call by adding two chips.
+      Payoffs are *net gains*, including the ante: checking gives
+      player 1 gain $+1$ with $W$ and $-1$ with $L$; a fold gives player 1 gain
+      $+1$; a call gives player 1 gain $+3$ with $W$ and $-3$ with $L$.
+      Player 2 receives the opposite payoff [@ferguson2000, Section 5.2].
+    diagram: "../games/extensive-form/poker-endgame.svg"
+
+  kuhn_poker:
+    name: "Kuhn poker"
+    rules: |
+      Two players each ante one chip. A deck contains three cards, the ranking from lowest to highest is
+      $J<Q<K$. Each player receives one private card, uniformly without
+      replacement; the remaining card is unused. Player 1 may check or
+      bet one chip. After a check, player 2 may check or bet one chip.
+      A player facing a bet may fold or call by adding one chip; there
+      are no raises. Two checks or a call lead to a showdown, won by
+      the higher card. A fold awards the pot to the other player.
+      The winner's net gain is one chip after two checks or a fold,
+      and two chips after a called bet. The loser loses the same amount.
+    deal_diagram: "../games/extensive-form/kuhn-poker-deal.svg"
+    betting_diagram: "../games/extensive-form/kuhn-poker-betting.svg"
+    information_diagram: "../games/extensive-form/kuhn-poker-information.svg"
+
+  forgotten_visit:
+    name: "Forgetting an earlier decision"
+    rules: |
+      One player chooses $A$ or $B$. Choosing $B$ immediately ends the
+      game with payoff $0$. Choosing $A$ leads to another decision:
+      $A$ now gives payoff $1$, while $B$ gives payoff $4$.
+      The two decision nodes belong to the *same information set*:
+      the player cannot tell whether this is the first or second visit.
+    diagram: "../games/extensive-form/forgotten-visit.svg"

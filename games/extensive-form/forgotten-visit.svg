@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="395" viewBox="0 0 700 395" role="img" aria-labelledby="title desc">
+<title id="title">Forgetting an earlier decision</title>
+<desc id="desc">One player encounters the same information set before and after action A.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526174"/></marker></defs>
+<rect width="700" height="395" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="22" fill="#192a3c">
+<circle cx="345" cy="50" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="345" y="58" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 330.98 70.70 L 255.70 181.82" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="263.3" y="102.0" width="25.3" height="27" rx="3" fill="white"/>
+<text x="276" y="123" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">A</text>
+<circle cx="240" cy="205" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="240" y="213" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 364.94 65.08 L 539.63 197.16" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="446.3" y="102.0" width="25.3" height="27" rx="3" fill="white"/>
+<text x="459" y="123" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">B</text>
+<circle cx="550" cy="205" r="3.5" fill="#526174"/>
+<text x="550" y="236" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">0</text>
+<path d="M 225.39 225.29 L 157.60 319.45" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="182.3" y="247.0" width="25.3" height="27" rx="3" fill="white"/>
+<text x="195.0" y="268" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">A</text>
+<circle cx="150" cy="330" r="3.5" fill="#526174"/>
+<text x="150" y="361" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">1</text>
+<path d="M 254.61 225.29 L 322.40 319.45" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="272.3" y="247.0" width="25.3" height="27" rx="3" fill="white"/>
+<text x="285.0" y="268" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">B</text>
+<circle cx="330" cy="330" r="3.5" fill="#526174"/>
+<text x="330" y="361" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">4</text>
+<path d="M 318 50 C 150 30 125 155 213 205" stroke="#725799" stroke-width="2.5" stroke-dasharray="8 6" fill="none"/>
+<text x="153" y="105" text-anchor="middle" font-size="23" font-weight="normal" fill="#67468b">I₁</text>
+<text x="520" y="310" text-anchor="middle" font-size="19" font-weight="normal" fill="#67468b">Same information set;</text>
+<text x="520" y="339" text-anchor="middle" font-size="19" font-weight="normal" fill="#67468b">two possible visits.</text>
+</g>
+</svg>

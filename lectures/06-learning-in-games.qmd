@@ -460,10 +460,12 @@ $p_i^*(s_i)=0$. Every action in the support of $p_i^*$ is consequently a
 best response to $\mathbf p_{-i}^*$, which is
 the support characterization of Nash equilibrium. $\square$
 
+### Shapley's fictitious-play counterexample {#sec-learning-shapley}
+
 
 Fictitious play may fail to converge in a general finite game.
 
-::: {.callout-note appearance="minimal" icon="false" title="Example: Prisoner's dilemma"}
+::: {.callout-note appearance="minimal" icon="false" title="Example"} 
 
 Alice chooses a row and Bob a column in the following game
 [@shapley1964]:

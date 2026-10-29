@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="475" viewBox="0 0 940 475" role="img" aria-labelledby="title desc">
+<title id="title">A basic poker endgame</title>
+<desc id="desc">Chance determines player 1 card. Player 2 cannot observe the card when responding to a bet.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526174"/></marker></defs>
+<rect width="940" height="475" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="22" fill="#192a3c">
+<path d="M 470 19 L 496 45 L 470 71 L 444 45 Z" fill="#edf3ed" stroke="#4c6650" stroke-width="2.5"/>
+<text x="470" y="53" text-anchor="middle" font-size="23" font-weight="bold" fill="#4c6650">c</text>
+<path d="M 447.36 55.60 L 260.36 143.13" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="311.5" y="78.0" width="82.0" height="27" rx="3" fill="white"/>
+<text x="352.5" y="99" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">W: 1/4</text>
+<circle cx="235" cy="155" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="235" y="163" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 216.06 171.32 L 99.85 271.51" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="127.2" y="195.0" width="70.7" height="27" rx="3" fill="white"/>
+<text x="162.5" y="216" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">check</text>
+<circle cx="90" cy="280" r="3.5" fill="#526174"/>
+<text x="90" y="311" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(1, −1)</text>
+<path d="M 251.08 174.14 L 321.99 258.56" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="252.2" y="195.0" width="70.7" height="27" rx="3" fill="white"/>
+<text x="287.5" y="216" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">bet 2</text>
+<circle cx="340" cy="280" r="24" fill="#fff1df" stroke="#9a4f15" stroke-width="2.5"/>
+<text x="340" y="288" text-anchor="middle" font-size="23" font-weight="bold" fill="#9a4f15">2</text>
+<path d="M 328.47 302.18 L 281.00 393.47" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="277.8" y="324.0" width="59.4" height="27" rx="3" fill="white"/>
+<text x="307.5" y="345" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">fold</text>
+<circle cx="275" cy="405" r="3.5" fill="#526174"/>
+<text x="275" y="436" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(1, −1)</text>
+<path d="M 351.53 302.18 L 399.00 393.47" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="342.8" y="324.0" width="59.4" height="27" rx="3" fill="white"/>
+<text x="372.5" y="345" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">call</text>
+<circle cx="405" cy="405" r="3.5" fill="#526174"/>
+<text x="405" y="436" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(3, −3)</text>
+<path d="M 492.64 55.60 L 679.64 143.13" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="546.5" y="78.0" width="82.0" height="27" rx="3" fill="white"/>
+<text x="587.5" y="99" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">L: 3/4</text>
+<circle cx="705" cy="155" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="705" y="163" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 723.94 171.32 L 840.15 271.51" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="742.1" y="195.0" width="70.7" height="27" rx="3" fill="white"/>
+<text x="777.5" y="216" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">check</text>
+<circle cx="850" cy="280" r="3.5" fill="#526174"/>
+<text x="850" y="311" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(−1, 1)</text>
+<path d="M 688.92 174.14 L 618.01 258.56" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="617.1" y="195.0" width="70.7" height="27" rx="3" fill="white"/>
+<text x="652.5" y="216" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">bet 2</text>
+<circle cx="600" cy="280" r="24" fill="#fff1df" stroke="#9a4f15" stroke-width="2.5"/>
+<text x="600" y="288" text-anchor="middle" font-size="23" font-weight="bold" fill="#9a4f15">2</text>
+<path d="M 588.47 302.18 L 541.00 393.47" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="537.8" y="324.0" width="59.4" height="27" rx="3" fill="white"/>
+<text x="567.5" y="345" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">fold</text>
+<circle cx="535" cy="405" r="3.5" fill="#526174"/>
+<text x="535" y="436" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(1, −1)</text>
+<path d="M 611.53 302.18 L 659.00 393.47" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="602.8" y="324.0" width="59.4" height="27" rx="3" fill="white"/>
+<text x="632.5" y="345" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">call</text>
+<circle cx="665" cy="405" r="3.5" fill="#526174"/>
+<text x="665" y="436" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">(−3, 3)</text>
+<path d="M 367 280 L 573 280" fill="none" stroke="#725799" stroke-width="2.5" stroke-dasharray="8 6"/>
+<rect x="452.2" y="247.0" width="35.6" height="26" rx="3" fill="white"/>
+<text x="470.0" y="267" text-anchor="middle" font-size="20" font-weight="normal" fill="#67468b">I₂</text>
+<text x="470" y="469" text-anchor="middle" font-size="19" font-weight="normal" fill="#536276">W = winning card   /   L = losing card   /   c = chance</text>
+</g>
+</svg>

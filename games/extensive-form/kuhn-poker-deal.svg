@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="320" viewBox="0 0 960 320" role="img" aria-labelledby="title desc">
+<title id="title">Kuhn poker: the dealing stage</title>
+<desc id="desc">Six equiprobable ordered deals are grouped into three opening information sets for player 1.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526174"/></marker></defs>
+<rect width="960" height="320" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="22" fill="#192a3c">
+<path d="M 480 19 L 506 45 L 480 71 L 454 45 Z" fill="#edf3ed" stroke="#4c6650" stroke-width="2.5"/>
+<text x="480" y="53" text-anchor="middle" font-size="23" font-weight="bold" fill="#4c6650">c</text>
+<path d="M 456.85 54.43 L 95.93 201.44" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="27.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="70" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(J, Q)</text>
+<circle cx="70" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="70" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 70 240 L 70 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 459.32 59.04 L 257.17 196.27" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="191.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="234" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(J, K)</text>
+<circle cx="234" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="234" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 234 240 L 234 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 468.98 67.44 L 410.34 186.87" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="355.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="398" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(Q, J)</text>
+<circle cx="398" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="398" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 398 240 L 398 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 491.02 67.44 L 549.66 186.87" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="519.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="562" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(Q, K)</text>
+<circle cx="562" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="562" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 562 240 L 562 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 500.68 59.04 L 702.83 196.27" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="683.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="726" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(K, J)</text>
+<circle cx="726" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="726" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 726 240 L 726 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 503.15 54.43 L 864.07 201.44" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="847.4" y="151.0" width="85.3" height="28" rx="3" fill="white"/>
+<text x="890" y="173" text-anchor="middle" font-size="22" font-weight="normal" fill="#192a3c">(K, Q)</text>
+<circle cx="890" cy="212" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="890" y="220" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 890 240 L 890 264" stroke="#526174" stroke-width="2" stroke-dasharray="3 5" fill="none"/>
+<path d="M 97 212 L 207 212" fill="none" stroke="#725799" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="152.0" y="257" text-anchor="middle" font-size="20" font-weight="normal" fill="#67468b">private J</text>
+<path d="M 425 212 L 535 212" fill="none" stroke="#725799" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="480.0" y="257" text-anchor="middle" font-size="20" font-weight="normal" fill="#67468b">private Q</text>
+<path d="M 753 212 L 863 212" fill="none" stroke="#725799" stroke-width="2.5" stroke-dasharray="8 6"/>
+<text x="808.0" y="257" text-anchor="middle" font-size="20" font-weight="normal" fill="#67468b">private K</text>
+<rect x="397.4" y="78.0" width="165.2" height="26" rx="3" fill="white"/>
+<text x="480" y="98" text-anchor="middle" font-size="20" font-weight="normal" fill="#4c6650">each deal: 1/6</text>
+<text x="480" y="305" text-anchor="middle" font-size="19" font-weight="normal" fill="#536276">Betting continues below every node; cards are ordered (player 1, player 2).</text>
+</g>
+</svg>

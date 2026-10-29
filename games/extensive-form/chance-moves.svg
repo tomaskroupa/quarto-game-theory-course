@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="650" viewBox="0 0 850 650" role="img" aria-labelledby="title desc">
+<title id="title">A game with chance moves</title>
+<desc id="desc">Players 1 and 2 choose actions a to f. Chance nodes labelled c select outcomes with the displayed probabilities. Terminal labels o1 to o7 denote outcomes, not utility values.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#526174"/></marker></defs>
+<rect width="850" height="650" fill="white"/>
+<g font-family="Arial, sans-serif" font-size="22" fill="#192a3c">
+<path d="M 290.54 60.69 L 176.80 152.42" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="219.8" y="78.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="232.5" y="99.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">a</text>
+<path d="M 331.85 57.14 L 510.52 156.40" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="409.8" y="78.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="422.5" y="99.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">b</text>
+<path d="M 141.52 191.06 L 82.01 284.05" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="102.3" y="203.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="115.0" y="224.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">c</text>
+<path d="M 168.48 191.06 L 227.99 284.05" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="182.3" y="203.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="195.0" y="224.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">d</text>
+<path d="M 517.32 187.68 L 419.19 285.81" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="448.5" y="203.5" width="48.0" height="27" rx="3" fill="white"/>
+<text x="472.5" y="224.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">1/2</text>
+<path d="M 552.68 187.68 L 640.20 275.20" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="573.5" y="203.5" width="48.0" height="27" rx="3" fill="white"/>
+<text x="597.5" y="224.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">1/2</text>
+<path d="M 643.07 313.40 L 563.96 399.39" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="589.8" y="328.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="602.5" y="349.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">e</text>
+<path d="M 676.93 313.40 L 766.20 410.43" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="704.8" y="328.5" width="25.3" height="27" rx="3" fill="white"/>
+<text x="717.5" y="349.5" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">f</text>
+<path d="M 526.19 436.46 L 394.78 551.44" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="433.0" y="474.0" width="48.0" height="27" rx="3" fill="white"/>
+<text x="457.0" y="495" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">1/4</text>
+<path d="M 545.00 445.00 L 545.00 547.00" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="521.0" y="474.0" width="48.0" height="27" rx="3" fill="white"/>
+<text x="545.0" y="495" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">1/2</text>
+<path d="M 563.81 436.46 L 695.22 551.44" stroke="#526174" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+<rect x="609.0" y="474.0" width="48.0" height="27" rx="3" fill="white"/>
+<text x="633.0" y="495" text-anchor="middle" font-size="21" font-weight="normal" fill="#192a3c">1/4</text>
+<circle cx="310" cy="45" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="310" y="53" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<circle cx="155" cy="170" r="24" fill="#fff1df" stroke="#9a4f15" stroke-width="2.5"/>
+<text x="155" y="178" text-anchor="middle" font-size="23" font-weight="bold" fill="#9a4f15">2</text>
+<circle cx="660" cy="295" r="24" fill="#eaf2fc" stroke="#245a91" stroke-width="2.5"/>
+<text x="660" y="303" text-anchor="middle" font-size="23" font-weight="bold" fill="#245a91">1</text>
+<path d="M 535 144 L 561 170 L 535 196 L 509 170 Z" fill="#edf3ed" stroke="#4c6650" stroke-width="2.5"/>
+<text x="535" y="178" text-anchor="middle" font-size="23" font-weight="bold" fill="#4c6650">c</text>
+<path d="M 545 394 L 571 420 L 545 446 L 519 420 Z" fill="#edf3ed" stroke="#4c6650" stroke-width="2.5"/>
+<text x="545" y="428" text-anchor="middle" font-size="23" font-weight="bold" fill="#4c6650">c</text>
+<circle cx="75" cy="295" r="3.5" fill="#526174"/>
+<text x="75" y="326" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₁</text>
+<circle cx="235" cy="295" r="3.5" fill="#526174"/>
+<text x="235" y="326" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₂</text>
+<circle cx="410" cy="295" r="3.5" fill="#526174"/>
+<text x="410" y="326" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₃</text>
+<circle cx="385" cy="560" r="3.5" fill="#526174"/>
+<text x="385" y="591" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₄</text>
+<circle cx="545" cy="560" r="3.5" fill="#526174"/>
+<text x="545" y="591" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₅</text>
+<circle cx="705" cy="560" r="3.5" fill="#526174"/>
+<text x="705" y="591" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₆</text>
+<circle cx="775" cy="420" r="3.5" fill="#526174"/>
+<text x="775" y="451" text-anchor="middle" font-size="23" font-weight="bold" fill="#192a3c">o₇</text>
+<text x="425" y="636" text-anchor="middle" font-size="19" font-weight="normal" fill="#536276">1, 2 = players     /     c = chance     /     o₁, …, o₇ = outcomes</text>
+</g>
+</svg>

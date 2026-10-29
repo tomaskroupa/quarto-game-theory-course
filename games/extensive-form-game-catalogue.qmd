@@ -1,4 +1,15 @@
-# Extensive-form game catalogue {.unnumbered}
+# Extensive-form game catalogue {#sec-extensive-form-catalogue .unnumbered}
+
+```{=typst}
+// This unnumbered catalogue uses local figure numbers.
+#show figure.where(kind: "quarto-float-fig"): set figure(numbering: "1")
+```
+
+Circles denote player decisions, diamonds labelled $c$ denote chance, and dashed
+links join nodes in one information set. Unless stated otherwise,
+terminal pairs are ordered $(\text{player 1},\text{player 2})$.
+The examples below are used in
+[Lecture 7](../lectures/07-extensive-form-games.qmd#sec-efg-perfect-information).
 
 ## Alice–Bob game
 
@@ -11,3 +22,72 @@ The game tree from [Strategic games](../lectures/01-strategic-games.qmd#the-alic
 %%| fig-alt: "Alice first chooses to stay home, action a, or go out, action b. After staying home, Bob chooses an action film, c, or cooking together, d. After going out, Bob chooses a cafe, e, or live music, f; following live music, Alice chooses a rock club, g, or a jazz club, h. The five terminal payoffs are 0 comma 4; 2 comma 1; 1 comma 2; 3 comma 8; and 8 comma 0."
 %%| fig-width: 8
 ```
+
+## Dividing two coins {#sec-catalogue-two-coin-bargaining}
+
+{{< var games.two_coin_bargaining.rules >}}
+
+![Dividing two coins. Player 2 observes the proposal, so the three response nodes are separate information sets.](../games/extensive-form/two-coin-bargaining.svg){#fig-catalogue-two-coin-bargaining width=100% fig-alt="Player 1 chooses k equal to 0, 1 or 2. At each separate player 2 node, rejection gives (0, 0); acceptance gives respectively (0, 2), (1, 1) or (2, 0)."}
+
+See @sec-efg-perfect-information for complete plans, a non-credible
+threat, and backward induction.
+
+## A game with chance moves {#sec-catalogue-chance-moves}
+
+{{< var games.chance_moves.rules >}}
+
+![A game with chance moves. Players are labelled 1 and 2; chance is labelled $c$. Terminal labels are outcomes rather than numerical utilities.](../games/extensive-form/chance-moves.svg){#fig-catalogue-chance-moves width=90% fig-alt="Player 1 chooses a or b. After a, player 2 chooses c for o1 or d for o2. After b, chance gives o3 with probability one half or a player 1 decision with probability one half. Action f gives o7; action e leads to chance outcomes o4, o5, o6 with probabilities one quarter, one half, one quarter."}
+
+See @sec-efg-chance for the outcome probabilities under the profile
+$((b,e),c)$ and the corresponding expected utilities.
+
+## Matching pennies with a hidden first move {#sec-catalogue-hidden-matching-pennies}
+
+{{< var games.matching_pennies.extensive_rules >}}
+
+![Matching pennies encoded as a tree. The dashed line joins nodes that player 2 cannot distinguish.](../games/extensive-form/matching-pennies.svg){#fig-catalogue-matching-pennies width=90% fig-alt="Player 1 chooses H or T. The two subsequent player 2 nodes are in one information set, with actions H and T at both. Matching choices give payoffs (1, -1), and different choices give (-1, 1)."}
+
+The normal form is unchanged:
+
+{{< var games.matching_pennies.matrix >}}
+
+See @sec-efg-normal-form-encoding for the role of the information set.
+
+## A basic poker endgame {#sec-catalogue-poker-endgame}
+
+{{< var games.poker_endgame.rules >}}
+
+![A basic poker endgame. Player 1 sees the card; player 2 observes the bet but cannot distinguish the two nodes in the dashed information set.](../games/extensive-form/poker-endgame.svg){#fig-catalogue-poker-endgame width=100% fig-alt="Chance deals W with probability one quarter or L with probability three quarters. Player 1 checks or bets at separate nodes. Checks pay (1, -1) for W and (-1, 1) for L. After a bet, player 2's nodes are linked: folding pays (1, -1), while calling pays (3, -3) for W and (-3, 3) for L."}
+
+## Kuhn poker {#sec-catalogue-kuhn-poker}
+
+{{< var games.kuhn_poker.rules >}}
+
+For a deal $(x,y)$, $x$ is player 1's private card and $y$ is player
+2's. The diagrams separate dealing from betting; the full game
+contains one betting continuation for each of the six deals.
+
+![The dealing stage of Kuhn poker. Each ordered deal has probability 1/6. Dashed links join player 1's opening nodes with the same private card; betting continues below every node.](../games/extensive-form/kuhn-poker-deal.svg){#fig-catalogue-kuhn-poker-deal width=100% fig-alt="Chance selects one of (J,Q), (J,K), (Q,J), (Q,K), (K,J), (K,Q), each with probability one sixth. Player 1's six opening nodes are grouped into three information sets according to the first card."}
+
+![The betting continuation for one fixed deal (x,y). Here w is 1 if x is higher than y and -1 otherwise. Information sets connecting different deals are omitted from this slice.](../games/extensive-form/kuhn-poker-betting.svg){#fig-catalogue-kuhn-poker-betting width=100% fig-alt="Player 1 checks or bets. After a check, player 2 checks for payoff (w, -w), or bets; player 1 then folds for (-1, 1) or calls for (2w, -2w). After an opening bet, player 2 folds for (1, -1) or calls for (2w, -2w)."}
+
+Each player's information sets are determined by their own card
+and the public betting history. There are six information sets per
+player. In particular, different deals must be linked when these
+observations agree:
+
+![One information set in Kuhn poker: player 2 holds Q and faces an opening bet. The opponent may hold J or K, but the response must use the same distribution at both nodes.](../games/extensive-form/kuhn-poker-information.svg){#fig-catalogue-kuhn-poker-information width=90% fig-alt="A partial tree shows histories (J,Q,bet) and (K,Q,bet) joined in player 2's information set. A fold gives (1, -1) at either node. A call gives (-2, 2) against J and (2, -2) against K."}
+
+See @sec-efg-kuhn-poker for the complete list of information sets
+and terminal betting sequences [@schmid2025efg].
+
+## Forgetting an earlier decision {#sec-catalogue-forgotten-visit}
+
+{{< var games.forgotten_visit.rules >}}
+
+![An imperfect-recall decision problem. The dashed link joins two visits to the same information set, one before and one after the player's own action A.](../games/extensive-form/forgotten-visit.svg){#fig-catalogue-forgotten-visit width=85% fig-alt="One player acts at two nodes in the same information set. B at the root gives 0, while A continues. At the second node A gives 1 and B gives 4. The player forgets the earlier visit and action."}
+
+There is only one player, so each terminal label is a single payoff.
+This example permits repeated visits to an information set and
+violates perfect recall. See @sec-efg-perfect-recall for the
+different outcomes of mixed plans and fresh randomization at each visit.
