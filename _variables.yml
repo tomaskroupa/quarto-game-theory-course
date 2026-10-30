@@ -311,14 +311,15 @@ games:
     name: "A game with chance moves"
     rules: |
       Player 1 first chooses $a$ or $b$. After $a$, player 2 chooses
-      $c$ or $d$, leading to outcomes $o_1$ or $o_2$, respectively.
-      After $b$, chance ends the game at $o_3$ with probability $1/2$
+      $c$ or $d$, giving payoffs $(1,3)$ or $(4,1)$, respectively.
+      After $b$, chance ends the game with payoffs $(2,2)$ with probability $1/2$
       and otherwise gives player 1 another decision. Player 1 then
-      chooses $e$ or $f$. Action $f$ leads to $o_7$; action $e$ leads
-      to a second chance move, with outcomes $o_4,o_5,o_6$ having
+      chooses $e$ or $f$. Action $f$ gives $(3,3)$; action $e$ leads
+      to a second chance move, with payoffs $(0,4)$, $(4,2)$, and $(8,0)$ having
       probabilities $1/4,1/2,1/4$, respectively. All earlier actions
       and chance outcomes are observed whenever a player acts, so
-      this game has perfect information.
+      this game has perfect information. Payoff pairs are ordered
+      $(\text{player 1},\text{player 2})$.
     diagram: "../games/extensive-form/chance-moves.svg"
 
   poker_endgame:

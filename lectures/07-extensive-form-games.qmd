@@ -103,10 +103,6 @@ toward the root. Keep a continuation payoff vector at each node:
 3. Continue until the root is reached. Retain the choices at every
    decision node, including those outside the resulting play path.
 
-If the game also has chance moves, take the probability-weighted
-average of the successor payoff vectors at a chance node. *The
-perfect-information assumption requires that any earlier chance
-outcomes be observed when a player acts.*
 
 In the bargaining game, player 2 accepts proposals $0$ and $1$, since
 $2>0$ and $1>0$. At proposal $2$, acceptance and rejection both give
@@ -117,7 +113,7 @@ player 1 chooses $2$, yielding the SPE $(2,aaa)$.
 
 ::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
 
-Every finite extensive-form game with perfect information has a SPE. 
+Every extensive-form game with perfect information has a SPE. 
 
 :::
 
@@ -128,11 +124,9 @@ and the player moving at the current node chooses a best continuation.
 The resulting profile is therefore an equilibrium in this larger
 subgame. Repeat to the root. $\square$
 
-For a fixed number of players, one traversal takes time linear in the size of the *explicit tree*. This does not make enormous trees small. When several actions give the moving player the same maximal continuation payoff, different tie-breaking choices may produce different subgame-perfect equilibria. For two-player zero-sum games, maximizing the moving player’s payoff is the familiar alternating maximization and minimization of minimax.
+For a fixed number of players, one traversal takes time linear in the size of the *explicit tree*, which can be enormously large. When several actions give the moving player the same maximal continuation payoff, different tie-breaking choices may produce different subgame-perfect equilibria. For two-player zero-sum games, maximizing the moving player’s payoff is the familiar alternating maximization and minimization of minimax.
 
-Although full-tree backward induction is infeasible for large board games, search and evaluation can achieve superhuman play: *Deep Blue* defeated Kasparov in chess (1997) [@campbell2002], *AlphaGo Zero* mastered Go through self-play (2017) [@silver2017zero], and *AlphaZero* outperformed leading programs in chess, shogi, and Go (2018) [@silver2018alphazero].
-
-Superhuman performance does not imply a mathematical solution. By contrast, checkers was *weakly solved* in 2007: the initial position is provably a draw under optimal play [@schaeffer2007].
+Although full-tree backward induction is infeasible for large board games, search and evaluation can achieve superhuman play: *Deep Blue* defeated Kasparov in chess (1997) [@campbell2002], *AlphaGo Zero* mastered Go through self-play (2017) [@silver2017zero], and *AlphaZero* outperformed leading programs in chess, shogi, and Go (2018) [@silver2018alphazero]. Superhuman performance does not imply a mathematical solution. By contrast, checkers was *weakly solved* in 2007: the initial position is provably a draw under optimal play [@schaeffer2007].
 
 ### Chance nodes {#sec-efg-chance}
 
@@ -180,33 +174,37 @@ In all our game diagrams, diamonds labelled $c$ denote chance nodes.
 
 {{< var games.chance_moves.rules >}}
 
-The terminal labels denote outcomes, not numerical utilities.
+![](../games/extensive-form/chance-moves.svg){#fig-efg-chance-moves width=90% fig-alt="Player 1 chooses a or b. After a, player 2 chooses c for (1, 3) or d for (4, 1). After b, chance gives (2, 2) with probability one half or a further player 1 decision with probability one half. Player 1 chooses e or f. Action f gives (3, 3); e leads to (0, 4), (4, 2), (8, 0) with probabilities one quarter, one half, one quarter."}
 
-![](../games/extensive-form/chance-moves.svg){#fig-efg-chance-moves width=90% fig-alt="Player 1 chooses a or b. After a, player 2 chooses c for outcome o1 or d for o2. After b, chance selects o3 with probability one half or a further player 1 decision with probability one half. Player 1 then chooses e or f. Action f gives o7; action e leads to chance outcomes o4, o5, o6 with probabilities one quarter, one half, one quarter."}
-
-Suppose player 1 chooses the pure strategy $s_1=(b,e)$ and player 2
-chooses $s_2=c$. Player 2's action is specified even though their
-node is not reached. Each outcome labels a unique terminal history, so we write
-$p_{\mathbf s}(o_k)$ for its probability. Then the outcome probabilities under the strategy profile $\mathbf s=(s_1,s_2)$ are
-
-$$
-\begin{aligned}
-p_{\mathbf s}(o_1)=p_{\mathbf s}(o_2)=p_{\mathbf s}(o_7)&=0,\\
-p_{\mathbf s}(o_3)&=\frac12,\\
-p_{\mathbf s}(o_4)=p_{\mathbf s}(o_6)&=\frac12\cdot\frac14=\frac18,\\
-p_{\mathbf s}(o_5)&=\frac12\cdot\frac12=\frac14.
-\end{aligned}
-$$
-
-For either player $i\in\{1,2\}$, the expected utility is
+Suppose player 1 chooses $s_1=(b,e)$ and player 2 chooses $s_2=c$.
+Player 2's action is specified even though their node is not reached.
+The terminal payoff pairs $(2,2)$, $(0,4)$, $(4,2)$, and $(8,0)$ occur
+with probabilities $1/2$, $1/8$, $1/4$, and $1/8$, respectively;
+the other leaves have probability zero. Thus the expected payoff vector is
 
 $$
-u_i^{\mathrm{NF}}(\mathbf s)
-=\frac12u_i(o_3)+\frac18u_i(o_4)
-+\frac14u_i(o_5)+\frac18u_i(o_6).
+u^{\mathrm{NF}}((b,e),c)
+=\frac12(2,2)+\frac18(0,4)+\frac14(4,2)+\frac18(8,0)
+=(3,2).
 $$
 
 :::
+
+Backward induction can also be applied to games with chance moves. At a chance node, take the
+probability-weighted average of the successor payoff vectors. At a
+player node, choose the successor that maximizes that player's own
+payoff and carry its whole payoff vector backward. In this example:
+
+1. The lower chance node has expected payoffs
+   $\frac14(0,4)+\frac12(4,2)+\frac14(8,0)=(4,2)$.
+   Player 1 therefore chooses $e$ over $f$, since $4>3$.
+2. The upper chance node then has expected payoffs
+   $\frac12(2,2)+\frac12(4,2)=(3,2)$.
+   On the other branch, player 2 chooses $c$ over $d$, since $3>1$,
+   giving $(1,3)$.
+3. At the root, player 1 chooses $b$ over $a$, since $3>1$.
+   The resulting subgame-perfect equilibrium is $((b,e),c)$,
+   with expected payoffs $(3,2)$.
 
 ## Imperfect information {#sec-efg-information}
 
@@ -234,9 +232,9 @@ We will further assume that:
 - For every information set $I\in \mathcal I_i$, any history $h\in I$ has the same set of available actions, denoted $A(I)$.
 - A pure strategy of player $i$ prescribes the same action at every history in $I\in \mathcal I_i$.
 
-Perfect information means every player's information sets are
+Perfect information means all information sets are
 singletons. A game has **imperfect information** if some information
-set contains more than one history. In our diagrams of game trees, a dashed link joins nodes in one information set. It is not an action or an additional path through the tree. An unlinked player node is a singleton information set.
+set contains more than one history. In our diagrams of game trees, a dashed link joins nodes in one information set. 
 
 ### Extensive-form game with imperfect information
 
@@ -268,7 +266,7 @@ Start with the matching-pennies:
 
 Player 2 has one information set and two pure strategies, $H$ and $T$.
 The instruction "choose $T$ after $H$ and $H$ after $T$" is
-*unavailable*: it would condition on an unobserved choice. The
+unavailable: it would condition on an unobserved choice. The
 induced normal form is exactly the matrix above. 
 
 If we remove the dashed link and make the game into a perfect-information game, player 2 observes the first move and
@@ -316,16 +314,14 @@ a fold still produces a positive payoff.
 ### Kuhn poker {#sec-efg-kuhn-poker}
 
 Kuhn introduced this game in *A Simplified Two-Person Poker*
-[@kuhn1950poker]. Here we also use the description from [@schmid2025efg].
-Kuhn poker adds a private card for each player and a second
+[@kuhn1950poker]. Kuhn poker adds a private card for each player and a second
 opportunity for player 1 to act. It is small enough to describe
 completely while retaining bluffing, hidden information, and
 decisions that depend on earlier betting.
 
 {{< var games.kuhn_poker.rules >}}
 
-Let $x$ be player 1's card and $y$ player 2's. We represent the deal
-as one chance action
+Let $x$ be player 1's card and $y$ player 2's. We represent the deal as one chance outcome
 
 $$
 (x,y)\in\{(J,Q),(J,K),(Q,J),(Q,K),(K,J),(K,Q)\},
@@ -347,12 +343,11 @@ For every deal there are exactly five terminal betting sequences:
 | $cb\ell$ | Player 1 calls | $2w$ |
 
 Here $w=1$ if $x>y$ and $w=-1$ if $x<y$; player 2 receives the
-negative of player 1's payoff. There are $6\cdot5=30$ terminal
-histories. A returned bet is not a profit: the net gain is $1$ after
-either fold and $2$ only after a called bet.
+negative of player 1's payoff. 
 
 @fig-efg-kuhn-poker-betting is the betting tree for *one fixed deal*. The full game contains six copies of this continuation, connected by
-information sets across deals.
+information sets across deals. There are $6\cdot5=30$ terminal
+histories.  For the complete game tree, see [@schmid2025efg].
 
 ![Continuation of the Kuhn poker.](../games/extensive-form/kuhn-poker-betting.svg){#fig-efg-kuhn-poker-betting width=100% fig-alt="Player 1 checks or bets. After a check, player 2 checks for payoff (w, -w), or bets; player 1 then folds for (-1, 1) or calls for (2w, -2w). After an opening bet, player 2 folds for (1, -1) or calls for (2w, -2w)."}
 
@@ -367,13 +362,12 @@ deals $(Q,J)$ and $(Q,K)$. After checking and facing a bet, those
 same two deals again form an information set, but a different one:
 the player remembers having checked and having seen a bet.
 
-The full information structure can be specified without drawing
-all 30 leaves at once:
+The full information structure can be specified as follows:
 
 | Player | Information set | Histories | Actions |
 |:--|:--|:--|:--|
-| 1 | $I_1(x,\varnothing)$ | $\{(x,y)\mid x\ne y\}$ | $c,b$ |
-| 1 | $I_1(x,cb)$ | $\{(x,y,c,b)\mid x\ne y\}$ | $f,\ell$ |
+| 1 | $I_1(x,\varnothing)$ | $\{(x,y)\mid y\ne x\}$ | $c,b$ |
+| 1 | $I_1(x,cb)$ | $\{(x,y,c,b)\mid y\ne x\}$ | $f,\ell$ |
 | 2 | $I_2(y,c)$ | $\{(x,y,c)\mid x\ne y\}$ | $c,b$ |
 | 2 | $I_2(y,b)$ | $\{(x,y,b)\mid x\ne y\}$ | $f,\ell$ |
 
@@ -381,14 +375,14 @@ Each row represents three information sets, one for each possible
 own card. Thus each player has six information sets, with two
 histories and two actions in each.
 
-![One information set in Kuhn poker: player 2 holds Q and faces an opening bet. The opponent may hold J or K, but the response must use the same distribution at both nodes.](../games/extensive-form/kuhn-poker-information.svg){#fig-efg-kuhn-poker-information width=90% fig-alt="A partial tree shows histories (J,Q,bet) and (K,Q,bet) joined in player 2's information set. A fold gives (1, -1) at either node. A call gives (-2, 2) against J and (2, -2) against K."}
-
 In the last diagram, player 2 holds $Q$ and faces a bet. Against $J$,
 calling wins two chips; against $K$, calling loses two chips. The
 player cannot choose a different response at those two nodes.
-The possibility of bluffing matters precisely because the response
-must depend on the information available, rather than on the actual
-hidden deal.
+
+![One information set in Kuhn poker: player 2 holds Q and faces an opening bet.](../games/extensive-form/kuhn-poker-information.svg){#fig-efg-kuhn-poker-information width=90% fig-alt="A partial tree shows histories (J,Q,bet) and (K,Q,bet) joined in player 2's information set. A fold gives (1, -1) at either node. A call gives (-2, 2) against J and (2, -2) against K."}
+
+
+
 
 ## Pure, mixed, and behavioral strategies {#sec-efg-strategies}
 
