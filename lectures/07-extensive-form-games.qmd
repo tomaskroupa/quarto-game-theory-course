@@ -507,25 +507,20 @@ The game has perfect recall if every player does, and has **imperfect recall** o
 The condition requires the same sequence of *the player's own*
 past information sets and actions. It does not require the complete
 histories, opponents' hidden actions, or unobserved chance outcomes
-to coincide.
+to coincide. For example, Kuhn poker has perfect recall: a player retains their card and the betting history, including their own choices. 
 
-Kuhn poker has perfect recall: a player retains their card and the
-betting history, including their own choices. Holding $Q$ while
-being unsure whether the opponent has $J$ or $K$ is compatible
-with perfect recall. Merging decisions with different remembered
-own cards or different earlier own actions would violate it.
-Every perfect-information game also has perfect recall.
+In a perfect-information game, every information set is a singleton. Hence any two histories in the same information set are identical and have the same sequence of the player’s earlier information sets and actions. *Thus every perfect-information game has perfect recall.*
+
+
+
 
 ### What the equivalence theorem says {#sec-efg-kuhn-theorem}
 
-We say that a behavioral strategy and a mixed strategy of player $i$ are **realization-equivalent** if, for every fixed strategy profile of the other players, they induce the same probability of every terminal history.
+A behavioral strategy and a mixed strategy of player $i$ are **realization-equivalent** if replacing one with the other leaves the probability of every terminal history unchanged, regardless of the strategies chosen by the other players.
 
 ::: {.callout-important appearance="minimal" icon="false" title="Theorem [@kuhn1953]"}
 
-In an extensive-form game with imperfect information and perfect recall, every mixed
-strategy of a player has a realization-equivalent behavioral
-strategy, and every behavioral strategy has a realization-equivalent
-mixed strategy.
+In an extensive-form imperfect-information game with perfect recall, mixed and behavioral strategies are equivalent: every strategy of either type has a realization-equivalent strategy of the other type.
 
 :::
 
@@ -535,7 +530,7 @@ at each of $m$ information sets, a mixed strategy has $2^m-1$
 free probabilities, whereas a behavioral strategy has $m$.
 This reduction is essential for computation.
 
-*Why perfect recall helps.* Starting with a behavioral strategy,
+Why perfect recall helps? Starting with a behavioral strategy,
 independently pre-sample an action for every information set. This
 produces a distribution over pure strategies with the same path
 probabilities. In the other direction, start with a mixed strategy and,
@@ -557,15 +552,9 @@ $$
 (\text{bet},\text{call after check--bet}),
 $$
 
-with identical instructions for the other cards. The equivalent
+with identical instructions for the other cards. The realization-equivalent
 behavioral strategy checks with probability $1/2$ initially.
-After check--bet, it *folds with probability one*: only the first
-sampled strategy can produce the player's earlier check.
-
-Using the unconditional $1/2$ call probability at the later decision
-would be wrong. Against an opponent who bets after a check, it
-would introduce a check--bet--call path with positive probability,
-although neither of the sampled strategies produces that path.
+After check--bet, it folds with probability one.
 
 :::
 
@@ -580,8 +569,7 @@ although neither of the sampled strategies produces that path.
 At the second node the player has forgotten the first visit and their own action $A$, so perfect
 recall fails: two different histories $\varnothing$ and $A$ reaching $I_1$ have different recall sequences, $\varnothing$ and $((I_1,A))$.
 
-There are only two pure strategies: choose $A$ at the information
-set, or choose $B$. In particular, any mixed strategy assigns probability zero to history $AB$. On the other hand, a behavioral strategy choosing $A$ with probability $q$ uses an independent draw on *each visit*. It gives terminal probabilities
+There are only two pure strategies: choose $A$ or $B$ at $I_1$. In particular, any mixed strategy assigns probability zero to history $AB$. Under a behavioral strategy, the player chooses $A$ with probability $q$ and $B$ with probability $1-q$ each time they act. If the first choice is $A$, the player randomizes again at the second node, independently of the first choice. This means that *the same information set can be visited twice during one play*: it contains both the first decision node and the node reached after choosing $A$. It gives terminal probabilities
 $1-q$ for $B$, $q^2$ for $AA$, and $q(1-q)$ for $AB$. In particular, the history $AB$ has positive probability for $0<q<1$, which no mixed strategy can achieve.
 
 
