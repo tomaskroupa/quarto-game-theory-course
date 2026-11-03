@@ -347,7 +347,7 @@ negative of player 1's payoff.
 
 @fig-efg-kuhn-poker-betting is the betting tree for *one fixed deal*. The full game contains six copies of this continuation, connected by
 information sets across deals. There are $6\cdot5=30$ terminal
-histories.  For the complete game tree, see [@schmid2025efg].
+histories. The complete game tree appears in @fig-efg-kuhn-poker-full-tree; see also [@schmid2025efg].
 
 ![Continuation of the Kuhn poker.](../games/extensive-form/kuhn-poker-betting.svg){#fig-efg-kuhn-poker-betting width=100% fig-alt="Player 1 checks or bets. After a check, player 2 checks for payoff (w, -w), or bets; player 1 then folds for (-1, 1) or calls for (2w, -2w). After an opening bet, player 2 folds for (1, -1) or calls for (2w, -2w)."}
 
@@ -383,6 +383,27 @@ player cannot choose a different response at those two nodes.
 
 
 
+
+The complete game tree is depicted below.
+Nodes with the same purple tag belong to the same information set. In each
+tag, the card after the colon is the acting player's own card: `O` denotes
+player 1's opening decision, `R` their response after check–bet, `C` player
+2's decision after a check, and `B` their response to a bet. Thus, for example,
+the two nodes tagged `B:Q` form $I_2(Q,b)$.
+
+```{=typst}
+#page(paper: "a3", flipped: true, margin: 18mm, header: none, footer: none)[
+```
+
+![The complete game tree of Kuhn poker.](../games/extensive-form/kuhn-poker-full-tree.svg){#fig-efg-kuhn-poker-full-tree width=100% fig-alt="The complete Kuhn poker tree: chance c selects one of six ordered deals, each with probability one sixth. Each deal has four player decision nodes and five terminal histories. Twelve pairs of nodes carry matching purple information-set tags, determined by the acting player's own card and public betting history. Terminal payoffs are plus or minus one chip after two checks or a fold, and plus or minus two after a called bet."}
+
+```{=typst}
+]
+```
+
+::: {.content-visible when-format="html"}
+[Open the complete tree at full size](../games/extensive-form/kuhn-poker-full-tree.svg).
+:::
 
 ## Pure, mixed, and behavioral strategies {#sec-efg-strategies}
 

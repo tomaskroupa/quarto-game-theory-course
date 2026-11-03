@@ -1,0 +1,383 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3360" height="1640" viewBox="0 0 3360 1640" role="img" aria-labelledby="title desc"><title id="title">Complete Kuhn poker game tree</title><desc id="desc">Six equiprobable ordered deals, 24 player decision nodes and 30 terminal histories. Matching purple tags identify the 12 two-node information sets: O for player 1 opening, R for player 1 after check-bet, C for player 2 after check, and B for player 2 after bet. The letter after the colon is the acting player's private card. Payoffs are net gains to players 1 and 2.</desc>
+<rect x="0" y="0" width="3360" height="1640" rx="0" fill="white" stroke="none"/>
+<rect x="20" y="255" width="520" height="1115" rx="18" fill="#f7f9fc" stroke="none"/>
+<rect x="1140" y="255" width="520" height="1115" rx="18" fill="#f7f9fc" stroke="none"/>
+<rect x="2260" y="255" width="520" height="1115" rx="18" fill="#f7f9fc" stroke="none"/>
+<polygon points="1680,22 1718,60 1680,98 1642,60" fill="#edf3ed" stroke="#4c6650" stroke-width="3"/>
+<text x="1680" y="73" font-family="Arial, sans-serif" font-size="40" font-weight="bold" fill="#4c6650" text-anchor="middle">c</text>
+<line x1="1641.3184047630104" y1="64.97334795904152" x2="280" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="280" y1="240" x2="280" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="160" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="280" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(J, Q)  1/6</text>
+<circle cx="280" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="280" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="323" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="375" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:J</text>
+<line x1="266.80029187377374" y1="378.04937976823084" x2="133.19970812622626" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="133.19970812622626,661.9506202317692 142.83336607318978,653.2217809870067 133.78517905117985,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="147.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="200.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="293.19970812622626" y1="378.04937976823084" x2="426.80029187377374" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="426.80029187377374,661.9506202317692 426.2148209488202,648.9638106237078 417.1666339268102,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="325.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="360.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="120" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="120" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="163" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="215" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:Q</text>
+<circle cx="440" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="440" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="293" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="345" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:Q</text>
+<line x1="115.04964583868541" y1="720.6021893608538" x2="66.59688843913374" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="66.59688843913374,1020.1283260126278 73.44899155978031,1009.080761447348 63.57731757240811,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="39.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="92.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="65" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="65" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="434.17894997366125" y1="720.4485693685411" x2="376.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="376.8777580730125,1020.1778808488577 384.04212733619863,1009.3302169039932 374.2200081850564,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="363.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="407.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="375" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="375" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="445.82105002633875" y1="720.4485693685411" x2="503.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="503.1222419269875,1020.1778808488577 505.7799918149436,1007.4524588309807 495.95787266380137,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="428.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="472.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="505" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="505" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="127.93266936980476" y1="719.9678620637069" x2="202.06733063019524" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="202.06733063019524,1000.0321379362931 203.8301460457074,987.1522124003735 194.16309376709228,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="130.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="165.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="210" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="210" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="253" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="305" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:J</text>
+<line x1="201.94082232311595" y1="1059.9340885141407" x2="142.59973473447872" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="142.59973473447872,1280.3438424147932 150.54749520845652,1270.0563206797847 140.89133762324983,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="131.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="175.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="140" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="140" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="218.05917767688405" y1="1059.9340885141407" x2="277.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="277.4002652655213,1280.3438424147932 279.10866237675015,1267.456585945306 269.4525047915435,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="201.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="245.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="280" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="280" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="1641.865705850981" y1="68.17163446050407" x2="840" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="840" y1="240" x2="840" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="720" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="840" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(J, K)  1/6</text>
+<circle cx="840" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="840" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="883" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="935" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:J</text>
+<line x1="826.8002918737737" y1="378.04937976823084" x2="693.1997081262263" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="693.1997081262263,661.9506202317692 702.8333660731897,653.2217809870067 693.7851790511799,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="707.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="760.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="853.1997081262263" y1="378.04937976823084" x2="986.8002918737737" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="986.8002918737737,661.9506202317692 986.2148209488201,648.9638106237078 977.1666339268103,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="885.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="920.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="680" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="680" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="723" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="775" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:K</text>
+<circle cx="1000" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="1000" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="853" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="905" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:K</text>
+<line x1="675.0496458386854" y1="720.6021893608538" x2="626.5968884391337" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="626.5968884391337,1020.1283260126278 633.4489915597803,1009.080761447348 623.5773175724082,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="599.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="652.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="625" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="625" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="994.1789499736612" y1="720.4485693685411" x2="936.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="936.8777580730125,1020.1778808488577 944.0421273361986,1009.3302169039932 934.2200081850564,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="923.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="967.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="935" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="935" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="1005.8210500263388" y1="720.4485693685411" x2="1063.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="1063.1222419269875,1020.1778808488577 1065.7799918149437,1007.4524588309807 1055.9578726638013,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="988.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1032.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="1065" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1065" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="687.9326693698048" y1="719.9678620637069" x2="762.0673306301952" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="762.0673306301952,1000.0321379362931 763.8301460457074,987.1522124003735 754.1630937670923,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="690.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="725.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="770" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="770" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="813" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="865" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:J</text>
+<line x1="761.940822323116" y1="1059.9340885141407" x2="702.5997347344787" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="702.5997347344787,1280.3438424147932 710.5474952084566,1270.0563206797847 700.8913376232498,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="691.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="735.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="700" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="700" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="778.059177676884" y1="1059.9340885141407" x2="837.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="837.4002652655213,1280.3438424147932 839.1086623767502,1267.456585945306 829.4525047915434,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="761.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="805.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="840" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="840" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="1647.1940394603143" y1="81.08954606122646" x2="1400" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="1400" y1="240" x2="1400" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="1280" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="1400" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(Q, J)  1/6</text>
+<circle cx="1400" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="1400" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="1443" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1495" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:Q</text>
+<line x1="1386.8002918737736" y1="378.04937976823084" x2="1253.1997081262264" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="1253.1997081262264,661.9506202317692 1262.83336607319,653.2217809870067 1253.78517905118,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1267.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1320.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="1413.1997081262264" y1="378.04937976823084" x2="1546.8002918737736" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="1546.8002918737736,661.9506202317692 1546.21482094882,648.9638106237078 1537.16663392681,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1445.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1480.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="1240" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="1240" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="1283" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1335" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:J</text>
+<circle cx="1560" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="1560" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="1413" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1465" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:J</text>
+<line x1="1235.0496458386854" y1="720.6021893608538" x2="1186.5968884391336" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="1186.5968884391336,1020.1283260126278 1193.44899155978,1009.080761447348 1183.577317572408,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1159.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1212.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="1185" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1185" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="1554.1789499736612" y1="720.4485693685411" x2="1496.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="1496.8777580730125,1020.1778808488577 1504.0421273361987,1009.3302169039932 1494.2200081850563,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1483.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1527.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="1495" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1495" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="1565.8210500263388" y1="720.4485693685411" x2="1623.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="1623.1222419269875,1020.1778808488577 1625.7799918149437,1007.4524588309807 1615.9578726638013,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1548.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1592.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="1625" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1625" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<line x1="1247.9326693698047" y1="719.9678620637069" x2="1322.0673306301953" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="1322.0673306301953,1000.0321379362931 1323.8301460457076,987.1522124003735 1314.1630937670923,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1250.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1285.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="1330" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="1330" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="1373" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1425" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:Q</text>
+<line x1="1321.940822323116" y1="1059.9340885141407" x2="1262.5997347344787" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="1262.5997347344787,1280.3438424147932 1270.5474952084564,1270.0563206797847 1260.89133762325,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1251.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1295.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="1260" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1260" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="1338.059177676884" y1="1059.9340885141407" x2="1397.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="1397.4002652655213,1280.3438424147932 1399.10866237675,1267.456585945306 1389.4525047915436,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1321.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1365.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="1400" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1400" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<line x1="1712.8059605396857" y1="81.08954606122646" x2="1960" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="1960" y1="240" x2="1960" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="1840" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="1960" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(Q, K)  1/6</text>
+<circle cx="1960" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="1960" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="2003" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2055" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:Q</text>
+<line x1="1946.8002918737736" y1="378.04937976823084" x2="1813.1997081262264" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="1813.1997081262264,661.9506202317692 1822.83336607319,653.2217809870067 1813.78517905118,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1827.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1880.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="1973.1997081262264" y1="378.04937976823084" x2="2106.800291873774" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="2106.800291873774,661.9506202317692 2106.2148209488205,648.9638106237078 2097.1666339268104,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2005.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2040.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="1800" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="1800" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="1843" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1895" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:K</text>
+<circle cx="2120" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="2120" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="1973" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2025" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:K</text>
+<line x1="1795.0496458386854" y1="720.6021893608538" x2="1746.5968884391336" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="1746.5968884391336,1020.1283260126278 1753.44899155978,1009.080761447348 1743.577317572408,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1719.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1772.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="1745" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1745" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="2114.1789499736615" y1="720.4485693685411" x2="2056.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="2056.8777580730125,1020.1778808488577 2064.0421273361985,1009.3302169039932 2054.2200081850565,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2043.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2087.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="2055" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2055" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="2125.8210500263385" y1="720.4485693685411" x2="2183.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="2183.1222419269875,1020.1778808488577 2185.7799918149435,1007.4524588309807 2175.9578726638015,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2108.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2152.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="2185" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2185" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="1807.9326693698047" y1="719.9678620637069" x2="1882.0673306301953" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="1882.0673306301953,1000.0321379362931 1883.8301460457076,987.1522124003735 1874.1630937670923,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1810.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1845.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="1890" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="1890" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="1933" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="1985" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:Q</text>
+<line x1="1881.940822323116" y1="1059.9340885141407" x2="1822.5997347344787" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="1822.5997347344787,1280.3438424147932 1830.5474952084564,1270.0563206797847 1820.89133762325,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1811.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1855.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="1820" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1820" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="1898.059177676884" y1="1059.9340885141407" x2="1957.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="1957.4002652655213,1280.3438424147932 1959.10866237675,1267.456585945306 1949.4525047915436,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="1881.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="1925.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="1960" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="1960" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−2, 2)</text>
+<line x1="1718.134294149019" y1="68.17163446050407" x2="2520" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="2520" y1="240" x2="2520" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="2400" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="2520" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(K, J)  1/6</text>
+<circle cx="2520" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="2520" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="2563" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2615" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:K</text>
+<line x1="2506.800291873774" y1="378.04937976823084" x2="2373.199708126226" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="2373.199708126226,661.9506202317692 2382.8333660731896,653.2217809870067 2373.7851790511795,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2387.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2440.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="2533.199708126226" y1="378.04937976823084" x2="2666.800291873774" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="2666.800291873774,661.9506202317692 2666.2148209488205,648.9638106237078 2657.1666339268104,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2565.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2600.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="2360" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="2360" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="2403" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2455" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:J</text>
+<circle cx="2680" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="2680" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="2533" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2585" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:J</text>
+<line x1="2355.0496458386856" y1="720.6021893608538" x2="2306.5968884391336" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="2306.5968884391336,1020.1283260126278 2313.4489915597806,1009.080761447348 2303.577317572408,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2279.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2332.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="2305" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2305" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="2674.1789499736615" y1="720.4485693685411" x2="2616.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="2616.8777580730125,1020.1778808488577 2624.0421273361985,1009.3302169039932 2614.2200081850565,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2603.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2647.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="2615" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2615" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="2685.8210500263385" y1="720.4485693685411" x2="2743.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="2743.1222419269875,1020.1778808488577 2745.7799918149435,1007.4524588309807 2735.9578726638015,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2668.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2712.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="2745" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2745" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<line x1="2367.932669369805" y1="719.9678620637069" x2="2442.067330630195" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="2442.067330630195,1000.0321379362931 2443.8301460457074,987.1522124003735 2434.163093767092,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2370.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2405.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="2450" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="2450" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="2493" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="2545" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:K</text>
+<line x1="2441.9408223231158" y1="1059.9340885141407" x2="2382.5997347344787" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="2382.5997347344787,1280.3438424147932 2390.5474952084564,1270.0563206797847 2380.89133762325,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2371.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2415.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="2380" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2380" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="2458.0591776768842" y1="1059.9340885141407" x2="2517.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="2517.4002652655213,1280.3438424147932 2519.10866237675,1267.456585945306 2509.4525047915436,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2441.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2485.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="2520" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2520" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<line x1="1718.6815952369896" y1="64.97334795904152" x2="3080" y2="240" stroke="#748399" stroke-width="3"/>
+<line x1="3080" y1="240" x2="3080" y2="319" stroke="#748399" stroke-width="3"/>
+<rect x="2960" y="200" width="240" height="51" rx="6" fill="white" stroke="none"/>
+<text x="3080" y="238" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#192a3c" text-anchor="middle">(K, Q)  1/6</text>
+<circle cx="3080" cy="350" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="3080" y="362" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="3123" y="330" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="3175" y="361" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">O:K</text>
+<line x1="3066.800291873774" y1="378.04937976823084" x2="2933.199708126226" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="2933.199708126226,661.9506202317692 2942.8333660731896,653.2217809870067 2933.7851790511795,648.9638106237078" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2947.0" y="476.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="3000.0" y="508.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<line x1="3093.199708126226" y1="378.04937976823084" x2="3226.800291873774" y2="661.9506202317692" stroke="#748399" stroke-width="3"/>
+<polygon points="3226.800291873774,661.9506202317692 3226.2148209488205,648.9638106237078 3217.1666339268104,653.2217809870067" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="3125.0" y="520.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="3160.0" y="552.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="2920" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="2920" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="2963" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="3015" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">C:Q</text>
+<circle cx="3240" cy="690" r="29" fill="#fff1df" stroke="#9a4f15" stroke-width="3"/>
+<text x="3240" y="702" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#9a4f15" text-anchor="middle">2</text>
+<rect x="3093" y="670" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="3145" y="701" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">B:Q</text>
+<line x1="2915.0496458386856" y1="720.6021893608538" x2="2866.5968884391336" y2="1020.1283260126278" stroke="#748399" stroke-width="3"/>
+<polygon points="2866.5968884391336,1020.1283260126278 2873.4489915597806,1009.080761447348 2863.577317572408,1007.4838730082143" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2839.5" y="816.0" width="106" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2892.5" y="848.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">check</text>
+<circle cx="2865" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2865" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="3234.1789499736615" y1="720.4485693685411" x2="3176.8777580730125" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="3176.8777580730125,1020.1778808488577 3184.0421273361985,1009.3302169039932 3174.2200081850565,1007.4524588309807" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="3163.5" y="824.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="3207.5" y="856.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="3175" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="3175" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(1, −1)</text>
+<line x1="3245.8210500263385" y1="720.4485693685411" x2="3303.1222419269875" y2="1020.1778808488577" stroke="#748399" stroke-width="3"/>
+<polygon points="3303.1222419269875,1020.1778808488577 3305.7799918149435,1007.4524588309807 3295.9578726638015,1009.3302169039932" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="3228.5" y="852.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="3272.5" y="884.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="3305" cy="1030" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="3305" y="1085" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<line x1="2927.932669369805" y1="719.9678620637069" x2="3002.067330630195" y2="1000.0321379362931" stroke="#748399" stroke-width="3"/>
+<polygon points="3002.067330630195,1000.0321379362931 3003.8301460457074,987.1522124003735 2994.163093767092,989.7111380035363" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2930.0" y="860.0" width="70" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2965.0" y="892.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">bet</text>
+<circle cx="3010" cy="1030" r="29" fill="#eaf2fc" stroke="#245a91" stroke-width="3"/>
+<text x="3010" y="1042" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#245a91" text-anchor="middle">1</text>
+<rect x="3053" y="1010" width="104" height="42" rx="9" fill="#f5effc" stroke="#725799"/>
+<text x="3105" y="1041" font-family="Arial, sans-serif" font-size="29" font-weight="bold" fill="#725799" text-anchor="middle">R:K</text>
+<line x1="3001.9408223231158" y1="1059.9340885141407" x2="2942.5997347344787" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="2942.5997347344787,1280.3438424147932 2950.5474952084564,1270.0563206797847 2940.89133762325,1267.456585945306" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="2931.0" y="1124.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="2975.0" y="1156.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">fold</text>
+<circle cx="2940" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="2940" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(−1, 1)</text>
+<line x1="3018.0591776768842" y1="1059.9340885141407" x2="3077.4002652655213" y2="1280.3438424147932" stroke="#748399" stroke-width="3"/>
+<polygon points="3077.4002652655213,1280.3438424147932 3079.10866237675,1267.456585945306 3069.4525047915436,1270.0563206797847" fill="#748399" stroke="#748399" stroke-width="3"/>
+<rect x="3001.0" y="1152.0" width="88" height="40" rx="4" fill="white" stroke="none"/>
+<text x="3045.0" y="1184.0" font-family="Arial, sans-serif" font-size="32" font-weight="normal" fill="#192a3c" text-anchor="middle">call</text>
+<circle cx="3080" cy="1290" r="5" fill="#192a3c" stroke="#192a3c" stroke-width="3"/>
+<text x="3080" y="1345" font-family="Arial, sans-serif" font-size="34" font-weight="bold" fill="#192a3c" text-anchor="middle">(2, −2)</text>
+<text x="1680" y="1460" font-family="Arial, sans-serif" font-size="38" font-weight="normal" fill="#192a3c" text-anchor="middle">Matching purple tags identify one information set; the card after the colon is the acting player’s own card.</text>
+<text x="1680" y="1525" font-family="Arial, sans-serif" font-size="36" font-weight="normal" fill="#192a3c" text-anchor="middle">O: opening (player 1)    R: after check–bet (player 1)    C: after check (player 2)    B: after bet (player 2)</text>
+<text x="1680" y="1590" font-family="Arial, sans-serif" font-size="36" font-weight="normal" fill="#536276" text-anchor="middle">Deal: (player 1’s card, player 2’s card). Payoffs: (player 1’s net gain, player 2’s net gain).</text>
+</svg>
