@@ -1,7 +1,69 @@
 ---
 subtitle: "Computational Game Theory · Winter semester 2026/2027"
+suppress-bibliography: true
 ---
 
 # Semestral project catalogue {.unnumbered}
 
-Project suggestions will be published here soon.
+These topics are starting points for independent study and your own project
+formulation. Follow the [project proposal requirements](semestral-project.qmd#sec-semestral-project-proposal).
+
+## Equilibrium computation in stochastic games {#sec-project-stochastic-games}
+
+Stochastic games generalize Markov decision processes (MDPs) to settings with multiple interacting players. Compute stationary Nash equilibrium policies and state values for a discounted two-player zero-sum stochastic game. For the model and value-iteration
+algorithm, see [*Pursuit-Evasion Games II*](../presentations/b4m36uir-lec10-slidesTK.pdf).
+
+**Possible application: robotic pursuit-evasion.**
+
+This [task](https://cw.fel.cvut.cz/b221/courses/uir/hw/t4c-vi)
+provides inspiration and a starting point: one player controls a single evading robot and
+the other jointly controls two pursuers on a grid map with obstacles.
+In a fully observed model, the state records all three robot positions.
+The pursuers seek capture, while the evader tries to avoid it. The
+assignment uses opposite capture rewards and discounting to favour earlier
+capture; its resource pack provides maps and a simulation environment.
+
+Compute randomized policies for both players and values for the initial
+configurations, using value iteration with linear programming for the matrix
+games at each state. Possible questions include how obstacles and starting
+positions affect coordinated pursuit, or how computation time grows with map
+size. Choose one focused question and a manageable set of maps.
+
+In your proposal, specify movement, capture and termination rules, rewards and
+discounting. Explain how any simulation step limit relates to the discounted
+model. Plan small, hand-checkable cases and a numerical check of equilibrium
+quality, such as each player's possible gain from a best response.
+
+## Double Oracle algorithm for matrix games {#sec-project-double-oracle}
+
+Implement Double Oracle for two-player zero-sum matrix games. Study the
+[Double Oracle section of Lecture 4](../lectures/04-two-player-zero-sum-games.qmd#sec-zero-sum-double-oracle)
+and, for further information, the [*Double Oracle Algorithm* slides](<../presentations/DO lecture MFF 2025.pdf>).
+
+**Possible application: pursuit-evasion with planned paths.**
+
+You can check the maps, four-neighbour moves and capture rules from this
+[task](https://cw.fel.cvut.cz/b221/courses/uir/hw/t4a-greedy).
+One possible formulation fixes initial positions, one evader, one or two
+pursuers, and a short horizon $H$. A pure strategy is a legal $H$-step path
+for the evader, or a joint choice of paths for the pursuing team. Both players
+commit to their paths at the start. The pursuing player receives $1$ if capture
+occurs within $H$ steps and $0$ otherwise; the evader receives the opposite
+payoff. Capture includes occupying the same cell or exchanging positions
+during a move.
+
+**Possible experiment setup.**
+
+- Begin with small maps, fixed initial positions, and vary the horizon.
+  Enumerate all legal plans and solve the full matrix game by linear programming
+  to check Double Oracle's value and full-game best-response gap.
+- Repeat Double Oracle from several randomly chosen initial restricted strategy
+  sets, recording the seeds. Compare total runtime, iterations, generated
+  rows and columns, and payoff evaluations. Include the cost of computing
+  best responses and constructing payoffs in the timings.
+- Increase the horizon or map size and investigate when the full matrix becomes
+  impractical and which part of Double Oracle dominates the computation.
+
+In your proposal, specify both best-response oracles and a stopping tolerance.
+Exhaustive search provides an initial oracle for small instances; justify the
+accuracy of any faster replacement.
