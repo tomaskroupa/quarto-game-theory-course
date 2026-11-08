@@ -40,12 +40,12 @@ Problems will follow the style of the [course exercises](../exercises/exercises.
 - *Alternatives to Nash equilibria:* find a Stackelberg equilibrium, formulate a program to compute correlated equilibrium.
 
 
-### Midterm tests with worked solutions
+### Midterm tests in 2026 with worked solutions
 
-- [Test 01A with solutions (PDF)](../tests/midterm/CGT_26-01a.pdf)
-- [Test 01B with solutions (PDF)](../tests/midterm/CGT_26-01b.pdf)
-- [Test 02A with solutions (PDF)](../tests/midterm/CGT_26-02a.pdf)
-- [Test 02B with solutions (PDF)](../tests/midterm/CGT_26-02b.pdf)
+[01A](../tests/midterm/CGT_26-01a.pdf)
+[01B](../tests/midterm/CGT_26-01b.pdf)
+[02A](../tests/midterm/CGT_26-02a.pdf)
+[02B](../tests/midterm/CGT_26-02b.pdf)
 
 
 ## Course assessment
