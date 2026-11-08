@@ -67,3 +67,40 @@ during a move.
 In your proposal, specify both best-response oracles and a stopping tolerance.
 Exhaustive search provides an initial oracle for small instances; justify the
 accuracy of any faster replacement.
+
+## Learning equilibrium strategies: fictitious play versus regret matching {#sec-project-learning-equilibria}
+
+Investigate how players learn equilibrium strategies through repeated play.
+Implement [fictitious play](../lectures/06-learning-in-games.qmd#sec-learning-fp)
+and [external regret matching](../lectures/06-learning-in-games.qmd#sec-learning-regret-matching)
+from Lecture 6. Focus on two-player zero-sum games, using the
+[connection between regret and equilibrium](../lectures/06-learning-in-games.qmd#sec-learning-regret-zero-sum)
+to evaluate the results.
+
+**Possible application: learning to play Morra.**
+
+Use [Morra from Lecture 4](../lectures/04-two-player-zero-sum-games.qmd#sec-zero-sum-morra),
+where players simultaneously choose a number of fingers and guess the other
+player's number.
+Let both players learn from repeated interaction. How quickly do their empirical
+strategy frequencies approach equilibrium, and how does this depend on the
+learning rule and initialization? Compute an equilibrium by
+[linear programming](../lectures/04-two-player-zero-sum-games.qmd#sec-zero-sum-lp)
+as a benchmark.
+
+**Possible experiment setup.**
+
+- Validate the updates on the short matching-pennies examples in Lecture 6,
+  then compare both methods in Morra over increasing numbers of rounds.
+- Record the full-game saddle-point gap of the empirical strategy frequencies,
+  each player's average external regret, and computation time. Plot current
+  play separately from empirical frequencies to distinguish cycling from
+  convergence of averages.
+- Repeat stochastic runs with recorded seeds and vary initial play or
+  fictitious-play tie-breaking. Report variation across runs and the number
+  of rounds needed to reach a chosen accuracy.
+
+In your proposal, specify the feedback available to each learner, update timing,
+initialization, and evaluation metric. Choose a focused question about learning
+speed or sensitivity to these choices, and interpret the findings using the
+convergence results from the lecture.
