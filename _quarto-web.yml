@@ -28,12 +28,14 @@ book:
         - lectures/05-alternatives-to-nash-equilibrium.qmd
         - lectures/06-learning-in-games.qmd
         - lectures/07-extensive-form-games.qmd
+        - lectures/08-solving-extensive-form-games.qmd
 
     - part: classroom-games/index.qmd
       chapters:
         - classroom-games/two-thirds-of-average.qmd
         - classroom-games/instigation-game.qmd
         - classroom-games/hide-the-treasure.qmd
+        
 
 format:
   html:

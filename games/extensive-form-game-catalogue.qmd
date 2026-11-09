@@ -9,7 +9,8 @@ Circles denote player decisions, diamonds labelled $c$ denote chance, and dashed
 links join nodes in one information set. Unless stated otherwise,
 terminal pairs are ordered $(\text{player 1},\text{player 2})$.
 The examples below are used in
-[Lecture 7](../lectures/07-extensive-form-games.qmd#sec-efg-perfect-information).
+[Lecture 7](../lectures/07-extensive-form-games.qmd#sec-efg-perfect-information)
+and [Lecture 8](../lectures/08-solving-extensive-form-games.qmd).
 
 ## Alice–Bob game
 
@@ -80,6 +81,16 @@ observations agree:
 
 See @sec-efg-kuhn-poker for the complete list of information sets
 and terminal betting sequences [@schmid2025efg].
+
+## A choice between two hidden-response branches {#sec-catalogue-sequence-form}
+
+{{< var games.sequence_form_example.rules >}}
+
+![A sequence-form example with hidden responses. Terminal labels give only player 1's payoff; player 2 receives its negative.](../games/extensive-form/sequence-form-example.svg){#fig-catalogue-sequence-form width=100% fig-alt="Player 1 chooses A or B, followed by player 2 choosing g or h after A, or i or j after B. Player 1 then chooses C,D or E,F without observing player 2's response. The eight terminal payoffs to player 1 are 6,-2,0,4,3,0,-1,2."}
+
+See @sec-solving-sequence-example for its sequence-form LP
+and equilibrium value $2$, and @sec-solving-cfr for a counterfactual
+regret update at an unreached information set.
 
 ## Forgetting an earlier decision {#sec-catalogue-forgotten-visit}
 

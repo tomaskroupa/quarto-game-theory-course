@@ -352,6 +352,24 @@ games:
     betting_diagram: "../games/extensive-form/kuhn-poker-betting.svg"
     information_diagram: "../games/extensive-form/kuhn-poker-information.svg"
 
+  sequence_form_example:
+    name: "A choice between two hidden-response branches"
+    rules: |
+    diagram: "../games/extensive-form/sequence-form-example.svg"
+    sequence_matrix: |
+      $$
+      \begin{array}{c|rrrrr}
+        & \varnothing & g & h & i & j \\ \hline
+        \varnothing & 0 & 0 & 0 & 0 & 0 \\
+        A & 0 & 0 & 0 & 0 & 0 \\
+        B & 0 & 0 & 0 & 0 & 0 \\
+        AC & 0 & 6 & 0 & 0 & 0 \\
+        AD & 0 & -2 & 4 & 0 & 0 \\
+        BE & 0 & 0 & 0 & 3 & -1 \\
+        BF & 0 & 0 & 0 & 0 & 2
+      \end{array}
+      $$
+
   forgotten_visit:
     name: "Forgetting an earlier decision"
     rules: |

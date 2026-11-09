@@ -58,6 +58,7 @@ Imperfect information prevents independent backward induction at individual info
 
 **Key concepts:** sequences and realization plans; sequence-form linear programming for two-player zero-sum games; counterfactual regret minimization.
 
+
 ## Auctions 1 {#sec-topic-auctions-1}
 
 The first auction topic introduces common auction formats. Interim analysis
