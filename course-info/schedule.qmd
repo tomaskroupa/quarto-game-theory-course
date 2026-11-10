@@ -23,7 +23,7 @@ subtitle: "Computational Game Theory · Winter semester 2026/2027"
 | 5 | 20 Oct | [Alternatives to Nash equilibrium](topics.qmd#sec-topic-alternatives) | TK |
 | 6 | 27 Oct | [Learning in games](topics.qmd#sec-topic-learning) | TK |
 | 7 | 3 Nov | [Extensive-form games](topics.qmd#sec-topic-extensive-form-games) | TK |
-| 8 | 10 Nov | [Solving extensive-form games](topics.qmd#sec-topic-solving-extensive-form-games) |  TK |
+| 8 | 10 Nov | [Solving extensive-form games](topics.qmd#sec-topic-solving-extensive-form-games) |  TK, [M. Šustr](http://michal.sustr.sk) |
 | 9 | 17 Nov | *No class — public holiday* | - |
 | 10 | 24 Nov | [Auctions 1](topics.qmd#sec-topic-auctions-1) |  TK |
 | 11 | 1 Dec | [Auctions 2](topics.qmd#sec-topic-auctions-2) | TK |
@@ -37,22 +37,22 @@ subtitle: "Computational Game Theory · Winter semester 2026/2027"
 ## Tutorials
 
 | Week | Date | Topic | Instructor |
-|---:|---|---|:---:|
+|---:|---|:---|:---:|
 | 1 |  22 Sep  | Prerequisites: linear programming, minimax and maximin. Basic principles of solving games. | DR |
-| 2 |  29 Sep  | Nash equilibrium 1. | DR |
-| 3 |  6 Oct  | Nash equilibrium 2. | DR |
-| 4 |  13 Oct  | Quantal response. Matrix games. | DR |
+| 2 |  29 Sep  | Nash equilibrium 1 | DR |
+| 3 |  6 Oct  | Nash equilibrium 2 | DR |
+| 4 |  13 Oct  | Quantal response. Matrix games | DR |
 | 5 |  20 Oct  | Alternatives to Nash equilibrium | DR |
-| 6 |  27 Oct  |  | DR |
+| 6 |  27 Oct  |  Learning in games | DR |
 | 7 |  3 Nov  | **Midterm test**  | - |
-| 8 |  10 Nov  |  | DR |
+| 8 |  10 Nov  | Extensive-form games | DR |
 | 9 |  17 Nov  | *No class — public holiday* | - |
-| 10 |  24 Nov  |  | DR |
-| 11 |  1 Dec  |  | DR |
-| 12 |  8 Dec  |  | DR |
-| 13 |  15 Dec  |  | DR |
+| 10 |  24 Nov  | Solving extensive-form games | DR |
+| 11 |  1 Dec  | Auctions | DR |
+| 12 |  8 Dec  | Mechanism design | DR |
+| 13 |  15 Dec  | Coalitional games | DR |
 | — |  22, 29 Dec  | *No class — winter holiday* | - |
-| 14 |  5 Jan | | DR |
+| 14 |  5 Jan | Shapley value | DR |
 
 : Tutorial schedule for winter semester 2026/2027 {#tbl-tutorial-schedule tbl-colwidths="[10,18,57,15]"}
 
