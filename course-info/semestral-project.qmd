@@ -17,7 +17,7 @@ The project consists of a **project proposal (10 points)**, a **final report (10
 | Proposal preparation | After topic approval | Submit the project proposal by **6 Dec 2026**. |
 | Proposal approval | By **15 Dec 2026** | Obtain explicit approval of the submitted proposal. A requested revision must also be approved by the deadline. |
 | Implementation and experiments | After proposal approval | Implement the  required methods, verify the environment and algorithms, run the planned experiments, and record any justified departure from the proposal. |
-| Final submission | At the announced deadline | Submit the final report PDF and the frozen code ZIP. |
+| Final submission | By **10 Jan 2027** | Submit the final report PDF and the frozen code ZIP. |
 | Live code defense | At the assigned consultation | Each team runs and defends the exact frozen version of the code on their own computer. |
 
 : Project timeline {#tbl-semestral-project-timeline}

@@ -54,7 +54,7 @@ To obtain the course assessment (*zápočet*), you must earn at least **20 point
 
 ## Exam
 
-At least **20 points** must be earned from the exam (two-hour written test). A brief oral examination may follow in selected cases to clarify answers. *Course assessment must normally be completed before taking the exam.* The first exam session may be treated as an exception.
+The problems and questions in the exam test will be selected from the Lectures 6 -14. At least **20 points** must be earned from the exam (two-hour written test). A brief oral examination may follow in selected cases to clarify answers. *Course assessment must normally be completed before taking the exam.* The first exam session may be treated as an exception.
 
 
 

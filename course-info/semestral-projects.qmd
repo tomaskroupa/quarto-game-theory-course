@@ -104,3 +104,93 @@ In your proposal, specify the feedback available to each learner, update timing,
 initialization, and evaluation metric. Choose a focused question about learning
 speed or sensitivity to these choices, and interpret the findings using the
 convergence results from the lecture.
+
+
+
+## Evaluation games with uncertainty about the AI's goals {#sec-project-bayesian-evaluation-games}
+
+Before relying on an AI system, we would like to check that it does what we want. This is harder when we do not know what kind of AI we are dealing with: one that shares our goals, one that pursues other goals and acts strategically, or one that follows a fixed pattern of behaviour. As an example, consider how AI assistants are used today. You give the assistant a task and it produces an artefact, such as a piece of code or a report. You can use the artefact as it is, discard it, or scrutinise it first, which takes effort. The assistant may have done the work well, or badly, possibly on purpose and in a way that is hard to notice. How often should you check, and how does the possibility of being checked change what the assistant does?
+
+Model situations of this kind as a game and build a tool that solves it. Start from a small two-player game in matrix form between the user and the AI, and add two things. The first is evaluation: an extra action for the user that costs *c*, reveals the AI's action, and lets the user best-respond to it. In the example, this is scrutinising the artefact. [Kovařík, Oesterheld and Conitzer (2023)](https://arxiv.org/abs/2305.11261) study games with such an action under the name *simulation*. The second is uncertainty about the AI: its payoffs depend on its *type*, drawn from a known prior over a finite set; the AI knows its type and the user does not. This makes the game a Bayesian game ([Shoham and Leyton-Brown, Section 6.3](https://masfoundations.org/)). Assume that the user's payoff depends only on the actions played, not on the AI's type. As the solution concept, treat each type as a separate player and look for Nash equilibria; explain how this relates to Bayes–Nash equilibrium. A type that follows a fixed policy has a given strategy instead of a chosen one.
+
+**Possible experiment setup.**
+
+-   Implement a solver that computes the Nash equilibria of small instances, for example by support enumeration adapted to the fact that the types interact only with the user.
+-   Validate it. Reproduce the equilibria of the trust game in Section 1.1 of the paper, which has a single type. Solve a two-type variant by hand. Check that neither the user nor any type can gain by deviating. Compare with an existing bimatrix solver applied to the equivalent game in which the AI chooses an action for every type in advance.
+-   For two or three scenarios, starting with the example above, vary the prior and the evaluation cost, and map how the equilibria and the expected payoffs change. Who gains from the option to evaluate?
+-   Build an interactive front end in which a user enters the AI types, the payoff tables, the prior and the cost, and sees the equilibria and the effect of changing a parameter.
+
+In your proposal, specify the game precisely, including the rule for breaking ties among the user's best responses after an evaluation (see Definition 2 and Lemma 5 of the paper) and the treatment of multiple equilibria. State the equilibrium conditions that your algorithm solves, the quantities it reports, and the numerical tolerance of the equilibrium check. In the report, discuss what the user learns about the AI's goals from an evaluation, and why this does not affect the user's decision in the model above.
+
+**Possible extensions.** Add a language-model front end that translates a verbal description of a scenario into the formal game and explains the computed equilibria in words; the core program must work without the language model. Offer several levels of scrutiny, where cheaper ones reveal less about the AI's action. Let the user's payoff depend on the AI's type directly. In the last two cases, the user's best response depends on their beliefs about the AI.
+
+This topic was proposed by Vojta Kovařík, who is happy to offer consultations and further materials (vojta.kovarik@gmail.com).
+
+
+## The value of evaluation awareness to a strategic AI {#sec-project-evaluation-awareness}
+
+AI systems are tested before deployment. Unlike ordinary software, they can sometimes tell that they are being tested, and may then behave differently. This ability is called *evaluation awareness*. One way to measure it is to show a model many transcripts, some from tests and some from real use, ask for the probability that each comes from a test, and summarise the answers with a metric called AUC, as in [Needham et al. (2025)](https://arxiv.org/abs/2505.23836). For this purpose AUC has an important flaw: it measures how accurately the AI tells tests from real use, not what the AI could achieve with that ability. An AI that wanted to misbehave could behave well whenever it suspects a test, and misbehave only when it is confident that the situation is real. If it cannot tell tests from real use on everyday requests, but is nearly certain in the few cases where it controls a company's finances, its AUC is mediocre and it can still get most of what it wants.
+
+Design a metric that measures how much such an AI could gain. Common metrics can be read as the score of a decision-maker in a particular decision problem, that is, in a one-player game. Learning how this works for AUC is the first part of the project: see [Fawcett (2006)](https://ui.adsabs.harvard.edu/abs/2006PaReL..27..861F/abstract) for an introduction to AUC, and [Flach et al. (2011)](https://icml.cc/imls/conferences/2011/papers/385_icmlpaper.pdf) and [Hernández-Orallo et al. (2012)](https://jmlr.org/papers/v13/hernandez-orallo12a.html) for the decision problems behind it. Then use the idea in the opposite direction: formulate the decision problem of a strategic AI, solve it, and take the value of its optimal policy as the metric.
+
+**Possible formulation.** Each situation is either a test or real, and has *stakes*: what the AI gains by misbehaving there if the situation is real. The AI observes the stakes and its own estimate of the probability that the situation is a test, and decides whether to misbehave, possibly at random. Misbehaviour in a test is detected. What follows from detection is a modelling choice; one option is the rule from Section 3.1 of [Kovařík et al. (2025)](https://arxiv.org/abs/2508.14927), where the AI is deployed only if no misbehaviour was detected in testing. Restrict the AI to monotone policies: it is weakly more willing to misbehave when it is more confident that the situation is real, and when more is at stake. Otherwise a policy fitted to a finite dataset can single out individual situations.
+
+**Possible experiment setup.**
+
+-   Generate synthetic data: for each level of stakes, draw the AI's estimates for tests and for real situations from two different distributions.
+-   Compute the optimal policy and its value. Compare with three reference AIs: one that tells tests from real situations perfectly, one whose estimates carry no information, and one that treats every situation as a test.
+-   Take a dataset in which all situations have equal stakes, and compute AUC and your metric. Add a few real situations with very high stakes that the AI recognises as real with high but imperfect confidence, and recompute both. How does each metric respond? Repeat for different numbers of tests.
+
+In your proposal, specify the information available to the AI, the allowed policies, the consequences of detected misbehaviour, and the AI's objective. State the optimisation problem, the algorithm that solves it, and how its value is normalised into a metric. Plan hand-checkable cases and a comparison with exhaustive search on small instances. For example, an AI whose estimates carry no information should reproduce the result of Section 3.1.3 of Kovařík et al. under the deployment rule used there.
+
+**Main extension: existing data.** Obtain the data behind an existing paper on evaluation awareness, such as Needham et al., and run the last experiment on them, including the added high-stakes situations.
+
+**Another extension.** Add the evaluator as a second player who distributes a fixed number of tests among levels of stakes; the result is a zero-sum game that can be solved by [linear programming](https://tomaskroupa.github.io/quarto-game-theory-course/lectures/04-two-player-zero-sum-games.html#sec-zero-sum-lp) or [Double Oracle](https://tomaskroupa.github.io/quarto-game-theory-course/lectures/04-two-player-zero-sum-games.html#sec-zero-sum-double-oracle).
+
+This topic was proposed by Vojta Kovařík, who is happy to offer consultations and further materials (vojta.kovarik@gmail.com).
+
+### Policy-Space Response Oracles in Colonel Blotto
+
+**Goal:** Implement the Policy-Space Response Oracles (PSRO) algorithm of Lanctot et al. (2017) [A Unified Game-Theoretic Approach to Multiagent Reinforcement Learning](https://proceedings.neurips.cc/paper_files/paper/2017/hash/3323fe11e9595c09af38fe67567a9394-Abstract.html), NeurIPS 2017, and investigate how a Nash equilibrium can be approximated by iteratively expanding restricted strategy populations.
+
+**Game:** Consider a two-player zero-sum Colonel Blotto game. Each player simultaneously allocates a fixed budget of $B$ units among $m$ battlefields. A pure strategy is an integer vector
+
+$$
+x=(x_1,\ldots,x_m), \qquad x_j\geq 0,\quad \sum_{j=1}^m x_j=B.
+$$
+
+Each battlefield has a positive weight $w_j$. The player allocating more units to battlefield $j$ wins its weight, the other player loses it, and ties contribute zero. Thus, the payoff to player 1 is
+
+$$
+u(x,y)=\sum_{j=1}^m w_j\operatorname{sgn}(x_j-y_j).
+$$
+
+Start with $m=3$, $B=6$, and weights $w=(1,2,3)$. For the main experiments, use $m=4$, $B=12$, and weights $w=(1,2,3,4)$.
+
+**Tasks:**
+
+1. *Implement the game.* 
+
+2. *Implement PSRO.* Start with a small population of pure strategies for each player. In each iteration:
+   - Construct the payoff matrix of the restricted game.
+   - Compute a Nash equilibrium of this restricted two-player zero-sum game using linear programming.
+   - Compute an exact best response to the opponent's restricted-game equilibrium mixture by searching all feasible pure strategies.
+   - Add newly discovered best responses to the players' populations. Terminate when neither population changes.
+
+3. *Evaluate convergence.* Measure exploitability (the Nash gap) of the resulting meta-strategies with respect to the *full* game:
+
+   $$
+   \operatorname{gap}(\sigma_1,\sigma_2)
+   =\max_x u(x,\sigma_2)-\min_y u(\sigma_1,y).
+   $$
+
+   Plot the gap and the sizes of both strategy populations over PSRO iterations.
+
+4. *Compare response oracles.* Replace the exact best-response oracle with an approximate oracle that searches a randomly sampled subset of feasible pure strategies. Compare convergence behavior and computational cost, using multiple random seeds. Note that the approximate oracle need not find a new policy even when an improving policy exists.
+
+5. *Analyze the results.* For the smaller instance, compare the PSRO solution with an equilibrium computed directly from the full payoff matrix. Investigate sensitivity to initial populations and oracle quality. Explain why PSRO with exact best-response oracles reduces to the Double Oracle algorithm in this finite normal-form setting.
+
+**Expected results:** A working PSRO implementation, convergence plots showing exploitability and population sizes, and a comparison between exact and approximate response oracles. The report should discuss accuracy, computational cost, and the limitations of approximate best responses.
+
+
+
