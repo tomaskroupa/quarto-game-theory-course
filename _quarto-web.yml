@@ -35,6 +35,7 @@ book:
         - classroom-games/two-thirds-of-average.qmd
         - classroom-games/instigation-game.qmd
         - classroom-games/hide-the-treasure.qmd
+        - classroom-games/kuhn-poker.qmd
         
 
 format:
