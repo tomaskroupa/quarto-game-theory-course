@@ -1,0 +1,132 @@
+# Kuhn Poker {.unnumbered}
+
+In the classroom experiment, the students played @sec-efg-kuhn-poker against an Open AI bot. First, we will describe behavioral strategies for players 1 and 2 that form a Nash equilibrium.
+
+
+## All Nash equilibria
+
+All Nash equilibria in behavioral strategies are given by the following
+four tables. Kuhn's original paper derives the complete set of equilibria
+[@kuhn1950poker]. A single equilibrium can also be computed by linear programming directly from the induced
+normal form, with $2^6=64$ pure strategies per player
+and a $64\times64$ payoff matrix, or from the sequence-form linear program, with $13$ sequences per player. The equilibrium
+family is parameterized by the probability
+$\alpha\in[0,1/3]$ that player 1 opens with a bet holding
+$J$. Player 2's equilibrium strategy is unique. The additional parameter $\rho$ specifies player 1's probability of calling with $K$
+after check–bet and it is defined as
+$$
+\rho=1 \quad\text{if }0\leq\alpha<\frac13,
+\qquad
+\rho\in[0,1] \quad\text{if }\alpha=\frac13.
+$$
+
+### Player 1: opening move
+
+| Card | Check | Bet |
+|:--:|:--:|:--:|
+| $J$ | $1-\alpha$ | $\alpha$ |
+| $Q$ | $1$ | $0$ |
+| $K$ | $1-3\alpha$ | $3\alpha$ |
+
+### Player 1: after check–bet
+
+| Card | Fold | Call |
+|:--:|:--:|:--:|
+| $J$ | $1$ | $0$ |
+| $Q$ | $\frac23-\alpha$ | $\frac13+\alpha$ |
+| $K$ | $1-\rho$ | $\rho$ |
+
+### Player 2: after an opening check
+
+| Card | Check | Bet |
+|:--:|:--:|:--:|
+| $J$ | $\frac23$ | $\frac13$ |
+| $Q$ | $1$ | $0$ |
+| $K$ | $0$ | $1$ |
+
+### Player 2: facing an opening bet
+
+| Card | Fold | Call |
+|:--:|:--:|:--:|
+| $J$ | $1$ | $0$ |
+| $Q$ | $\frac23$ | $\frac13$ |
+| $K$ | $0$ | $1$ |
+
+
+
+At $\alpha=1/3$, player 1 always opens with a bet holding $K$. The
+information set after checking with $K$ and facing a bet is therefore
+unreachable under that player's own strategy, regardless of player 2's
+choices. Any value of $\rho$ gives the same distribution over terminal
+histories against every strategy of player 2. The usual choice $\rho=1$
+prescribes calling with the highest card even at this unreachable
+information set.
+
+At $\alpha=0$, player 1 always opens with a check. Player 2's responses to an
+opening bet still have to be as specified above since they prevent profitable
+unilateral deviations by player 1.
+
+Every admissible pair $(\alpha,\rho)$ as defined above gives a Nash equilibrium and there
+are no other equilibria. Since the game is zero-sum, all have the same
+expected net payoff $v$ for player 1, which is the *value of the game*. The value is 
+
+$$
+v=-\frac1{18} \approx -0.056.
+$$
+in chips per hand. Hence Player 2 has a small advantage under equilibrium play.
+
+## Classroom play against an equilibrium bot
+
+$950$ completed hands were recorded from 3 to 10
+November 2026.  Students played $475$
+hands in the role of either player. The records contains $11$ browser profiles and $13$ nicknames. The bot used the fixed
+equilibrium strategy with $\alpha=1/3$ and $\rho=1$. 
+
+### Statistics
+
+| Student's seat | Hands | Hands won | Net chips | Chips per hand | Equilibrium expectation per hand |
+|:--|--:|--:|--:|--:|--:|
+| Player 1 | $475$ | $248$ | $-46$ | $-0.097$ | $-0.056$ |
+| Player 2 | $475$ | $255$ | $+51$ | $+0.107$ | $+0.056$ |
+| *All student hands* | **$950$** | **$503$** | **$+5$** | **$+0.005$** | **$0$** |
+
+Students won $503/950\approx52.9\%$ of hands.
+This result alone says nothing about whether the students used equilibrium strategies. At equilibrium, Player 2 expects to gain over $475$ hands $475/18\approx 26.39$ chips. The standard deviation of the $475$-hand total is $29.5$ chips.
+
+### Decisions at observed information sets
+
+The table counts a student's decision only when its information set was
+reached. The equilibrium benchmark is the fixed strategy $\alpha=1/3$, $\rho=1$ used by
+the bot when it occupies the same seat. 
+
+| Student's seat and info set | Action |  Benchmark | Observed choices |
+|:--|:--|:--:|:--:|
+| Player 1 opens with $J$ | Bet | $1/3$ | $52/168$ ($31.0\%$) |
+| Player 1 opens with $Q$ | Bet | $0$ | [$97/147$ ($66.0\%$)]{style="color: #b42318; font-weight: 700"} |
+| Player 1 opens with $K$ | Bet | $1$ | $142/160$ ($88.8\%$) |
+| Player 1 holds $J$ after check–bet | Call | $0$ | $5/54$ ($9.3\%$) |
+| Player 1 holds $Q$ after check–bet | Call | $2/3$ | $19/34$ ($55.9\%$) |
+| Player 1 holds $K$ after check–bet | Call | $1$ | $4/4$ ($100\%$) |
+| Player 2 holds $J$ after an opening check | Bet | $1/3$ | $34/71$ ($47.9\%$) |
+| Player 2 holds $Q$ after an opening check | Bet | $0$ | [$42/55$ ($76.4\%$)]{style="color: #b42318; font-weight: 700"} |
+| Player 2 holds $K$ after an opening check | Bet | $1$ | $114/131$ ($87.0\%$) |
+| Player 2 holds $J$ facing an opening bet | Call | $0$ | [$19/82$ ($23.2\%$)]{style="color: #b42318; font-weight: 700"} |
+| Player 2 holds $Q$ facing an opening bet | Call | $1/3$ | [$70/98$ ($71.4\%$)]{style="color: #b42318; font-weight: 700"} |
+| Player 2 holds $K$ facing an opening bet | Call | $1$ | $37/38$ ($97.4\%$) |
+
+Red marks the largest departures from the fixed benchmark. Player 1's $Q$
+bets and Player 2's $J$ calls reduce expected payoff against this bot. However, Player 2's $Q$ bets and  $Q$ calls do not, although they are different from the
+equilibrium play. Player 1's $J$ and $K$ opening rates are roughly compatible
+with another equilibrium parameter, $\alpha\approx0.30$. The counts pool
+repeated decisions from recorded $11$ browser profiles.
+
+### Which decisions reduced expected payoff?
+
+Against this fixed bot, the largest summed conditional expected losses came
+from Player 2 calling an opening bet with $J$ ($19$ calls; $19$ chips),
+Player 1 opening with a bet holding $Q$ ($97$ bets; $16.17$ chips), and
+Player 2 checking with $K$ after a check ($17$ checks; $6.80$ chips).
+Across all $139$ costly choices ($13.3\%$ of $1{,}042$ student decisions),
+the summed conditional expected loss was $49.97$ chips. This compares
+decisions using only the student's card and public history; it does not
+explain the realized $+5$-chip result.
