@@ -14,6 +14,7 @@ book:
     - lectures/06-learning-in-games.qmd
     - lectures/07-extensive-form-games.qmd
     - lectures/08-solving-extensive-form-games.qmd
+    - lectures/09-auctions-1.qmd
 
 format:
   typst:

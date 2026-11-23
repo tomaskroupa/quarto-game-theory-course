@@ -1,0 +1,309 @@
+---
+title: "Auctions 1"
+---
+
+
+## What is an auction? {#sec-auctions-introduction}
+
+Suppose more people want the same object. An auction asks them to bid and uses
+their bids to settle two questions: 
+
+1. Who gets the object?
+2. How much does the winner pay?
+
+Keeping the first rule fixed while changing the second can change
+what each bidder wants to do. 
+
+Auctions allocate paintings and second-hand goods, advertising positions in
+search results [@edelmanostrovsky2007], and rights to use radio spectrum. In public procurement the
+roles are reversed. A buyer invites suppliers to bid for a contract, and the
+winning supplier receives a payment. In each case there is competition for a
+scarce opportunity, and the rules determine how participants can express what
+it is worth to them.
+
+Some auctions are public. In an **English auction** the price rises as
+bidders compete to remain the last active bidder. In a **Dutch auction** the
+price falls until someone accepts it. In a **sealed-bid auction** each
+bidder submits a bid without seeing the other bids. In this lecture, we will study two
+sealed-bid rules for selling one object.
+
+
+
+### Three perspectives
+
+Auctions can be analyzed from several viewpoints. Suppose the winner values the object at $v$ and pays $p$. Losers pay nothing.
+
+| Perspective | Objective | Evaluation |
+|:--|:--|:--|
+| Bidder | Maximize profit. | The winner earns $v-p$. Each loser earns $0$. |
+| Seller | Choose auction rules maximizing revenue. | The seller receives $p$. |
+| External designer | Allocate the object to a bidder who values it most (*efficiency*). | Compare the winner's value with the highest value among all bidders. |
+
+
+
+## Sealed-bid auctions with known values {#sec-auctions-known-values}
+
+First, we will model sealed-bid auctions as normal-form games with **complete information**. The players are the bidders $N=\{1,\dots,n\}$. Each bidder $i\in N$ has a **value** $v_i\geq 0$, representing the maximum possible price they are willing to pay for the auctioned object. The complete-information assumption means that the values 
+$v_1,\ldots,v_n$ are common knowledge among the bidders, so that every bidder knows any other bidder's value. 
+
+A seller offers one indivisible object to bidders. Each bidder $i\in N$ submits one **bid** $b_i\geq 0$, without knowledge of the other bids. The highest bid wins. If several bidders tie for the highest bid, the seller draws the winner uniformly among them. There is no reserve price or entry fee, and losing bidders pay zero.
+
+Write 
+$$
+\bar b_i=\max_{j\ne i}b_j
+$$ {#eq-max-rival-bidding}
+for the highest bid among bidder $i$'s
+rivals. We define the first-price and second-price sealed-bid auctions by the following payment rules.
+
+| Auction | Payment if bidder $i$ wins | Profit if bidder $i$ wins |
+|:--|:--:|:--:|
+| **First-price** | $b_i$ | $v_i-b_i$ |
+| **Second-price** |$\bar b_i$ | $v_i-\bar b_i$ |
+
+The second-highest bid is counted with multiplicity. When the two highest bids are equal, the winner of the tie pays that common amount in either format. Suppose the bids are $10$, $10$, and $7$. The auctioneer breaks the tie between the two bidders who bid 10. In a first-price auction, the winner pays $10$, their own bid. In a second-price auction, the winner also pays $10$, because the other tied bidder bid $10$. The bid of $7$ ranks third.
+
+The sealed-bid auctions are naturally modeled as normal-form games:
+
+1. The players are bidders $N=\{1,\dots,n\}$.
+2. Each bidder $i\in N$ has a strategy space $S_i=[0,\infty)$, the set of possible bids.
+3. The payoff function of bidder $i$ in the *first-price auction* is 
+   $$
+   u_i(\mathbf b\mid v_i) = \begin{cases}
+   v_i - b_i & b_i > \bar b_i, \\
+   \frac{v_i-b_i}{k} & b_i = \bar b_i, \\
+   0 & b_i < \bar b_i,
+   \end{cases}, \qquad \mathbf b \in [0,\infty)^n,
+   $$
+where $k$ is the number of highest bidders. Analogously, The payoff function of bidder $i$ in the *second-price auction* is 
+   $$
+   u_i(\mathbf b\mid v_i) = \begin{cases}
+   v_i - \bar b_i & b_i > \bar b_i, \\
+   \frac{v_i-\bar b_i}{k} & b_i = \bar b_i, \\
+   0 & b_i < \bar b_i,
+   \end{cases}, \qquad \mathbf b \in [0,\infty)^n.
+   $$
+
+For example, let two bidders have values $4$ and $2$, and suppose both bid
+their values. The bidder with value $4$ wins under either rule. At first
+price the seller receives $4$ and the winner earns $0$. At second price the
+seller receives $2$ and the winner earns $2$. Would the bidders actually choose bids $b_i=v_i$?
+
+### Truthfull bidding
+
+::: {.callout-important appearance="minimal" icon="false" title="Proposition [@vickrey1961]"}
+
+In the second-price auction, bidding one's value $v_i$ is a weakly dominant
+strategy for each bidder $i$. The truthful bid profile $(v_1,\dots,v_n)$ is therefore a Nash
+equilibrium.
+
+::: 
+
+*Proof.* Consider bidder $i$ with value $v_i$ and fix any bids $\mathbf b_{-i}$ of the rivals, where  $\bar b_i$ is their maximum ([-@eq-max-rival-bidding]). Whether bidder $i$ wins is determined by the relation of $v_i$ and $\bar b_i$.
+There are three cases and corresponding results for bidder $i$.
+
+| Case | Result of bidding $v_i$ | Can another bid $b_i$ improve the payoff? |
+|:--|:--|:--|
+| $\bar b_i<v_i$ | Wins and earns $v_i-\bar b_i>0$. | If $b_i>\bar b_i$, the payoff is still $v_i-\bar b_i$. Bidding $b_i= \bar b_i$ yields $\frac{v_i-\bar b_i}{k}$ and $b_i< \bar b_i$ earns $0$. |
+| $\bar b_i=v_i$ | Ties with the payoff $0$. | The payoff is always $0$. |
+| $\bar b_i>v_i$ | Loses and earns $0$. | Winning with $b_i>  \bar b_i$ implies $v_i-\bar b_i<0$. Bidding $b_i=\bar b_i$ yields negative profit too and $b_i<\bar b_i$ means losing. |
+
+Thus, the table proves that for every $b_i\in [0,\infty)$ and every $\mathbf b_{-i}\in [0,\infty)^{n-1}$, 
+$$
+u_i(v_i,\mathbf b_{-i} \mid v_i) \ge u_i(b_i,\mathbf b_{-i} \mid v_i),
+$$
+and for every $b_i\neq v_i$ there exists $\mathbf b_{-i}\in [0,\infty)^{n-1}$ such that 
+$$
+u_i(v_i,\mathbf b_{-i} \mid v_i) > u_i(b_i,\mathbf b_{-i} \mid v_i).
+$$
+This proves weak dominance of $v_i$. $\square$
+
+Telling the truth is no longer an equilibrium strategy in the first-price auction.
+
+::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
+
+Assume that a bidder $i$ has the unique highest value, $v_i > \max_{j\ne j} v_j$. Then the truthful bid profile $(v_1,\dots,v_n)$ in the
+first-price auction is not a Nash equilibrium.
+
+:::
+
+*Proof.* At the truthful profile, bidder $i$ wins, pays $v_i$, and earns zero. Note that $\bar b_i=\max_{j\ne j} v_j$. We will construct a profitable unilateral deviation for bidder $i$. Keep all other bids fixed and change just the bidder's $i$ bid to $(v_i+\bar b_i)/2$. Then $(v_i+\bar b_i)/2 > \bar b_i$, so it still wins for certain. The new profit is positive since
+$v_i-(v_i+\bar b_i)/2=(v_i-\bar b_i)/2>0$. 
+$\square$
+
+For example, with values $4$ and $2$, the deviation is the bid $3$. If several bidders
+share the highest value, the truthful profile is a Nash
+equilibrium in the first-price auction in which each bidder earns zero. Indeed, to win against a rival bidding the same highest value, a bidder must pay at least that value, which rules out a
+positive profit.
+
+How does equilibrium bidding change when bidders know only their own values?
+We will show that truthful bidding remains an equilibrium in the second-price auction and derive the first-price equilibrium in the next lecture.
+
+## Symmetric auctions {#sec-sym-auctions}
+
+From now on, we will analyze  a more realistic setting in which each bidder $i$ knows only their own value $v_i$, but not the values $v_j$ of the bidders $j\neq i$. 
+
+This assumption means that we are modeling auctions as **games of incomplete information**, also called  **Bayesian games**.  Every bidder must choose a bid under uncertainty about their rivals’ values and their bids. Uncertainty about values is captured by probabilitity distributions. We will assume that the auction rules and the joint distribution of bidders’ values are common knowledge. Before bidding, each bidder privately observes their own value for the object. Formally, these assumptions are captured by the following definition.
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition"}
+
+We call a sealed-bid auction **symmetric** if:
+
+- Each bidder $i$'s value is a continuous random variable $V_i$ on some interval $[0,\bar v]$.
+- Each bidder $i$ privately observes its
+realization, the value $v_i$.
+- The random variables $V_1,\ldots,V_n$ are *identically*  and *independently* distributed. 
+
+:::
+
+Due to the uncertainty about the bidders' values, a pure strategy $s_i$ now specifies a bid for every possible value. Thus, we define a **bidding strategy**
+as a function $$s_i:[0,\bar v]\to[0,\infty).$$ A bidder  observing privately their own value $v_i$ submits $b_i=s_i(v_i)$. However, from a rival's perspective $B_i=s_i(V_i)$
+is random, even when $s_i$ is a pure strategy. Suppose the other bidders use strategies $\mathbf s_{-i}=(s_j)_{j\ne i}$. The rival bids $\mathbf s_{-i}(\mathbf V_{-i})$ are random variables. We will define the expected utility of the bid of player $i$ under those assumptions for either type of sealed-bid auction.
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition"}
+
+The **interim expected utility** of bidder $i$ with value $v_i$ from
+submitting a bid $b_i\geq 0$ against rival strategies $\mathbf s_{-i}$ is defined as
+$$
+U_i(b_i,\mathbf s_{-i}\mid v_i)
+=
+\mathbb E \left[\,
+  u_i(b_i,\mathbf s_{-i}(\mathbf V_{-i})\mid v_i)\,
+\right].
+$$
+
+:::
+
+The term *interim* refers to the moment when bidder $i$ knows their own
+value $v_i$ and chooses a bid. The expectation averages over the rivals' values. 
+
+Similarly to the concept of Nash equilibrium in strategic games, we will define the equilibrium for symmetric auctions using the interim expected utility. The resulting equilibrium is called *Bayes-Nash* as it involves uncertainty about other bidders' values.
+
+::: {.callout-note appearance="minimal" icon="false" title="Definition"}
+
+A profile of bidding strategies $\mathbf s^* =(s_1^*,\ldots,s_n^*)$ is a
+**Bayes–Nash equilibrium** if, for every bidder $i$, every possible value
+$v_i$, and every alternative bid $b_i\ge 0$,
+$$
+U_i\bigl(s_i^*(v_i),\mathbf s_{-i}^*\mid v_i\bigr)
+\ge
+U_i\bigl(b_i,\mathbf s_{-i}^*\mid v_i\bigr).
+$$
+
+:::
+
+Thus, for each value $v_i$ the bidder might observe, the equilibrium strategy $s_i^*$ prescribes
+a bid $s_i^*(v_i)$ that maximizes interim expected utility given the other bidders' strategies.
+
+::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
+
+In the second-price symmetric auction the truthful strategy $s^*_i(v_i)=v_i$ is weakly dominant for each bidder $i$. The resulting profile $\mathbf s^*=(s_1^*,\dots,s_n^*)$ is a Bayes–Nash equilibrium and the allocation of the auctioned object to the winner is efficient.
+
+:::
+
+*Proof.* Fix bidder $i$ and their value $v_i$. By the complete-information proposition, the truthful bid $v_i$ satisfies
+$$
+u_i(v_i,\mathbf b_{-i}\mid v_i)
+\ge u_i(b_i,\mathbf b_{-i}\mid v_i)
+$$
+for every alternative bid $b_i\ge 0$ and every vector of rival bids $\mathbf b_{-i}$.
+
+Now fix any rival strategies $\mathbf s_{-i}$. For each realization $\mathbf v_{-i}$ of the rivals’ values, their strategies produce a bid vector $\mathbf b_{-i}=\mathbf s_{-i}(\mathbf v_{-i})$ to which the same inequality applies. Taking expectations over $\mathbf V_{-i}$ gives
+$$
+\begin{aligned}
+U_i\bigl(v_i,\mathbf s_{-i}\mid v_i\bigr)
+&=\mathbb E\!\left[u_i\bigl(v_i,\mathbf s_{-i}(\mathbf V_{-i})\mid v_i\bigr)\right]\\
+&\ge \mathbb E\!\left[u_i\bigl(b_i,\mathbf s_{-i}(\mathbf V_{-i})\mid v_i\bigr)\right]\\
+&=U_i\bigl(b_i,\mathbf s_{-i}\mid v_i\bigr).
+\end{aligned}
+$$
+
+For each $b_i\ne v_i$, the complete-information proposition also gives a rival bid vector $\mathbf b'_{-i}$ against which the inequality is strict. Let each rival $j\neq i$ use the constant strategy $s'_j(v_j)=b'_j$ for every value $v_j$. Then $\hat{\mathbf b}_{-i}$ occurs with probability one, so
+$$
+U_i(v_i,\mathbf s'_{-i}\mid v_i)
+>
+U_i(b_i,\mathbf s'_{-i}\mid v_i).
+$$
+Thus, at every value $v_i$, the truthful bid weakly dominates each alternative bid $b_i$ in interim expected utility.
+
+Therefore, truthful bidding profile $\mathbf s^*$ satisfies the Bayes–Nash equilibrium condition for every bidder and every value. Under $\mathbf s^*$, bids are equal to values, so the winner has a highest value. Hence the allocation is efficient. $\square$
+
+
+
+Under the second-price payment rule, bidding one’s private value is optimal for every realization of the rivals’ bids. It therefore remains optimal in expectation even when values are correlated or rivals bid above or below their values. In the next section, we use independence assumption to derive the distribution of the highest rival value.
+
+## Order statistics and winning {#sec-auctions-winning}
+
+For the rest of the lecture, suppose all random values $V_i$ in the symmetric auction have the same continuous distribution function $F$ with density $f$. 
+
+### The highest rival value
+
+Sorting a sample from smallest to largest gives its **order statistics**. From the perspective of a single bidder $i$, the relevant order statistic is
+$$
+Y=\max_{j\ne i} V_j,
+$$
+the largest of the $n-1$ rival values. The probability distribution of random variable $Y$ can be easily described by its distribution function $G$. Indeed, independence of values allows us to multiply the probabilities, giving for every $y\in \mathbb R$:
+$$
+\begin{align}
+G(y):=\Pr(Y\le y) & =\Pr(V_j \leq y, \;\forall j\neq i )\\ & =\prod_{j\ne i}\Pr(V_j\le y)=F(y)^{n-1}.
+\end{align}
+$$
+To find the density $g$ of $Y$, take the derivative of its distribution function $G(y)=[F(y)]^{n-1}$. Wherever $F'(y)=f(y)$, the chain rule gives
+$$
+g(y)=G'(y)=(n-1)[F(y)]^{n-2}f(y).
+$$
+
+For example, for uniformly distributed values on $[0,1]$, we get $G(y)=y^{n-1}$ and
+$g(y)=(n-1)y^{n-2}$ on $(0,1)$. Its expected value is
+$$\mathbb E[Y]=\int_0^1 y(n-1)y^{n-2}\,dy=(n-1)/n.$$
+With three bidders, the probability both rivals have values below
+$1/2$ is $1/4$. With ten bidders it falls to $(1/2)^9=1/512$.
+
+![Distribution and density of $Y$ for uniform values on $[0,1]$.](../assets/figures/auctions-rival-values.svg){#fig-auctions-rival-values width=100% fig-alt="Two graphs compare the maximum of two and nine independent uniform rival values. With nine rivals its distribution function is lower throughout the interior, and its density rises more steeply near one."}
+
+### Probability of winning
+
+A **symmetric strategy profile** $\mathbf s=(s_1,\dots,s_n)$ satisfies $s_1=\dots=s_n$, and we denote such common bidding strategy by $s$. For the calculation below, suppose that a real function $s$ is *continuous* and *strictly increasing* on $[0,\bar v]$. Suppose bidders follow the symmetric strategy profile $(s,\dots,s)$, bidder $i$ has private value $v_i$ and submits the bid $b_i:=s(z)\geq 0$ for some $z\in [0,\bar v]$. The maximum of the rival bids is a random variable
+$$
+B = \max_{j\neq i} s(V_j).
+$$
+The random event $B< b_i$ means that *bidder $i$ wins the auction*. The probability of winning for bidder $i$ is then
+$$
+\Pr (B< s(z))
+=\Pr\bigl(s(Y)<s(z)\bigr)
+=\Pr(Y<z)=G(z),
+$$
+where the first and second equality follow from the assumptions on bidding strategy $s$. The third equality says that $\Pr(Y<z)=\Pr(Y\le z)$, which is true since $Y$ is a continuous random variable.
+
+
+## Examples of interim expected utility {#sec-auctions-interim}
+
+We will use the assumptions and results above for the symmetric auctions to derive the specific formulas for interim expected utility in the two sealed-bid models. Bidder $i$ with private value $v_i$ submits a bid $b_i=s(z)\geq 0$, while the opponents use a strategy profile $\mathbf s_{-i}$.
+
+::: {.callout-note appearance="minimal" icon="false" title="Example (First-price auction)"}
+
+On every win, bidder $i$ earns
+$v_i-b_i$. On a loss, the payoff is zero. Therefore, the interim expected utility is
+$$
+U_i(b_i,\mathbf s_{-i}\mid v_i)
+=(v_i-b_i)\Pr(B<b_i)
+=(v_i-b_i)G(z).
+$$
+
+:::
+
+::: {.callout-note appearance="minimal" icon="false" title="Example (Second-price auction)"}
+
+ If the realization of highest rival value is $Y=y$ and $y\leq z$, then bidder $i$ wins,
+and pays the highest rival bid $s(y)$. The profit on
+this win is $v_i-s(y)$. Integrating over the winning values of $y$ gives
+$$
+U_i(b_i,\mathbf s_{-i}\mid v_i)
+=\int_0^z \bigl(v_i-s(y)\bigr)g(y)\,dy,
+$$
+where $g$ is the density of $Y$. 
+
+:::
+
+
+
+

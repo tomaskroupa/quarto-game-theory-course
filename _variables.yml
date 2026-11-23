@@ -379,3 +379,5 @@ games:
       The two decision nodes belong to the *same information set*:
       the player cannot tell whether this is the first or second visit.
     diagram: "../games/extensive-form/forgotten-visit.svg"
+
+ 

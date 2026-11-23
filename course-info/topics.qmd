@@ -61,24 +61,17 @@ Imperfect information prevents independent backward induction at individual info
 
 ## Auctions 1 {#sec-topic-auctions-1}
 
-The first auction topic introduces common auction formats. Interim analysis
-expresses a bidder's expected payoff as a function of the bid, the probability
-of winning, and the payment rule.
+The first lecture about auctions introduces common auction formats. We discuss the properties of first-price and second-price auctions with commonly known values, and then analyze sealed-bid auctions as Bayesian games.
 
-**Key concepts:** English, Dutch, first-price and second-price auctions;
-independent private values; types and bidding strategies; symmetric auctions;
-order statistics; probability of winning; interim expected utility.
+
+**Key concepts:** English and Dutch auctions; sealed bids; weak dominance; independent private values; Bayes–Nash equilibrium; order statistics; winning probability; interim expected utility.
 
 ## Auctions 2 {#sec-topic-auctions-2}
 
-The second auction topic analyzes strategic bidding and the seller's expected
-revenue. Equilibrium bidding differs between first-price and second-price
-auctions, but under the stated assumptions their expected payments can be
-compared through revenue equivalence.
+Starting from the interim payoff in Auctions 1, we derive and verify a symmetric equilibrium. We then use the truthful second-price equilibrium to compare bidder payments and seller revenue. 
 
-**Key concepts:** equilibrium bidding in first-price
-auctions; truthful bidding in second-price auctions; expected payment;
-seller revenue; revenue equivalence.
+**Key concepts:** symmetric first-price equilibrium; bid shading; interim
+expected payment; expected seller revenue; revenue equivalence.
 
 ## Mechanism design {#sec-topic-mechanism-design}
 
