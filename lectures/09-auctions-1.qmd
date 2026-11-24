@@ -121,12 +121,12 @@ Telling the truth is no longer an equilibrium strategy in the first-price auctio
 
 ::: {.callout-important appearance="minimal" icon="false" title="Proposition"}
 
-Assume that a bidder $i$ has the unique highest value, $v_i > \max_{j\ne j} v_j$. Then the truthful bid profile $(v_1,\dots,v_n)$ in the
+Assume that a bidder $i$ has the unique highest value, $v_i > \max_{j\ne i} v_j$. Then the truthful bid profile $(v_1,\dots,v_n)$ in the
 first-price auction is not a Nash equilibrium.
 
 :::
 
-*Proof.* At the truthful profile, bidder $i$ wins, pays $v_i$, and earns zero. Note that $\bar b_i=\max_{j\ne j} v_j$. We will construct a profitable unilateral deviation for bidder $i$. Keep all other bids fixed and change just the bidder's $i$ bid to $(v_i+\bar b_i)/2$. Then $(v_i+\bar b_i)/2 > \bar b_i$, so it still wins for certain. The new profit is positive since
+*Proof.* At the truthful profile, bidder $i$ wins, pays $v_i$, and earns zero. Note that $\bar b_i=\max_{j\ne i} v_j$. We will construct a profitable unilateral deviation for bidder $i$. Keep all other bids fixed and change just the bidder's $i$ bid to $(v_i+\bar b_i)/2$. Then $(v_i+\bar b_i)/2 > \bar b_i$, so it still wins for certain. The new profit is positive since
 $v_i-(v_i+\bar b_i)/2=(v_i-\bar b_i)/2>0$. 
 $\square$
 
